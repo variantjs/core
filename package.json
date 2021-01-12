@@ -34,9 +34,6 @@
     "ts-jest": "^26.4.4"
   },
   "release-it": {
-    "publishConfig": {
-      "access": "public"
-    },
     "hooks": {
       "before:init": ["yarn lint", "yarn test"],
       "after:bump": "yarn build"
