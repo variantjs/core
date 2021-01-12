@@ -1,16 +1,14 @@
 {
   "name": "@variantjs/core",
   "version": "0.0.0",
-  "main": "index.js",
   "description": "VariantJS common functions and utilities",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint src --fix",
-    "prepare": "yarn run build",
-    "prepublishOnly": "yarn test && yarn run lint",
     "release": "release-it"
   },
   "keywords": ["tailwindcss", "react", "vue", "react-tailwind", "vue-tailwind", "variantjs  "],
@@ -36,9 +34,12 @@
     "ts-jest": "^26.4.4"
   },
   "release-it": {
+    "publishConfig": {
+      "access": "public"
+    },
     "hooks": {
-      "before:init": ["yarn run lint", "yarn test"],
-      "after:bump": "yarn run build"
+      "before:init": ["yarn lint", "yarn test"],
+      "after:bump": "yarn build"
     }
   }
 }
