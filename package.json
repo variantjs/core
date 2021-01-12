@@ -37,6 +37,9 @@
     "hooks": {
       "before:init": ["yarn lint", "yarn test"],
       "after:bump": "yarn build"
+    },
+    "github": {
+      "release": true
     }
   }
 }
