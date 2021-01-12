@@ -1,8 +1,9 @@
 {
-  "name": "core",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@variantjs/core",
+  "version": "0.0.0",
   "main": "index.js",
+  "description": "VariantJS common functions and utilities",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
@@ -12,8 +13,8 @@
     "prepublishOnly": "yarn test && yarn run lint",
     "release": "release-it"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["tailwindcss", "react", "vue", "react-tailwind", "vue-tailwind", "variantjs  "],
+  "author": "Alfonso Bribiesca <alfonso@vexilo.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^14.14.20",
