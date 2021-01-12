@@ -13,7 +13,12 @@
   },
   "keywords": ["tailwindcss", "react", "vue", "react-tailwind", "vue-tailwind", "variantjs  "],
   "author": "Alfonso Bribiesca <alfonso@vexilo.com>",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfonsobries/vue-tailwind"
+  },
+  "license": "MIT",
+  "private": false,
   "devDependencies": {
     "@types/node": "^14.14.20",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
@@ -37,9 +42,6 @@
     "hooks": {
       "before:init": ["yarn lint", "yarn test"],
       "after:bump": "yarn build"
-    },
-    "github": {
-      "release": true
     }
   }
 }
