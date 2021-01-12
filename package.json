@@ -1,6 +1,6 @@
 {
   "name": "@variantjs/core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "VariantJS common functions and utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,14 @@
     "lint": "eslint src --fix",
     "release": "release-it"
   },
-  "keywords": ["tailwindcss", "react", "vue", "react-tailwind", "vue-tailwind", "variantjs  "],
+  "keywords": [
+    "tailwindcss",
+    "react",
+    "vue",
+    "react-tailwind",
+    "vue-tailwind",
+    "variantjs  "
+  ],
   "author": "Alfonso Bribiesca <alfonso@vexilo.com>",
   "repository": {
     "type": "git",
@@ -40,7 +47,10 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": ["yarn lint", "yarn test"],
+      "before:init": [
+        "yarn lint",
+        "yarn test"
+      ],
       "after:bump": "yarn build"
     }
   }
