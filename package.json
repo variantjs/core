@@ -1,9 +1,10 @@
 {
   "name": "@variantjs/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "VariantJS common functions and utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
