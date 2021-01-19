@@ -14,9 +14,11 @@ const getCustomPropsFromVariant = <P extends ObjectWithClassName>(
 
 const parseVariant = <P extends ObjectWithClassName>(
   props: WithVariantProps<P>,
-  globalConfiguration?: WithVariantProps<P>
+  globalConfiguration?: WithVariantProps<P>,
+  defaultConfiguration?: WithVariantProps<P>
 ): P => {
   const { variants, variant, ...mainProps } = {
+    ...defaultConfiguration,
     ...globalConfiguration,
     ...props,
   }

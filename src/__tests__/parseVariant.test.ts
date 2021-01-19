@@ -24,6 +24,21 @@ describe('parse variants function', () => {
     expect(parseVariant(props)).toEqual(props.variants.alt)
   })
 
+  it('returns the default configuration', () => {
+    const props = {}
+    const globalConfiguration = {}
+    const defaultConfiguration = {
+      type: 'text',
+      fixedClasses: 'border p-3',
+      classes: 'text-red-500',
+    }
+
+    expect(parseVariant(props, globalConfiguration, defaultConfiguration)).toEqual({
+      type: 'text',
+      className: 'text-red-500 border p-3',
+    })
+  })
+
   it('merge the variant props with the default props', () => {
     const props = {
       className: 'text-red-500',
@@ -139,5 +154,22 @@ describe('parse variants function', () => {
     }
 
     expect(parseVariant(props).className).toBe('text-red-500 border-blue-500 border')
+  })
+
+  it('uses the classes from the configuration', () => {
+    const props = {
+      variant: 'error',
+    }
+
+    const configuration = {
+      classes: 'text-black',
+      variants: {
+        error: {
+          classes: 'text-red-500',
+        },
+      },
+    }
+
+    expect(parseVariant(props, configuration).className).toBe('text-red-500')
   })
 })
