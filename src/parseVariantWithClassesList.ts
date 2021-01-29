@@ -109,11 +109,6 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList>(
     )
   })
 
-  // Remove the empty properties
-  Object.keys(mergedClasses)
-    .filter((key) => !mergedClasses[key])
-    .forEach((key) => delete mergedClasses[key])
-
   if (Object.keys(mergedClasses).length > 0) {
     ;(mergedProps as P).classesList = mergedClasses
   }

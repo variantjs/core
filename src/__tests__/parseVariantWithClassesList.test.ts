@@ -193,7 +193,11 @@ describe('parse variants with classes list function', () => {
       variant: 'error',
     }
 
-    expect(parseVariantWithClassesList(props, ['wrapper'])).toEqual({})
+    expect(parseVariantWithClassesList(props, ['wrapper'])).toEqual({
+      classesList: {
+        wrapper: '',
+      },
+    })
   })
 
   it('merges only the attributes that are defined from the variant', () => {
