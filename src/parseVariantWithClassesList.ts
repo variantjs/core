@@ -4,6 +4,7 @@ import {
   WithVariantPropsAndClassesList,
 } from './types/Variants'
 import get from './helpers/get'
+import pick from './helpers/pick'
 
 import mergeClasses from './mergeClasses'
 import { CSSClassesList, CSSRawClassesList } from './types'
@@ -109,13 +110,10 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList>(
     )
   })
 
-  // Remove the empty properties
-  Object.keys(mergedClasses)
-    .filter((key) => !mergedClasses[key])
-    .forEach((key) => delete mergedClasses[key])
+  const result = pick(mergedClasses)
 
-  if (Object.keys(mergedClasses).length > 0) {
-    ;(mergedProps as P).classesList = mergedClasses
+  if (Object.keys(result).length > 0) {
+    ;(mergedProps as P).classesList = result
   }
 
   return mergedProps as P
