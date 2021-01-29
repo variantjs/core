@@ -1,9 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const get = <T extends Record<K, any>, K extends keyof T>(
-  object: T,
-  path: string,
-  defaultValue?: unknown
-): unknown => {
+const get = <T, K>(object: T, path: string, defaultValue?: unknown): K | undefined => {
   const result = path
     .replace(/\[/g, '.')
     .replace(/\]/g, '')

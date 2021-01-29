@@ -199,4 +199,209 @@ describe('parse variants with classes list function', () => {
       },
     })
   })
+
+  it('merges only the attributes that are defined from the variant', () => {
+    const props = {
+      classes: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: '',
+      },
+      variants: {
+        error: {
+          classes: {
+            label: 'uppercase text-red-500',
+            input: 'shadow',
+          },
+        },
+      },
+      variant: 'error',
+    }
+
+    expect(
+      parseVariantWithClassesList(props, ['wrapper', 'inputWrapper', 'label', 'input'])
+    ).toEqual({
+      classesList: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-red-500',
+        input: 'shadow',
+      },
+    })
+  })
+
+  it('merges only the attributes that are defined from the variant and keep the fixed classes', () => {
+    const props = {
+      fixedClasses: {
+        wrapper: 'flex items-center',
+        inputWrapper: 'inline-flex',
+        label: 'semibold',
+        input: '',
+      },
+      classes: {
+        wrapper: 'space-x-2',
+        inputWrapper: '',
+        label: 'uppercase text-gray-500',
+        input: '',
+      },
+      variants: {
+        error: {
+          classes: {
+            label: 'uppercase text-red-500',
+            input: 'shadow',
+          },
+        },
+      },
+      variant: 'error',
+    }
+
+    expect(
+      parseVariantWithClassesList(props, ['wrapper', 'inputWrapper', 'label', 'input'])
+    ).toEqual({
+      classesList: {
+        wrapper: 'space-x-2 flex items-center',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-red-500 semibold',
+        input: 'shadow',
+      },
+    })
+  })
+
+  it('merges the only the new attributes to the global configuration', () => {
+    const props = {
+      classes: {
+        input: 'border-1',
+      },
+    }
+
+    const globalConfiguration = {
+      classes: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: '',
+      },
+    }
+
+    expect(
+      parseVariantWithClassesList(
+        props,
+        ['wrapper', 'inputWrapper', 'label', 'input'],
+        globalConfiguration
+      )
+    ).toEqual({
+      classesList: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: 'border-1',
+      },
+    })
+  })
+
+  it('it merges the new attributes from the default configuration', () => {
+    const globalConfiguration = {
+      classes: {
+        input: 'border-1',
+      },
+    }
+
+    const defaultConfiguration = {
+      classes: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: '',
+      },
+    }
+
+    expect(
+      parseVariantWithClassesList(
+        {},
+        ['wrapper', 'inputWrapper', 'label', 'input'],
+        globalConfiguration,
+        defaultConfiguration
+      )
+    ).toEqual({
+      classesList: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: 'border-1',
+      },
+    })
+  })
+
+  it('it merges the props with the the default configuration', () => {
+    const props = {
+      classes: {
+        input: 'border-1',
+      },
+    }
+
+    const defaultConfiguration = {
+      classes: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: '',
+      },
+    }
+
+    expect(
+      parseVariantWithClassesList(
+        props,
+        ['wrapper', 'inputWrapper', 'label', 'input'],
+        {},
+        defaultConfiguration
+      )
+    ).toEqual({
+      classesList: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: 'border-1',
+      },
+    })
+  })
+
+  it('it merges the global configuration, the props, and the default configuration', () => {
+    const props = {
+      classes: {
+        wrapper: 'flex items-center space-x-2',
+      },
+    }
+
+    const globalConfiguration = {
+      classes: {
+        input: 'border-1',
+      },
+    }
+
+    const defaultConfiguration = {
+      classes: {
+        wrapper: 'p-3',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: '',
+      },
+    }
+
+    expect(
+      parseVariantWithClassesList(
+        props,
+        ['wrapper', 'inputWrapper', 'label', 'input'],
+        globalConfiguration,
+        defaultConfiguration
+      )
+    ).toEqual({
+      classesList: {
+        wrapper: 'flex items-center space-x-2',
+        inputWrapper: 'inline-flex',
+        label: 'uppercase text-gray-500',
+        input: 'border-1',
+      },
+    })
+  })
 })

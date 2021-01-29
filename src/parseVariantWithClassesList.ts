@@ -3,8 +3,10 @@ import {
   VariantsWithClassesList,
   WithVariantPropsAndClassesList,
 } from './types/Variants'
+import get from './helpers/get'
+
 import mergeClasses from './mergeClasses'
-import { CSSClassesList } from './types'
+import { CSSClassesList, CSSRawClassesList } from './types'
 
 const getCustomPropsFromVariant = <P extends ObjectWithClassesList>(
   variants?: VariantsWithClassesList<P>,
@@ -29,6 +31,61 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList>(
     ...props,
   }
 
+  const classes: CSSRawClassesList = {}
+  const fixedClasses: CSSRawClassesList = {}
+
+  classesListKeys.forEach((classItemKey) => {
+    classes[classItemKey] = get<typeof props, string>(
+      props,
+      `classes.${classItemKey}`,
+      get(
+        globalConfiguration,
+        `classes.${classItemKey}`,
+        get(defaultConfiguration, `classes.${classItemKey}`)
+      )
+    )
+
+    fixedClasses[classItemKey] = get<typeof props, string>(
+      props,
+      `fixedClasses.${classItemKey}`,
+      get(
+        globalConfiguration,
+        `fixedClasses.${classItemKey}`,
+        get(defaultConfiguration, `fixedClasses.${classItemKey}`)
+      )
+    )
+
+    if (variant) {
+      classes[classItemKey] = get<typeof props, string>(
+        props,
+        `variants.${variant}.classes.${classItemKey}`,
+        get(
+          globalConfiguration,
+          `variants.${variant}.classes.${classItemKey}`,
+          get(
+            defaultConfiguration,
+            `variants.${variant}.classes.${classItemKey}`,
+            classes[classItemKey]
+          )
+        )
+      )
+
+      fixedClasses[classItemKey] = get<typeof props, string>(
+        props,
+        `variants.${variant}.fixedClasses.${classItemKey}`,
+        get(
+          globalConfiguration,
+          `variants.${variant}.fixedClasses.${classItemKey}`,
+          get(
+            defaultConfiguration,
+            `variants.${variant}.fixedClasses.${classItemKey}`,
+            fixedClasses[classItemKey]
+          )
+        )
+      )
+    }
+  })
+
   const customProps = getCustomPropsFromVariant(variants, variant)
 
   const mergedProps = {
@@ -36,13 +93,15 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList>(
     ...customProps,
   }
 
-  const { classes, fixedClasses, ...componentProps } = mergedProps
+  delete mergedProps['fixedClasses']
+
+  delete mergedProps['classes']
 
   const mergedClasses: CSSClassesList = {}
 
   classesListKeys.forEach((classItemKey) => {
-    const classesForTheCurrentKey = classes ? classes[classItemKey] : undefined
-    const fixedClassesForTheCurrentKey = fixedClasses ? fixedClasses[classItemKey] : undefined
+    const classesForTheCurrentKey = classes[classItemKey]
+    const fixedClassesForTheCurrentKey = fixedClasses[classItemKey]
 
     mergedClasses[classItemKey] = mergeClasses(
       classesForTheCurrentKey,
@@ -51,10 +110,10 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList>(
   })
 
   if (Object.keys(mergedClasses).length > 0) {
-    ;(componentProps as P).classesList = mergedClasses
+    ;(mergedProps as P).classesList = mergedClasses
   }
 
-  return componentProps as P
+  return mergedProps as P
 }
 
 export default parseVariantWithClassesList
