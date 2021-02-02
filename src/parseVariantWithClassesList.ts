@@ -9,10 +9,10 @@ import pick from './helpers/pick'
 import mergeClasses from './mergeClasses'
 import { CSSClassesList, CSSRawClassesList } from './types'
 
-const getCustomPropsFromVariant = <P extends ObjectWithClassesList>(
-  variants?: VariantsWithClassesList<P>,
+const getCustomPropsFromVariant = <P extends ObjectWithClassesList, C extends CSSRawClassesList>(
+  variants?: VariantsWithClassesList<P, C>,
   variant?: string
-): WithVariantPropsAndClassesList<P> | undefined => {
+): WithVariantPropsAndClassesList<P, C> | undefined => {
   if (variant !== undefined && variants) {
     return variants[variant]
   }
@@ -20,11 +20,11 @@ const getCustomPropsFromVariant = <P extends ObjectWithClassesList>(
   return undefined
 }
 
-const parseVariantWithClassesList = <P extends ObjectWithClassesList>(
-  props: WithVariantPropsAndClassesList<P>,
+const parseVariantWithClassesList = <P extends ObjectWithClassesList, C extends CSSRawClassesList>(
+  props: WithVariantPropsAndClassesList<P, C>,
   classesListKeys: Array<string>,
-  globalConfiguration?: WithVariantPropsAndClassesList<P>,
-  defaultConfiguration?: WithVariantPropsAndClassesList<P>
+  globalConfiguration?: WithVariantPropsAndClassesList<P, C>,
+  defaultConfiguration?: WithVariantPropsAndClassesList<P, C>
 ): P => {
   const { variants, variant, ...mainProps } = {
     ...defaultConfiguration,
