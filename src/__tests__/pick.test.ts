@@ -1,4 +1,3 @@
-import { type } from 'os'
 import pick from '../helpers/pick'
 
 describe('pick', () => {
