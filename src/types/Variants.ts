@@ -5,7 +5,7 @@ export type WithVariantProps<P> = {
   fixedClasses?: CSSClass
   variants?: Variants<P>
   variant?: string
-  className?: string
+  class?: string
 } & P
 
 export interface Variants<P> {
@@ -13,7 +13,7 @@ export interface Variants<P> {
 }
 
 export type ObjectWithClassName = {
-  className?: string
+  class?: string
 }
 
 export type ObjectWithClassesList = ObjectWithClassName & {
@@ -25,7 +25,7 @@ export type WithVariantPropsAndClassesList<P, C extends CSSRawClassesList> = {
   fixedClasses?: C
   variants?: VariantsWithClassesList<P, C>
   variant?: string
-  className?: string
+  class?: string
 } & P
 
 export interface VariantsWithClassesList<P, C extends CSSRawClassesList> {

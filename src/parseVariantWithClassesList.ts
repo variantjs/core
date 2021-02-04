@@ -22,7 +22,7 @@ const getCustomPropsFromVariant = <P extends ObjectWithClassesList, C extends CS
 
 const parseVariantWithClassesList = <P extends ObjectWithClassesList, C extends CSSRawClassesList>(
   props: WithVariantPropsAndClassesList<P, C>,
-  classesListKeys: Array<string>,
+  classesListKeys: (keyof C)[],
   globalConfiguration?: WithVariantPropsAndClassesList<P, C>,
   defaultConfiguration?: WithVariantPropsAndClassesList<P, C>
 ): P => {
@@ -32,11 +32,11 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList, C extends 
     ...props,
   }
 
-  const classes: CSSRawClassesList = {}
-  const fixedClasses: CSSRawClassesList = {}
+  const classes: Partial<C> = {}
+  const fixedClasses: Partial<C> = {}
 
   classesListKeys.forEach((classItemKey) => {
-    classes[classItemKey] = get<typeof props, string>(
+    classes[classItemKey] = get<typeof props, C[keyof C]>(
       props,
       `classes.${classItemKey}`,
       get(
@@ -46,7 +46,7 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList, C extends 
       )
     )
 
-    fixedClasses[classItemKey] = get<typeof props, string>(
+    fixedClasses[classItemKey] = get<typeof props, C[keyof C]>(
       props,
       `fixedClasses.${classItemKey}`,
       get(
@@ -57,7 +57,7 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList, C extends 
     )
 
     if (variant) {
-      classes[classItemKey] = get<typeof props, string>(
+      classes[classItemKey] = get<typeof props, C[keyof C]>(
         props,
         `variants.${variant}.classes.${classItemKey}`,
         get(
@@ -71,7 +71,7 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList, C extends 
         )
       )
 
-      fixedClasses[classItemKey] = get<typeof props, string>(
+      fixedClasses[classItemKey] = get<typeof props, C[keyof C]>(
         props,
         `variants.${variant}.fixedClasses.${classItemKey}`,
         get(
@@ -104,7 +104,7 @@ const parseVariantWithClassesList = <P extends ObjectWithClassesList, C extends 
     const classesForTheCurrentKey = classes[classItemKey]
     const fixedClassesForTheCurrentKey = fixedClasses[classItemKey]
 
-    mergedClasses[classItemKey] = mergeClasses(
+    mergedClasses[classItemKey as string] = mergeClasses(
       classesForTheCurrentKey,
       fixedClassesForTheCurrentKey
     )

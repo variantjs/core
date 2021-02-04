@@ -3,7 +3,7 @@ import { parseVariantWithClassesList } from '../index'
 describe('parse variants with classes list function', () => {
   it('returns the same object if no variants passed', () => {
     const props = {
-      className: 'text-red-500',
+      class: 'text-red-500',
       type: 'number',
     }
 
@@ -12,11 +12,11 @@ describe('parse variants with classes list function', () => {
 
   it('returns the variant props if a variant is added', () => {
     const props = {
-      className: 'text-red-500',
+      class: 'text-red-500',
       type: 'number',
       variants: {
         alt: {
-          className: 'text-blue-500',
+          class: 'text-blue-500',
           type: 'text',
         },
       },
@@ -50,12 +50,12 @@ describe('parse variants with classes list function', () => {
 
   it('merge the variant props with the default props', () => {
     const props = {
-      className: 'text-red-500',
+      class: 'text-red-500',
       type: 'number',
       placeholder: 'Hello world',
       variants: {
         alt: {
-          className: 'text-blue-500',
+          class: 'text-blue-500',
           type: 'text',
         },
       },
@@ -72,13 +72,13 @@ describe('parse variants with classes list function', () => {
 
   it('use the props over the configuration', () => {
     const props = {
-      className: 'text-red-500',
+      class: 'text-red-500',
       type: 'number',
       placeholder: 'Hello world',
     }
 
     const configuration = {
-      className: 'text-blue-500',
+      class: 'text-blue-500',
     }
 
     expect(parseVariantWithClassesList(props, [], configuration)).toEqual(props)
@@ -90,10 +90,10 @@ describe('parse variants with classes list function', () => {
     }
 
     const configuration = {
-      className: 'text-blue-500',
+      class: 'text-blue-500',
       variants: {
         alt: {
-          className: 'text-blue-500',
+          class: 'text-blue-500',
           type: 'text',
         },
       },
@@ -108,7 +108,7 @@ describe('parse variants with classes list function', () => {
     const props = {}
 
     const configuration = {
-      className: 'text-blue-500',
+      class: 'text-blue-500',
       type: 'text',
     }
 
@@ -117,7 +117,7 @@ describe('parse variants with classes list function', () => {
 
   it('merges className and fixedClasses', () => {
     const props = {
-      className: 'text-red-500',
+      class: 'text-red-500',
       classes: {
         wrapper: ['border-red-500'],
       },
@@ -129,7 +129,7 @@ describe('parse variants with classes list function', () => {
     const config = parseVariantWithClassesList(props, ['wrapper'])
 
     expect(config).toEqual({
-      className: 'text-red-500',
+      class: 'text-red-500',
       classesList: {
         wrapper: 'border-red-500 border-2',
       },
@@ -138,7 +138,7 @@ describe('parse variants with classes list function', () => {
 
   it('merges fixedClasses and variant classes', () => {
     const props = {
-      className: 'text-red-500',
+      class: 'text-red-500',
       classes: {
         wrapper: ['border-red-500'],
       },
@@ -156,7 +156,7 @@ describe('parse variants with classes list function', () => {
     }
 
     expect(parseVariantWithClassesList(props, ['wrapper'])).toEqual({
-      className: 'text-red-500',
+      class: 'text-red-500',
       classesList: {
         wrapper: 'border-blue-500 border-2',
       },

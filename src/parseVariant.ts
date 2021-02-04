@@ -30,12 +30,12 @@ const parseVariant = <P extends ObjectWithClassName>(
     ...customProps,
   }
 
-  const { classes, fixedClasses, className, ...componentProps } = mergedProps
+  const { classes, fixedClasses, class: className, ...componentProps } = mergedProps
 
   const mergedClasses: string = mergeClasses(className, classes, fixedClasses)
 
   if (mergedClasses) {
-    ;(componentProps as P).className = mergedClasses
+    ;(componentProps as P).class = mergedClasses
   }
 
   return componentProps as P
