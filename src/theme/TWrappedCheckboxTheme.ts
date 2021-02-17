@@ -1,6 +1,6 @@
-import { TCheckbox } from './TCheckbox'
+import { TCheckbox } from './TCheckboxTheme'
 
-export const TWrappedCheckbox = {
+export const TWrappedCheckboxTheme = {
   classes: {
     wrapper: 'flex items-center space-x-2',
     inputWrapper: 'inline-flex',
