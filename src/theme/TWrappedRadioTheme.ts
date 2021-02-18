@@ -17,4 +17,4 @@ export const TWrappedRadioClassesListKeys = [
   'input',
   'label',
   'labelChecked',
-]
+] as const

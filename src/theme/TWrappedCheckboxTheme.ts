@@ -17,4 +17,4 @@ export const TWrappedCheckboxClassesListKeys = [
   'input',
   'label',
   'labelChecked',
-]
+] as const

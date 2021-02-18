@@ -30,7 +30,7 @@ const parseVariantWithClassesList = <
   C2 extends CSSRawClassesList
 >(
   props: WithVariantPropsAndClassesList<P, C, C2>,
-  classesListKeys: (keyof C)[],
+  classesListKeys: Readonly<(keyof C)[]>,
   globalConfiguration?: WithVariantPropsAndClassesList<P, C, C2>,
   defaultConfiguration?: WithVariantPropsAndClassesList<P, C, C2>
 ): P => {
