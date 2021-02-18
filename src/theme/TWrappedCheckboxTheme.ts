@@ -8,3 +8,13 @@ export const TWrappedCheckboxTheme = {
     input: TCheckboxTheme.classes,
   },
 }
+
+export const TWrappedCheckboxClassesListKeys = [
+  'wrapper',
+  'wrapperChecked',
+  'inputWrapper',
+  'inputWrapperChecked',
+  'input',
+  'label',
+  'labelChecked',
+] as const

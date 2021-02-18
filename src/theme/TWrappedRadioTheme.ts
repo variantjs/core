@@ -8,3 +8,13 @@ export const TWrappedRadioTheme = {
     input: TRadioTheme.classes,
   },
 }
+
+export const TWrappedRadioClassesListKeys = [
+  'wrapper',
+  'wrapperChecked',
+  'inputWrapper',
+  'inputWrapperChecked',
+  'input',
+  'label',
+  'labelChecked',
+] as const
