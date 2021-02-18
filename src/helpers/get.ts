@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const get = <T, K>(object: T, path: string, defaultValue?: unknown): K | undefined => {
-  const result = path
+const get = <T, K>(object: T, path: string | number, defaultValue?: unknown): K | undefined => {
+  const result = String(path)
     .replace(/\[/g, '.')
     .replace(/\]/g, '')
     .split('.')
