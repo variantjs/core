@@ -1,13 +1,13 @@
-import { TRadioTheme } from './TRadioTheme'
+import TRadioTheme from './TRadioTheme';
 
-export const TWrappedRadioTheme = {
+const TWrappedRadioTheme = {
   classes: {
     wrapper: 'flex items-center space-x-2',
     inputWrapper: 'inline-flex',
     label: '',
     input: TRadioTheme.classes,
   },
-}
+};
 
 export const TWrappedRadioClassesListKeys = [
   'wrapper',
@@ -17,4 +17,6 @@ export const TWrappedRadioClassesListKeys = [
   'input',
   'label',
   'labelChecked',
-] as const
+] as const;
+
+export default TWrappedRadioTheme;

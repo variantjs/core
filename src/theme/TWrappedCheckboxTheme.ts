@@ -1,13 +1,13 @@
-import { TCheckboxTheme } from './TCheckboxTheme'
+import TCheckboxTheme from './TCheckboxTheme';
 
-export const TWrappedCheckboxTheme = {
+const TWrappedCheckboxTheme = {
   classes: {
     wrapper: 'flex items-center space-x-2',
     inputWrapper: 'inline-flex',
     label: '',
     input: TCheckboxTheme.classes,
   },
-}
+};
 
 export const TWrappedCheckboxClassesListKeys = [
   'wrapper',
@@ -17,4 +17,6 @@ export const TWrappedCheckboxClassesListKeys = [
   'input',
   'label',
   'labelChecked',
-] as const
+] as const;
+
+export default TWrappedCheckboxTheme;

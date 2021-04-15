@@ -1,8 +1,8 @@
-export type NormalizedOptions = Array<NormalizedOption>
+export type NormalizedOptions = Array<NormalizedOption>;
 
-export type InputOptionValue = string | number | undefined | null
+export type InputOptionValue = string | number | undefined | null;
 
-export type InputOptionText = string | number | undefined
+export type InputOptionText = string | number | undefined;
 
 export type NormalizedOption = {
   value: InputOptionValue
@@ -10,9 +10,9 @@ export type NormalizedOption = {
   raw?: InputOption
   children?: NormalizedOptions
   disabled?: boolean | 'disabled'
-}
+};
 
-export type InputOptions = Array<InputOption> | { [key: string]: InputOptionText }
+export type InputOptions = Array<InputOption> | { [key: string]: InputOptionText };
 
 export type InputOptionObject = {
   value?: InputOptionValue
@@ -20,6 +20,6 @@ export type InputOptionObject = {
   disabled?: boolean | undefined
   children?: InputOptions
   [key: string]: unknown
-}
+};
 
-export type InputOption = InputOptionObject | string | number
+export type InputOption = InputOptionObject | string | number;

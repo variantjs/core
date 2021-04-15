@@ -1,27 +1,21 @@
-import { CSSClass, CSSClasses, CSSClassKeyValuePair } from './types/CSSClass'
+import { CSSClass, CSSClasses, CSSClassKeyValuePair } from './types/CSSClass';
 
-export const selectClasses = (classesObject: CSSClassKeyValuePair): CSSClasses => {
-  return Object.keys(classesObject).filter((className: string) => {
-    return !!classesObject[className]
+export const selectClasses = (classesObject: CSSClassKeyValuePair): CSSClasses => Object.keys(classesObject).filter((className: string) => !!classesObject[className]);
+
+const mergeClasses = (...classes: CSSClasses): string => classes
+  .map((className: CSSClass): string => {
+    if (typeof className === 'string' || className === undefined) {
+      return className || '';
+    }
+
+    if (Array.isArray(className)) {
+      return mergeClasses(...className);
+    }
+
+    return mergeClasses(...selectClasses(className));
   })
-}
+  .join(' ')
+  .replace(/  +/g, ' ')
+  .trim();
 
-const mergeClasses = (...classes: CSSClasses): string => {
-  return classes
-    .map((className: CSSClass): string => {
-      if (typeof className === 'string' || className === undefined) {
-        return className || ''
-      }
-
-      if (Array.isArray(className)) {
-        return mergeClasses(...className)
-      }
-
-      return mergeClasses(...selectClasses(className))
-    })
-    .join(' ')
-    .replace(/  +/g, ' ')
-    .trim()
-}
-
-export default mergeClasses
+export default mergeClasses;
