@@ -1,4 +1,5 @@
 import { parseVariantWithClassesList } from '../index'
+import { CSSClass, ObjectWithClassesList, WithVariantPropsAndClassesList } from '../types'
 
 describe('parse variants with classes list function', () => {
   it('returns the same object if no variants passed', () => {
@@ -137,7 +138,14 @@ describe('parse variants with classes list function', () => {
   })
 
   it('merges fixedClasses and variant classes', () => {
-    const props = {
+    type ClassesList = { 
+      wrapper?: CSSClass,
+      inputWrapper?: CSSClass,
+      label?: CSSClass,
+      input?: CSSClass,
+    }
+
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
       class: 'text-red-500',
       classes: {
         wrapper: ['border-red-500'],
@@ -197,7 +205,14 @@ describe('parse variants with classes list function', () => {
   })
 
   it('merges only the attributes that are defined from the variant', () => {
-    const props = {
+    type ClassesList = { 
+      wrapper?: CSSClass,
+      inputWrapper?: CSSClass,
+      label?: CSSClass,
+      input?: CSSClass,
+    }
+
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
       classes: {
         wrapper: 'flex items-center space-x-2',
         inputWrapper: 'inline-flex',
@@ -228,7 +243,14 @@ describe('parse variants with classes list function', () => {
   })
 
   it('merges only the attributes that are defined from the variant and keep the fixed classes', () => {
-    const props = {
+    type ClassesList = { 
+      wrapper?: CSSClass,
+      inputWrapper?: CSSClass,
+      label?: CSSClass,
+      input?: CSSClass,
+    }
+
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
       fixedClasses: {
         wrapper: 'flex items-center',
         inputWrapper: 'inline-flex',
@@ -265,13 +287,20 @@ describe('parse variants with classes list function', () => {
   })
 
   it('merges the only the new attributes to the global configuration', () => {
-    const props = {
+    type ClassesList = { 
+      wrapper?: CSSClass,
+      inputWrapper?: CSSClass,
+      label?: CSSClass,
+      input?: CSSClass,
+    }
+
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
       classes: {
         input: 'border-1',
       },
     }
 
-    const globalConfiguration = {
+    const globalConfiguration: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
       classes: {
         wrapper: 'flex items-center space-x-2',
         inputWrapper: 'inline-flex',
@@ -297,7 +326,14 @@ describe('parse variants with classes list function', () => {
   })
 
   it('it merges the new attributes from the default configuration', () => {
-    const globalConfiguration = {
+    type ClassesList = { 
+      wrapper?: CSSClass,
+      inputWrapper?: CSSClass,
+      label?: CSSClass,
+      input?: CSSClass,
+    }
+
+    const globalConfiguration: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
       classes: {
         input: 'border-1',
       },
@@ -330,7 +366,14 @@ describe('parse variants with classes list function', () => {
   })
 
   it('it merges the props with the the default configuration', () => {
-    const props = {
+    type ClassesList = { 
+      wrapper?: CSSClass,
+      inputWrapper?: CSSClass,
+      label?: CSSClass,
+      input?: CSSClass,
+    }
+
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
       classes: {
         input: 'border-1',
       },
@@ -363,7 +406,14 @@ describe('parse variants with classes list function', () => {
   })
 
   it('it merges the global configuration, the props, and the default configuration', () => {
-    const props = {
+    type ClassesList = { 
+      wrapper?: CSSClass,
+      inputWrapper?: CSSClass,
+      label?: CSSClass,
+      input?: CSSClass,
+    }
+
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
       classes: {
         wrapper: 'flex items-center space-x-2',
       },
