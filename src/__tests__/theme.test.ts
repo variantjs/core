@@ -10,6 +10,8 @@ it('exports all the themes', () => {
     'TRadioTheme',
     'TWrappedCheckboxTheme',
     'TWrappedRadioTheme',
+    'TWrappedRadioClassesListKeys',
+    'TWrappedCheckboxClassesListKeys',
   ];
 
   expect(Object.keys(theme)).toEqual(keys);
@@ -22,4 +24,6 @@ it('exports all the themes', () => {
   expect(theme.TRadioTheme).toBeTruthy();
   expect(theme.TWrappedCheckboxTheme).toBeTruthy();
   expect(theme.TWrappedRadioTheme).toBeTruthy();
+  expect(theme.TWrappedRadioClassesListKeys).toBeTruthy();
+  expect(theme.TWrappedCheckboxClassesListKeys).toBeTruthy();
 });
