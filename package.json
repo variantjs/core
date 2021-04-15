@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config  jestconfig.json --coverage",
     "test:watch": "jest  --coverage --watch --config jestconfig.json",
     "watch": "tsc --watch",
     "build": "tsc",
