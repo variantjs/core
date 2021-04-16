@@ -1,3 +1,5 @@
+import { CSSClass } from '../types/CSSClass';
+
 import TRadioTheme from './TRadioTheme';
 
 const TWrappedRadioTheme = {
@@ -18,5 +20,9 @@ export const TWrappedRadioClassesListKeys = [
   'label',
   'labelChecked',
 ] as const;
+
+export type TWrappedRadioClassesList = {
+  [key in typeof TWrappedRadioClassesListKeys[number]]?: CSSClass;
+};
 
 export default TWrappedRadioTheme;
