@@ -6,5 +6,5 @@ export { default as TCheckboxTheme } from './TCheckboxTheme';
 export { default as TRadioTheme } from './TRadioTheme';
 export { default as TWrappedCheckboxTheme } from './TWrappedCheckboxTheme';
 export { default as TWrappedRadioTheme } from './TWrappedRadioTheme';
-export { TWrappedRadioClassesListKeys } from './TWrappedRadioTheme';
-export { TWrappedCheckboxClassesListKeys } from './TWrappedCheckboxTheme';
+export { TWrappedRadioClassesListKeys, TWrappedRadioClassesList } from './TWrappedRadioTheme';
+export { TWrappedCheckboxClassesListKeys, TWrappedCheckboxClassesList } from './TWrappedCheckboxTheme';
