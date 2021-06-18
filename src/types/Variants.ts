@@ -23,7 +23,7 @@ export type ObjectWithClassesList = ObjectWithClassName & {
 export type WithVariantPropsAndClassesList<
   P,
   C extends CSSRawClassesList,
-  C2 extends CSSRawClassesList,
+  C2 extends CSSRawClassesList = C,
 > = {
   classes?: C
   fixedClasses?: C2
@@ -35,7 +35,7 @@ export type WithVariantPropsAndClassesList<
 export interface VariantsWithClassesList<
   P,
   C extends CSSRawClassesList,
-  C2 extends CSSRawClassesList,
+  C2 extends CSSRawClassesList = C,
 > {
   [key: string]: WithVariantPropsAndClassesList<P, C, C2> | undefined
 }
