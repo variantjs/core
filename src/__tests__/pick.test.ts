@@ -30,4 +30,19 @@ describe('pick', () => {
       other: undefined,
     });
   });
+
+  it('filter the attributes of an object by a condition with the key name', () => {
+    const obj = {
+      name: 'Alfonso',
+      age: 33,
+      gender: '',
+      other: undefined,
+      onemore: false,
+    };
+
+    expect(pick(obj, (value, key) => ['age', 'other'].includes(key))).toEqual({
+      age: 33,
+      other: undefined,
+    });
+  });
 });
