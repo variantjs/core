@@ -1,5 +1,5 @@
 import { parseVariantWithClassesList } from '../index';
-import { CSSClass, ObjectWithClassesList, WithVariantPropsAndClassesList } from '../types';
+import { ObjectWithClassesList, WithVariantPropsAndClassesList } from '../types';
 
 describe('parse variants with classes list function', () => {
   it('returns the same object if no variants passed', () => {
@@ -138,14 +138,9 @@ describe('parse variants with classes list function', () => {
   });
 
   it('merges fixedClasses and variant classes', () => {
-    type ClassesList = {
-      wrapper?: CSSClass,
-      inputWrapper?: CSSClass,
-      label?: CSSClass,
-      input?: CSSClass,
-    };
+    type ClassesKeys = 'wrapper' | 'inputWrapper' | 'label' | 'input';
 
-    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       class: 'text-red-500',
       classes: {
         wrapper: ['border-red-500'],
@@ -205,14 +200,9 @@ describe('parse variants with classes list function', () => {
   });
 
   it('merges only the attributes that are defined from the variant', () => {
-    type ClassesList = {
-      wrapper?: CSSClass,
-      inputWrapper?: CSSClass,
-      label?: CSSClass,
-      input?: CSSClass,
-    };
+    type ClassesKeys = 'wrapper' | 'inputWrapper' | 'label' | 'input';
 
-    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       classes: {
         wrapper: 'flex items-center space-x-2',
         inputWrapper: 'inline-flex',
@@ -243,14 +233,9 @@ describe('parse variants with classes list function', () => {
   });
 
   it('merges only the attributes that are defined from the variant and keep the fixed classes', () => {
-    type ClassesList = {
-      wrapper?: CSSClass,
-      inputWrapper?: CSSClass,
-      label?: CSSClass,
-      input?: CSSClass,
-    };
+    type ClassesKeys = 'wrapper' | 'inputWrapper' | 'label' | 'input';
 
-    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       fixedClasses: {
         wrapper: 'flex items-center',
         inputWrapper: 'inline-flex',
@@ -287,20 +272,15 @@ describe('parse variants with classes list function', () => {
   });
 
   it('merges the only the new attributes to the global configuration', () => {
-    type ClassesList = {
-      wrapper?: CSSClass,
-      inputWrapper?: CSSClass,
-      label?: CSSClass,
-      input?: CSSClass,
-    };
+    type ClassesKeys = 'wrapper' | 'inputWrapper' | 'label' | 'input';
 
-    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       classes: {
         input: 'border-1',
       },
     };
 
-    const globalConfiguration: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
+    const globalConfiguration: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       classes: {
         wrapper: 'flex items-center space-x-2',
         inputWrapper: 'inline-flex',
@@ -326,14 +306,9 @@ describe('parse variants with classes list function', () => {
   });
 
   it('it merges the new attributes from the default configuration', () => {
-    type ClassesList = {
-      wrapper?: CSSClass,
-      inputWrapper?: CSSClass,
-      label?: CSSClass,
-      input?: CSSClass,
-    };
+    type ClassesKeys = 'wrapper' | 'inputWrapper' | 'label' | 'input';
 
-    const globalConfiguration: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
+    const globalConfiguration: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       classes: {
         input: 'border-1',
       },
@@ -366,14 +341,9 @@ describe('parse variants with classes list function', () => {
   });
 
   it('it merges the props with the the default configuration', () => {
-    type ClassesList = {
-      wrapper?: CSSClass,
-      inputWrapper?: CSSClass,
-      label?: CSSClass,
-      input?: CSSClass,
-    };
+    type ClassesKeys = 'wrapper' | 'inputWrapper' | 'label' | 'input';
 
-    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       classes: {
         input: 'border-1',
       },
@@ -406,14 +376,9 @@ describe('parse variants with classes list function', () => {
   });
 
   it('it merges the global configuration, the props, and the default configuration', () => {
-    type ClassesList = {
-      wrapper?: CSSClass,
-      inputWrapper?: CSSClass,
-      label?: CSSClass,
-      input?: CSSClass,
-    };
+    type ClassesKeys = 'wrapper' | 'inputWrapper' | 'label' | 'input';
 
-    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesList, ClassesList> = {
+    const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       classes: {
         wrapper: 'flex items-center space-x-2',
       },

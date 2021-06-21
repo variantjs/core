@@ -11,12 +11,11 @@ import { CSSClassesList, CSSRawClassesList } from './types';
 
 const getCustomPropsFromVariant = <
   P extends ObjectWithClassesList,
-  C extends CSSRawClassesList,
-  C2 extends CSSRawClassesList,
+  ClassesKeys extends string,
 >(
-    variants?: VariantsWithClassesList<P, C, C2>,
+    variants?: VariantsWithClassesList<P, ClassesKeys>,
     variant?: string,
-  ): WithVariantPropsAndClassesList<P, C, C2> | undefined => {
+  ): WithVariantPropsAndClassesList<P, ClassesKeys> | undefined => {
   if (variant !== undefined && variants) {
     return variants[variant];
   }
@@ -26,13 +25,12 @@ const getCustomPropsFromVariant = <
 
 const parseVariantWithClassesList = <
   P extends ObjectWithClassesList,
-  C extends CSSRawClassesList,
-  C2 extends CSSRawClassesList,
+  ClassesKeys extends string,
 >(
-    props: WithVariantPropsAndClassesList<P, C, C2>,
-    classesListKeys: Readonly<(keyof C)[]>,
-    globalConfiguration?: WithVariantPropsAndClassesList<P, C, C2>,
-    defaultConfiguration?: WithVariantPropsAndClassesList<P, C, C2>,
+    props: WithVariantPropsAndClassesList<P, ClassesKeys>,
+    classesListKeys: Readonly<Array<ClassesKeys>>,
+    globalConfiguration?: WithVariantPropsAndClassesList<P, ClassesKeys>,
+    defaultConfiguration?: WithVariantPropsAndClassesList<P, ClassesKeys>,
   ): P => {
   const { variants, variant, ...mainProps } = {
     ...defaultConfiguration,
@@ -40,11 +38,11 @@ const parseVariantWithClassesList = <
     ...props,
   };
 
-  const classes: Partial<C> = {};
-  const fixedClasses: Partial<C> = {};
+  const classes: Partial<CSSRawClassesList<ClassesKeys>> = {};
+  const fixedClasses: Partial<CSSRawClassesList<ClassesKeys>> = {};
 
   classesListKeys.forEach((classItemKey) => {
-    classes[classItemKey] = get<typeof props, C[keyof C]>(
+    classes[classItemKey] = get<typeof props, CSSRawClassesList<ClassesKeys>>(
       props,
       `classes.${classItemKey}`,
       get(
@@ -54,7 +52,7 @@ const parseVariantWithClassesList = <
       ),
     );
 
-    fixedClasses[classItemKey] = get<typeof props, C[keyof C]>(
+    fixedClasses[classItemKey] = get<typeof props, CSSRawClassesList<ClassesKeys>>(
       props,
       `fixedClasses.${classItemKey}`,
       get(
@@ -65,7 +63,7 @@ const parseVariantWithClassesList = <
     );
 
     if (variant) {
-      classes[classItemKey] = get<typeof props, C[keyof C]>(
+      classes[classItemKey] = get<typeof props, CSSRawClassesList<ClassesKeys>>(
         props,
         `variants.${variant}.classes.${classItemKey}`,
         get(
@@ -79,7 +77,7 @@ const parseVariantWithClassesList = <
         ),
       );
 
-      fixedClasses[classItemKey] = get<typeof props, C[keyof C]>(
+      fixedClasses[classItemKey] = get<typeof props, CSSRawClassesList<ClassesKeys>>(
         props,
         `variants.${variant}.fixedClasses.${classItemKey}`,
         get(

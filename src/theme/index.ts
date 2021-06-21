@@ -4,6 +4,7 @@ export { default as TButtonTheme } from './TButtonTheme';
 export { default as TSelectTheme } from './TSelectTheme';
 export { default as TCheckboxTheme } from './TCheckboxTheme';
 export { default as TRadioTheme } from './TRadioTheme';
+export { default as TCardTheme, TCardThemeKeys } from './TCardTheme';
 export { default as TWrappedCheckboxTheme } from './TWrappedCheckboxTheme';
 export { default as TWrappedRadioTheme } from './TWrappedRadioTheme';
 export { TWrappedRadioClassesListKeys, TWrappedRadioClassesList } from './TWrappedRadioTheme';

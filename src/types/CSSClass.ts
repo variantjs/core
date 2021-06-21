@@ -7,10 +7,10 @@ export type CSSClasses = CSSClass[];
 
 export type CSSClass = CSSClassKeyValuePair | string | CSSClasses | undefined;
 
-export type CSSRawClassesList = {
-  [key: string]: CSSClass
+export type CSSRawClassesList<ClassesKeys extends string = string> = {
+  [key in ClassesKeys]?: CSSClass
 };
 
-export type CSSClassesList = {
-  [key: string]: string
+export type CSSClassesList<ClassesKeys extends string = string> = {
+  [key in ClassesKeys]?: CSSClass
 };
