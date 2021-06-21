@@ -1,6 +1,6 @@
 import * as theme from '../theme/index';
 
-it('exports all the themes', () => {
+it('exports all the themes and keys', () => {
   const keys = [
     'TInputTheme',
     'TTextareaTheme',
@@ -8,6 +8,7 @@ it('exports all the themes', () => {
     'TSelectTheme',
     'TCheckboxTheme',
     'TRadioTheme',
+    'TCardTheme',
     'TWrappedCheckboxTheme',
     'TWrappedRadioTheme',
     'TWrappedRadioClassesListKeys',
@@ -22,6 +23,7 @@ it('exports all the themes', () => {
   expect(theme.TSelectTheme).toBeTruthy();
   expect(theme.TCheckboxTheme).toBeTruthy();
   expect(theme.TRadioTheme).toBeTruthy();
+  expect(theme.TCardTheme).toBeTruthy();
   expect(theme.TWrappedCheckboxTheme).toBeTruthy();
   expect(theme.TWrappedRadioTheme).toBeTruthy();
   expect(theme.TWrappedRadioClassesListKeys).toBeTruthy();

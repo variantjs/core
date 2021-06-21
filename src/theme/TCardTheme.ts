@@ -2,9 +2,9 @@ import { CSSClass } from '../types';
 
 export type TCardThemeKeys = 'wrapper' | 'body' | 'header' | 'footer';
 
-const TCardTheme: {
+export const TCardTheme: {
   classes: {
-    [key in TCardThemeKeys]: CSSClass
+    [key in TCardThemeKeys]?: CSSClass
   }
 } = {
   classes: {
