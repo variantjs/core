@@ -1,10 +1,10 @@
 import { CSSClass } from '../types';
 
-export type TCardThemeKeys = 'wrapper' | 'body' | 'header' | 'footer';
+export type TCardConfigKeys = 'wrapper' | 'body' | 'header' | 'footer';
 
-export const TCardTheme: {
+export const TCardConfig: {
   classes: {
-    [key in TCardThemeKeys]?: CSSClass
+    [key in TCardConfigKeys]?: CSSClass
   }
 } = {
   classes: {
@@ -15,4 +15,4 @@ export const TCardTheme: {
   },
 };
 
-export default TCardTheme;
+export default TCardConfig;

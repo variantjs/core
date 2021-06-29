@@ -24,7 +24,7 @@
   "author": "Alfonso Bribiesca <alfonso@vexilo.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alfonsobries/vue-tailwind"
+    "url": "git+https://github.com/variantjs/core"
   },
   "license": "MIT",
   "private": false,
