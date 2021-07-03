@@ -7,6 +7,7 @@ export { default as TRadioConfig } from './TRadioConfig';
 export { default as TCardConfig } from './TCardConfig';
 export { default as TTagConfig } from './TTagConfig';
 export { default as TInputGroupConfig } from './TInputGroupConfig';
+export { default as TDropdownConfig } from './TDropdownConfig';
 export { default as TWrappedRadioConfig } from './TWrappedRadioConfig';
 export { default as TWrappedCheckboxConfig } from './TWrappedCheckboxConfig';
 
@@ -15,3 +16,4 @@ export { TCardConfigKeys } from './TCardConfig';
 export { TWrappedRadioConfigKeys } from './TWrappedRadioConfig';
 export { TWrappedCheckboxConfigKeys } from './TWrappedCheckboxConfig';
 export { TInputGroupConfigKeys } from './TInputGroupConfig';
+export { TDropdownConfigKeys } from './TDropdownConfig';
