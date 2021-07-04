@@ -19,6 +19,7 @@ it('exports all the configs and keys', () => {
   expect(Object.keys(config)).toEqual(keys);
 
   keys.forEach((key) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect((config as any)[key]).toBeTruthy();
   });
 });
