@@ -1,4 +1,4 @@
-import { TButtonConfig } from '.';
+import TButtonConfig from './TButtonConfig';
 
 const TDropdownConfig = {
   classes: {
