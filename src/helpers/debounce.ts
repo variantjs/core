@@ -1,7 +1,5 @@
-const debounce = (
-  func: (...args: any[]) => void,
-  wait = 200,
-) => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const debounce = (func: (...args: any[]) => void, wait = 200): (...args: any[]) => void => {
   let timeout: ReturnType<typeof setTimeout> | undefined;
 
   return (...args: any[]) => {

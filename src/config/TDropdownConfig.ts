@@ -1,3 +1,5 @@
+import { Options } from '@popperjs/core/lib/popper-lite';
+
 import TButtonConfig from './TButtonConfig';
 
 const TDropdownConfig = {
@@ -14,5 +16,19 @@ const TDropdownConfig = {
 };
 
 export type TDropdownConfigKeys = 'trigeer' | 'dropdown' | 'enterFromClass' | 'enterActiveClass' | 'enterToClass' | 'leaveFromClass' | 'leaveActiveClass' | 'leaveToClass';
+
+export const TDropdownPopperDefaultOptions: Options = {
+  placement: 'bottom',
+  modifiers: [
+    {
+      name: 'offset',
+      options: {
+        offset: [0, 10],
+      },
+    },
+  ],
+  strategy: 'absolute',
+  onFirstUpdate: undefined,
+};
 
 export default TDropdownConfig;
