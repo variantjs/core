@@ -9,5 +9,5 @@ it('exports all the helpers', () => {
   expect(typeof helpers.debounce).toBe('function');
   expect(typeof helpers.elementIsTargetOrTargetChild).toBe('function');
   expect(typeof helpers.getFocusableElements).toBe('function');
-  expect(typeof helpers.isTouchDevice).toBe('function');
+  expect(typeof helpers.isTouchOnlyDevice).toBe('function');
 });
