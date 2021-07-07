@@ -4,3 +4,4 @@ export { default as isPrimitive } from './isPrimitive';
 export { default as debounce } from './debounce';
 export { default as elementIsTargetOrTargetChild } from './elementIsTargetOrTargetChild';
 export { default as getFocusableElements } from './getFocusableElements';
+export { default as isTouchDevice } from './isTouchDevice';
