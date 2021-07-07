@@ -1,6 +1,6 @@
 {
   "name": "@variantjs/core",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "VariantJS common functions and utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -51,5 +51,5 @@
       ],
       "after:bump": "yarn build"
     }
-  }  
+  }
 }
