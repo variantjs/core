@@ -1,9 +1,9 @@
-const elementIsTargetOrTargetChild = (relatedTarget: EventTarget | null, wrapper: HTMLElement) : boolean => {
-  if (!(relatedTarget instanceof Element)) {
+const elementIsTargetOrTargetChild = (target: EventTarget | null, wrapper: HTMLElement) : boolean => {
+  if (!(target instanceof Element)) {
     return false;
   }
 
-  return wrapper.contains(relatedTarget);
+  return wrapper.contains(target);
 };
 
 export default elementIsTargetOrTargetChild;
