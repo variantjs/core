@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type DebounceFn = (...args: any[]) => void;
 
-type DebouncedFn = {
+export type DebouncedFn = {
   cancel: () => void,
 } & DebounceFn;
 
