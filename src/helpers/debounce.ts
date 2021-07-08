@@ -1,11 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const debounce = (func: (...args: any[]) => void, wait = 200): (...args: any[]) => void => {
+type DebounceFn = (...args: any[]) => void;
+
+type DebouncedFn = {
+  cancel: () => void,
+} & DebounceFn;
+
+const debounce = (func: (...args: any[]) => void, wait = 200): DebouncedFn => {
   let timeout: ReturnType<typeof setTimeout> | undefined;
 
-  return (...args: any[]) => {
+  const cancel: () => void = () => {
     if (timeout) {
       clearTimeout(timeout);
     }
+  };
+
+  const debounceFn: DebounceFn = (...args: any[]) => {
+    cancel();
 
     timeout = setTimeout(() => {
       timeout = undefined;
@@ -16,6 +26,8 @@ const debounce = (func: (...args: any[]) => void, wait = 200): (...args: any[]) 
       func(args);
     }
   };
+
+  return Object.assign(debounceFn, { cancel });
 };
 
 export default debounce;

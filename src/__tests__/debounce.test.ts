@@ -43,6 +43,22 @@ describe('debounce', () => {
     expect(mockFn).toHaveBeenCalled();
   });
 
+  it('can cancel the call', () => {
+    const mockFn = jest.fn();
+
+    jest.useFakeTimers();
+
+    const func = debounce(mockFn, 200);
+
+    func();
+
+    func.cancel();
+
+    jest.advanceTimersByTime(300);
+
+    expect(mockFn).not.toHaveBeenCalled();
+  });
+
   it('handle the function params ', () => {
     const mockFn = jest.fn();
 
