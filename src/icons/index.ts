@@ -14,4 +14,5 @@ const close = buildSvgFromSchema({
   },
 });
 
+// eslint-disable-next-line import/prefer-default-export
 export { close };
