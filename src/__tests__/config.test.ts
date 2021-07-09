@@ -9,6 +9,7 @@ it('exports all the configs and keys', () => {
     'TCheckboxConfig',
     'TRadioConfig',
     'TCardConfig',
+    'TAlertConfig',
     'TTagConfig',
     'TInputGroupConfig',
     'TDropdownConfig',

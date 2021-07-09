@@ -5,6 +5,7 @@ export { default as TSelectConfig } from './TSelectConfig';
 export { default as TCheckboxConfig } from './TCheckboxConfig';
 export { default as TRadioConfig } from './TRadioConfig';
 export { default as TCardConfig, TCardConfigKeys } from './TCardConfig';
+export { default as TAlertConfig, TAlertConfigKeys } from './TAlertConfig';
 export { default as TTagConfig } from './TTagConfig';
 export { default as TInputGroupConfig, TInputGroupConfigKeys } from './TInputGroupConfig';
 export { default as TDropdownConfig, TDropdownPopperDefaultOptions, TDropdownConfigKeys } from './TDropdownConfig';
