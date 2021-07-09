@@ -9,9 +9,11 @@ interface SchemaNode {
 
 const buildSvgNode = <P extends SchemaNode>(tag: string, attributes: P): SVGElement => {
   const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+
   Object.keys(attributes).forEach((key) => {
     node.setAttributeNS(null, key, attributes[key] as string);
   });
+
   return node;
 };
 

@@ -1,8 +1,8 @@
 import buildSvgFromSchema from './buildSvgFromSchema';
 
-const close = buildSvgFromSchema({
+const closeIcon = buildSvgFromSchema({
   fill: 'none',
-  viewBox: '0 0 24 2',
+  viewBox: '0 0 24 24',
   stroke: 'currentColor',
   children: {
     path: {
@@ -15,4 +15,4 @@ const close = buildSvgFromSchema({
 });
 
 // eslint-disable-next-line import/prefer-default-export
-export { close };
+export { closeIcon };
