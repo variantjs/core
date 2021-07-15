@@ -1,12 +1,4 @@
-import { CSSClass } from '../types';
-
-export type TCardConfigKeys = 'wrapper' | 'body' | 'header' | 'footer';
-
-export const TCardConfig: {
-  classes: {
-    [key in TCardConfigKeys]?: CSSClass
-  }
-} = {
+export const TCardConfig = {
   classes: {
     wrapper: 'border rounded shadow-sm bg-white border-gray-100',
     body: 'p-3',
@@ -14,5 +6,7 @@ export const TCardConfig: {
     footer: 'border-gray-100 border-t p-3 rounded-b',
   },
 };
+
+export type TCardConfigKeys = keyof typeof TCardConfig.classes;
 
 export default TCardConfig;

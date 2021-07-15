@@ -9,5 +9,6 @@ export { default as TAlertConfig, TAlertConfigKeys } from './TAlertConfig';
 export { default as TTagConfig } from './TTagConfig';
 export { default as TInputGroupConfig, TInputGroupConfigKeys } from './TInputGroupConfig';
 export { default as TDropdownConfig, TDropdownPopperDefaultOptions, TDropdownConfigKeys } from './TDropdownConfig';
+export { default as TRichSelectConfig, TRichSelectConfigKeys } from './TRichSelectConfig';
 export { default as TWrappedRadioConfig, TWrappedRadioConfigKeys } from './TWrappedRadioConfig';
 export { default as TWrappedCheckboxConfig, TWrappedCheckboxConfigKeys } from './TWrappedCheckboxConfig';

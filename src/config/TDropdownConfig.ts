@@ -1,5 +1,5 @@
 import TButtonConfig from './TButtonConfig';
-import { enterAndLeave, EnterAndLeaveKeys } from './transitions';
+import { enterAndLeave } from './transitions';
 
 const TDropdownConfig = {
   classes: {
@@ -9,7 +9,7 @@ const TDropdownConfig = {
   },
 };
 
-export type TDropdownConfigKeys = 'trigger' | 'dropdown' & EnterAndLeaveKeys;
+export type TDropdownConfigKeys = keyof typeof TDropdownConfig.classes;
 
 export const TDropdownPopperDefaultOptions = {
   placement: 'bottom',

@@ -14,6 +14,7 @@ it('exports all the configs and keys', () => {
     'TInputGroupConfig',
     'TDropdownConfig',
     'TDropdownPopperDefaultOptions',
+    'TRichSelectConfig',
     'TWrappedRadioConfig',
     'TWrappedCheckboxConfig',
   ];

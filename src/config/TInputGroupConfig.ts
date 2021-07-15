@@ -8,6 +8,6 @@ const TInputGroupConfig = {
   },
 };
 
-export type TInputGroupConfigKeys = 'wrapper' | 'label' | 'body' | 'feedback' | 'description';
+export type TInputGroupConfigKeys = keyof typeof TInputGroupConfig.classes;
 
 export default TInputGroupConfig;
