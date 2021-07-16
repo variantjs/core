@@ -3,8 +3,10 @@ import { enterAndLeave } from './transitions';
 const TRichSelectConfig = {
   classes: {
     wrapper: 'relative',
-    buttonWrapper: 'inline-block relative w-full',
     selectButton: 'w-full flex text-left justify-between items-center',
+
+    buttonWrapper: 'inline-block relative w-full',
+
     selectButtonLabel: 'block truncate',
     selectButtonTagWrapper: 'flex flex-wrap overflow-hidden',
     selectButtonTag: 'bg-blue-500 block disabled:cursor-not-allowed disabled:opacity-50 duration-100 ease-in-out focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded shadow-sm text-sm text-white transition white-space-no m-0.5 max-w-full overflow-hidden h-8 flex items-center',
@@ -34,6 +36,8 @@ const TRichSelectConfig = {
   },
 };
 
-export type TRichSelectConfigKeys = keyof typeof TRichSelectConfig.classes;
+export const TRichSelectClassesKeys = Object.keys(TRichSelectConfig.classes);
+
+export type TRichSelectClassesValidKeys = keyof typeof TRichSelectConfig.classes;
 
 export default TRichSelectConfig;

@@ -9,7 +9,9 @@ const TDropdownConfig = {
   },
 };
 
-export type TDropdownConfigKeys = keyof typeof TDropdownConfig.classes;
+export const TDropdownClassesKeys = Object.keys(TDropdownConfig.classes);
+
+export type TDropdownClassesValidKeys = keyof typeof TDropdownConfig.classes;
 
 export const TDropdownPopperDefaultOptions = {
   placement: 'bottom',

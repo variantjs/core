@@ -10,6 +10,8 @@ const TAlertConfig = {
   },
 };
 
-export type TAlertConfigKeys = keyof typeof TAlertConfig.classes;
+export const TAlertClassesKeys = Object.keys(TAlertConfig.classes);
+
+export type TAlertClassesValidKeys = keyof typeof TAlertConfig.classes;
 
 export default TAlertConfig;

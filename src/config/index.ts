@@ -4,11 +4,13 @@ export { default as TButtonConfig } from './TButtonConfig';
 export { default as TSelectConfig } from './TSelectConfig';
 export { default as TCheckboxConfig } from './TCheckboxConfig';
 export { default as TRadioConfig } from './TRadioConfig';
-export { default as TCardConfig, TCardConfigKeys } from './TCardConfig';
-export { default as TAlertConfig, TAlertConfigKeys } from './TAlertConfig';
 export { default as TTagConfig } from './TTagConfig';
-export { default as TInputGroupConfig, TInputGroupConfigKeys } from './TInputGroupConfig';
-export { default as TDropdownConfig, TDropdownPopperDefaultOptions, TDropdownConfigKeys } from './TDropdownConfig';
-export { default as TRichSelectConfig, TRichSelectConfigKeys } from './TRichSelectConfig';
-export { default as TWrappedRadioConfig, TWrappedRadioConfigKeys } from './TWrappedRadioConfig';
-export { default as TWrappedCheckboxConfig, TWrappedCheckboxConfigKeys } from './TWrappedCheckboxConfig';
+export { default as TCardConfig, TCardClassesKeys, TCardClassesValidKeys } from './TCardConfig';
+export { default as TAlertConfig, TAlertClassesKeys, TAlertClassesValidKeys } from './TAlertConfig';
+export { default as TInputGroupConfig, TInputGroupClassesKeys, TInputGroupClassesValidKeys } from './TInputGroupConfig';
+export {
+  default as TDropdownConfig, TDropdownPopperDefaultOptions, TDropdownClassesKeys, TDropdownClassesValidKeys,
+} from './TDropdownConfig';
+export { default as TRichSelectConfig, TRichSelectClassesKeys, TRichSelectClassesValidKeys } from './TRichSelectConfig';
+export { default as TWrappedRadioConfig, TWrappedRadioClassesKeys, TWrappedRadioClassesValidKeys } from './TWrappedRadioConfig';
+export { default as TWrappedCheckboxConfig, TWrappedCheckboxClassesKeys, TWrappedCheckboxClassesValidKeys } from './TWrappedCheckboxConfig';

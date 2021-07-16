@@ -7,6 +7,8 @@ export const TCardConfig = {
   },
 };
 
-export type TCardConfigKeys = keyof typeof TCardConfig.classes;
+export const TCardClassesKeys = Object.keys(TCardConfig.classes);
+
+export type TCardClassesValidKeys = keyof typeof TCardConfig.classes;
 
 export default TCardConfig;
