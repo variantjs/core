@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import isEqual from './isEqual';
 
-const toggleArrayItem = (arr: any, value: any): Array<any> => {
+const toggleFromArray = (arr: any, value: any): Array<any> => {
   if (!Array.isArray(arr)) {
     return [value];
   }
@@ -14,4 +16,4 @@ const toggleArrayItem = (arr: any, value: any): Array<any> => {
   return [...arr, value];
 };
 
-export default toggleArrayItem;
+export default toggleFromArray;
