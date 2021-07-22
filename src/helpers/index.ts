@@ -5,6 +5,7 @@ export { default as isEqual } from './isEqual';
 export { default as clone } from './clone';
 export { default as debounce, DebouncedFn } from './debounce';
 export { default as throttle } from './throttle';
+export { default as toggleArrayItem } from './toggleArrayItem';
 export { default as elementIsTargetOrTargetChild } from './elementIsTargetOrTargetChild';
 export { default as getFocusableElements } from './getFocusableElements';
 export { default as isTouchOnlyDevice } from './isTouchOnlyDevice';
