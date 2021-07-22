@@ -7,7 +7,7 @@ const toggle = <P, K = null>(original: P, value: any, defaultValue: K | null = n
     return defaultValue as K;
   }
 
-  return value;
+  return value as P;
 };
 
 export default toggle;
