@@ -2,9 +2,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import isEqual from './isEqual';
 
-const toggle = (original: any, value: any, defaultValue: any = null): Array<any> => {
+const toggle = <P, K = null>(original: P, value: any, defaultValue: K | null = null): P | K => {
   if (isEqual(original, value)) {
-    return defaultValue;
+    return defaultValue as K;
   }
 
   return value;
