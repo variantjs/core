@@ -3,7 +3,9 @@ import { enterAndLeave } from './transitions';
 const TRichSelectConfig = {
   classes: {
     wrapper: 'relative',
+
     selectButton: 'w-full flex text-left justify-between items-center',
+    dropdown: 'w-full z-10',
 
     buttonWrapper: 'inline-block relative w-full',
 
@@ -17,7 +19,7 @@ const TRichSelectConfig = {
     selectButtonIcon: 'fill-current flex-shrink-0 ml-1 h-4 w-4',
     selectButtonClearButton: 'flex flex-shrink-0 items-center justify-center absolute right-0 top-0 m-2 h-6 w-6',
     selectButtonClearIcon: 'fill-current h-3 w-3',
-    dropdown: 'w-full z-10',
+
     dropdownFeedback: '',
     loadingMoreResults: '',
     optionsList: 'overflow-auto',
