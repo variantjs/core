@@ -10,8 +10,8 @@ it('exports all the helpers', () => {
   expect(typeof helpers.isEqual).toBe('function');
   expect(typeof helpers.debounce).toBe('function');
   expect(typeof helpers.throttle).toBe('function');
-  expect(typeof helpers.toggleFromArray).toBe('function');
-  expect(typeof helpers.toggle).toBe('function');
+  expect(typeof helpers.addToArray).toBe('function');
+  expect(typeof helpers.substractFromArray).toBe('function');
   expect(typeof helpers.elementIsTargetOrTargetChild).toBe('function');
   expect(typeof helpers.getFocusableElements).toBe('function');
   expect(typeof helpers.isTouchOnlyDevice).toBe('function');
