@@ -1,4 +1,7 @@
-export type NormalizedOptions = Array<NormalizedOption>;
+export type NormalizedOptions = Array<NormalizedOption> & {
+  flat(): NormalizedOptions,
+  flatMap(func: (x: NormalizedOption) => NormalizedOption | NormalizedOptions): NormalizedOptions
+};
 
 export type InputOptionValue = string | number | undefined | null;
 
