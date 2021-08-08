@@ -1,6 +1,6 @@
 import { Measure } from '../types';
 
-const normalizeMeasure = (measure?: Measure | null | undefined): string | undefined => {
+const normalizeMeasure = (measure?: Measure | null | undefined): string | undefined => {
   if (measure === null || measure === undefined) {
     return undefined;
   }
