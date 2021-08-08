@@ -24,4 +24,12 @@ describe('normalizeMeasure', () => {
   it('keeps any random string as it is', () => {
     expect(normalizeMeasure('123,456')).toBe('123,456');
   });
+
+  it('keeps undefined values ', () => {
+    expect(normalizeMeasure(undefined)).toBe(undefined);
+  });
+
+  it('converts a null value to undefined ', () => {
+    expect(normalizeMeasure(null)).toBe(undefined);
+  });
 });
