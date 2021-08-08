@@ -1,7 +1,7 @@
 import * as helpers from '../helpers/index';
 
 it('exports all the helpers', () => {
-  expect(Object.keys(helpers).length).toBe(12);
+  expect(Object.keys(helpers).length).toBe(13);
 
   expect(typeof helpers.get).toBe('function');
   expect(typeof helpers.pick).toBe('function');
@@ -15,4 +15,5 @@ it('exports all the helpers', () => {
   expect(typeof helpers.elementIsTargetOrTargetChild).toBe('function');
   expect(typeof helpers.getFocusableElements).toBe('function');
   expect(typeof helpers.isTouchOnlyDevice).toBe('function');
+  expect(typeof helpers.normalizeMeasure).toBe('function');
 });
