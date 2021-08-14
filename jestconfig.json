@@ -4,5 +4,6 @@
   },
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
-  "modulePathIgnorePatterns": ["<rootDir>/dist/"]
+  "modulePathIgnorePatterns": ["<rootDir>/dist/"],
+  "testEnvironment": "jsdom"
 }
