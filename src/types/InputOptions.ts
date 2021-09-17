@@ -20,7 +20,8 @@ export type InputOptionObject = {
   text?: InputOptionText
   disabled?: boolean | undefined
   children?: InputOptions
-  [key: string]: unknown
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any
 };
 
 export type InputOption = InputOptionObject | string | number;
