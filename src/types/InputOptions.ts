@@ -7,7 +7,8 @@ export type InputOptionText = string | number | undefined;
 export type NormalizedOption = {
   value: InputOptionValue
   text: InputOptionText
-  raw?: InputOption
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  raw?: any
   children?: NormalizedOptions
   disabled?: boolean | 'disabled'
 };
