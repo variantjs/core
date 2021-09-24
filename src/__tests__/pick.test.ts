@@ -40,7 +40,7 @@ describe('pick', () => {
       onemore: false,
     };
 
-    expect(pick(obj, (value, key) => ['age', 'other'].includes(key))).toEqual({
+    expect(pick(obj, (_value, key) => ['age', 'other'].includes(key))).toEqual({
       age: 33,
       other: undefined,
     });
