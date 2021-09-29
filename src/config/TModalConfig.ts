@@ -12,6 +12,7 @@ export const TModalConfig = {
     modal: 'bg-white rounded shadow',
     header: 'p-3 border-b border-gray-100 rounded-t',
     body: 'p-3',
+    footer: 'p-3 rounded-b bg-gray-100',
     overlayEnterActiveClass: 'transition ease-out duration-300',
     overlayEnterFromClass: 'transform opacity-0',
     overlayEnterToClass: 'transform opacity-100',
