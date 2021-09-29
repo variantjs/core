@@ -11,6 +11,8 @@ it('exports all the configs and keys', () => {
     'TTagConfig',
     'TCardConfig',
     'TCardClassesKeys',
+    'TModalConfig',
+    'TModalClassesKeys',
     'TAlertConfig',
     'TAlertClassesKeys',
     'TInputGroupConfig',

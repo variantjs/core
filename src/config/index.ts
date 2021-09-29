@@ -6,6 +6,7 @@ export { default as TCheckboxConfig } from './TCheckboxConfig';
 export { default as TRadioConfig } from './TRadioConfig';
 export { default as TTagConfig } from './TTagConfig';
 export { default as TCardConfig, TCardClassesKeys, TCardClassesValidKeys } from './TCardConfig';
+export { default as TModalConfig, TModalClassesKeys, TModalClassesValidKeys } from './TModalConfig';
 export { default as TAlertConfig, TAlertClassesKeys, TAlertClassesValidKeys } from './TAlertConfig';
 export { default as TInputGroupConfig, TInputGroupClassesKeys, TInputGroupClassesValidKeys } from './TInputGroupConfig';
 export {
