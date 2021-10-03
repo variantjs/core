@@ -1,4 +1,4 @@
-export const TModalConfig = {
+export const TDialogConfig = {
   fixedClasses: {
     overlay: 'fixed top-0 bottom-0 left-0 right-0 w-full h-full overflow-auto scrolling-touch',
     wrapper: 'relative mx-auto',
@@ -28,12 +28,49 @@ export const TModalConfig = {
   },
 };
 
-export type ModalShowFn = (name: string, params?: Record<string, unknown>) => void;
+export enum DialogType {
+  Alert = 'alert',
+  Confirm = 'confirm',
+  Prompt = 'prompt',
+}
 
-export type ModalHideFn = (name: string) => void;
+export enum DialogHideReason {
+  Outside = 'outside',
+  Close = 'close',
+  Esc = 'esc',
+  Cancel = 'cancel',
+  Ok = 'ok',
+  Method = 'method',
+  Value = 'value',
+}
 
-export const TModalClassesKeys = Object.keys(TModalConfig.classes);
+export type DialogInput = string | string[] | null;
 
-export type TModalClassesValidKeys = keyof typeof TModalConfig.classes;
+export type DialogResponse = {
+  hideReason: DialogHideReason;
+  isOk: boolean;
+  isCancel: boolean;
+  isDismissed: boolean;
+  input?: DialogInput;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  response: any;
+};
 
-export default TModalConfig;
+export type DialogShowFn = (name: string) => Promise<DialogResponse>;
+
+export type DialogHideFn = (name: string) => void;
+
+export type DialogBeforeCloseParams = {
+  cancel: () => void;
+  event: Event;
+  reason: DialogHideReason;
+  input: DialogInput;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  response: any;
+};
+
+export const TDialogClassesKeys = Object.keys(TDialogConfig.classes);
+
+export type TDialogClassesValidKeys = keyof typeof TDialogConfig.classes;
+
+export default TDialogConfig;
