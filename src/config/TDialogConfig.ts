@@ -69,6 +69,10 @@ export type DialogBeforeCloseParams = {
   response: any;
 };
 
+// @TODO: see if was can get use a more specific typing
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type DialogPreconfirmFn = ((params: any) => Promise<any> | any);
+
 export const TDialogClassesKeys = Object.keys(TDialogConfig.classes);
 
 export type TDialogClassesValidKeys = keyof typeof TDialogConfig.classes;
