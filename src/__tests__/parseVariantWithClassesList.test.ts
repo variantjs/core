@@ -49,6 +49,176 @@ describe('parse variants with classes list function', () => {
     });
   });
 
+  it('returns the global configuration', () => {
+    const props = {};
+    const globalConfiguration = {
+      type: 'text',
+      fixedClasses: {
+        wrapper: 'border p-3',
+      },
+      classes: {
+        wrapper: 'text-red-500',
+      },
+    };
+
+    const defaultConfiguration = {
+      type: 'button',
+      fixedClasses: {
+        wrapper: 'p-2',
+      },
+      classes: {
+        wrapper: 'text-blue-500',
+      },
+    };
+
+    expect(
+      parseVariantWithClassesList(props, ['wrapper'], globalConfiguration, defaultConfiguration),
+    ).toEqual({
+      type: 'text',
+      classesList: {
+        wrapper: 'text-red-500 border p-3',
+      },
+    });
+  });
+
+  it('returns the prop configuration from the variant', () => {
+    const props = {
+      variant: 'error',
+      variants: {
+        error: {
+          type: 'button',
+          fixedClasses: {
+            wrapper: 'p-2',
+          },
+          classes: {
+            wrapper: 'text-blue-500',
+          },
+        },
+      },
+    };
+
+    const globalConfiguration = {
+      type: 'text',
+      fixedClasses: {
+        wrapper: 'border p-3',
+      },
+      classes: {
+        wrapper: 'text-red-500',
+      },
+    };
+
+    const defaultConfiguration = {
+      variants: {
+        error: {
+          type: 'submit',
+          fixedClasses: {
+            wrapper: 'p-3',
+          },
+          classes: {
+            wrapper: 'text-red-500',
+          },
+        },
+      },
+    };
+
+    expect(
+      parseVariantWithClassesList(props, ['wrapper'], globalConfiguration, defaultConfiguration),
+    ).toEqual({
+      type: 'button',
+      classesList: {
+        wrapper: 'text-blue-500 p-2',
+      },
+    });
+  });
+
+  it('returns the global configuration from the variant', () => {
+    const props = {
+      variant: 'error',
+    };
+
+    const globalConfiguration = {
+      type: 'text',
+      fixedClasses: {
+        wrapper: 'border p-3',
+      },
+      classes: {
+        wrapper: 'text-red-500',
+      },
+      variants: {
+        error: {
+          type: 'button',
+          fixedClasses: {
+            wrapper: 'p-2',
+          },
+          classes: {
+            wrapper: 'text-blue-500',
+          },
+        },
+      },
+    };
+
+    const defaultConfiguration = {
+      variants: {
+        error: {
+          type: 'submit',
+          fixedClasses: {
+            wrapper: 'p-3',
+          },
+          classes: {
+            wrapper: 'text-red-500',
+          },
+        },
+      },
+    };
+
+    expect(
+      parseVariantWithClassesList(props, ['wrapper'], globalConfiguration, defaultConfiguration),
+    ).toEqual({
+      type: 'button',
+      classesList: {
+        wrapper: 'text-blue-500 p-2',
+      },
+    });
+  });
+
+  it('returns the default configuration from the variant', () => {
+    const props = {
+      variant: 'error',
+    };
+    const globalConfiguration = {
+      type: 'text',
+      fixedClasses: {
+        wrapper: 'border p-3',
+      },
+      classes: {
+        wrapper: 'text-red-500',
+      },
+    };
+
+    const defaultConfiguration = {
+      variants: {
+        error: {
+          type: 'button',
+          fixedClasses: {
+            wrapper: 'p-2',
+          },
+          classes: {
+            wrapper: 'text-blue-500',
+          },
+        },
+      },
+    };
+
+    expect(
+      parseVariantWithClassesList(props, ['wrapper'], globalConfiguration, defaultConfiguration),
+    ).toEqual({
+      type: 'button',
+      classesList: {
+        wrapper: 'text-blue-500 p-2',
+      },
+    });
+  });
+
   it('merge the variant props with the default props', () => {
     const props = {
       class: 'text-red-500',
