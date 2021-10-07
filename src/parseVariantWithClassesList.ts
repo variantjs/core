@@ -24,6 +24,23 @@ const getCustomPropsFromVariant = <
   return undefined;
 };
 
+const getShouldClearClasses = <
+  P extends ObjectWithClassesList,
+  ClassesKeys extends string,
+>(props: WithVariantPropsAndClassesList<P, ClassesKeys>, key: string, variant: string | undefined): boolean => {
+  if (variant === undefined) {
+    return hasProperty(props, key) && (props[key] === undefined || props[key] === null);
+  }
+
+  if (props.variants !== undefined && props.variants[variant] !== undefined) {
+    const propsVariant = props.variants[variant] as WithVariantProps<P>;
+
+    return hasProperty(propsVariant, key) && (propsVariant[key] === undefined || propsVariant[key] === null);
+  }
+
+  return false;
+};
+
 const parseVariantWithClassesList = <
   P extends ObjectWithClassesList,
   ClassesKeys extends string,
@@ -42,23 +59,16 @@ const parseVariantWithClassesList = <
   const classes: Partial<CSSRawClassesList<ClassesKeys>> = {};
   const fixedClasses: Partial<CSSRawClassesList<ClassesKeys>> = {};
 
-  const clearClasses = hasProperty(props, 'classes') && (props.classes === undefined || props.classes === null);
-  const clearFixedClasses = hasProperty(props, 'fixedClasses') && (props.fixedClasses === undefined || props.fixedClasses === null);
+  const clearClasses = getShouldClearClasses(props, 'classes', variant);
+
+  const clearFixedClasses = getShouldClearClasses(props, 'fixedClasses', variant);
 
   if (clearClasses) {
     classesListKeys.forEach((classItemKey) => {
       classes[classItemKey] = undefined;
     });
-  }
-
-  if (clearFixedClasses) {
+  } else {
     classesListKeys.forEach((classItemKey) => {
-      fixedClasses[classItemKey] = undefined;
-    });
-  }
-
-  classesListKeys.forEach((classItemKey) => {
-    if (!clearClasses) {
       if (props.classes !== undefined && hasProperty(props.classes, classItemKey)) {
         classes[classItemKey] = props.classes[classItemKey];
       } else if (globalConfiguration !== undefined && globalConfiguration.classes !== undefined && hasProperty(globalConfiguration.classes, classItemKey)) {
@@ -66,20 +76,8 @@ const parseVariantWithClassesList = <
       } else if (defaultConfiguration !== undefined && defaultConfiguration.classes !== undefined && hasProperty(defaultConfiguration.classes, classItemKey)) {
         classes[classItemKey] = defaultConfiguration.classes[classItemKey];
       }
-    }
 
-    if (!clearFixedClasses) {
-      if (props.fixedClasses !== undefined && hasProperty(props.fixedClasses, classItemKey)) {
-        fixedClasses[classItemKey] = props.fixedClasses[classItemKey];
-      } else if (globalConfiguration !== undefined && globalConfiguration.fixedClasses !== undefined && hasProperty(globalConfiguration.fixedClasses, classItemKey)) {
-        fixedClasses[classItemKey] = globalConfiguration.fixedClasses[classItemKey];
-      } else if (defaultConfiguration !== undefined && defaultConfiguration.fixedClasses !== undefined && hasProperty(defaultConfiguration.fixedClasses, classItemKey)) {
-        fixedClasses[classItemKey] = defaultConfiguration.fixedClasses[classItemKey];
-      }
-    }
-
-    if (variant) {
-      if (!clearClasses) {
+      if (variant) {
         if (props.variants !== undefined && props.variants[variant] !== undefined) {
           const propsVariant = props.variants[variant] as WithVariantProps<P>;
 
@@ -100,8 +98,24 @@ const parseVariantWithClassesList = <
           }
         }
       }
+    });
+  }
 
-      if (!clearFixedClasses) {
+  if (clearFixedClasses) {
+    classesListKeys.forEach((classItemKey) => {
+      fixedClasses[classItemKey] = undefined;
+    });
+  } else {
+    classesListKeys.forEach((classItemKey) => {
+      if (props.fixedClasses !== undefined && hasProperty(props.fixedClasses, classItemKey)) {
+        fixedClasses[classItemKey] = props.fixedClasses[classItemKey];
+      } else if (globalConfiguration !== undefined && globalConfiguration.fixedClasses !== undefined && hasProperty(globalConfiguration.fixedClasses, classItemKey)) {
+        fixedClasses[classItemKey] = globalConfiguration.fixedClasses[classItemKey];
+      } else if (defaultConfiguration !== undefined && defaultConfiguration.fixedClasses !== undefined && hasProperty(defaultConfiguration.fixedClasses, classItemKey)) {
+        fixedClasses[classItemKey] = defaultConfiguration.fixedClasses[classItemKey];
+      }
+
+      if (variant) {
         if (props.variants !== undefined && props.variants[variant] !== undefined) {
           const propsVariant = props.variants[variant] as WithVariantProps<P>;
 
@@ -122,8 +136,8 @@ const parseVariantWithClassesList = <
           }
         }
       }
-    }
-  });
+    });
+  }
 
   const customProps = getCustomPropsFromVariant(variants, variant);
 
