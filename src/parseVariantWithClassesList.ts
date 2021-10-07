@@ -2,12 +2,13 @@ import {
   ObjectWithClassesList,
   VariantsWithClassesList,
   WithVariantPropsAndClassesList,
+  WithVariantProps,
 } from './types/Variants';
-import get from './helpers/get';
 import pick from './helpers/pick';
 
 import mergeClasses from './mergeClasses';
 import { CSSClassesList, CSSRawClassesList } from './types';
+import hasProperty from './hasProperty';
 
 const getCustomPropsFromVariant = <
   P extends ObjectWithClassesList,
@@ -41,55 +42,86 @@ const parseVariantWithClassesList = <
   const classes: Partial<CSSRawClassesList<ClassesKeys>> = {};
   const fixedClasses: Partial<CSSRawClassesList<ClassesKeys>> = {};
 
-  classesListKeys.forEach((classItemKey) => {
-    classes[classItemKey] = get<typeof props, CSSRawClassesList<ClassesKeys>>(
-      props,
-      `classes.${classItemKey}`,
-      get(
-        globalConfiguration,
-        `classes.${classItemKey}`,
-        get(defaultConfiguration, `classes.${classItemKey}`),
-      ),
-    );
+  const clearClasses = hasProperty(props, 'classes') && (props.classes === undefined || props.classes === null);
+  const clearFixedClasses = hasProperty(props, 'fixedClasses') && (props.fixedClasses === undefined || props.fixedClasses === null);
 
-    fixedClasses[classItemKey] = get<typeof props, CSSRawClassesList<ClassesKeys>>(
-      props,
-      `fixedClasses.${classItemKey}`,
-      get(
-        globalConfiguration,
-        `fixedClasses.${classItemKey}`,
-        get(defaultConfiguration, `fixedClasses.${classItemKey}`),
-      ),
-    );
+  if (clearClasses) {
+    classesListKeys.forEach((classItemKey) => {
+      classes[classItemKey] = undefined;
+    });
+  }
+
+  if (clearFixedClasses) {
+    classesListKeys.forEach((classItemKey) => {
+      fixedClasses[classItemKey] = undefined;
+    });
+  }
+
+  classesListKeys.forEach((classItemKey) => {
+    if (!clearClasses) {
+      if (props.classes !== undefined && hasProperty(props.classes, classItemKey)) {
+        classes[classItemKey] = props.classes[classItemKey];
+      } else if (globalConfiguration !== undefined && globalConfiguration.classes !== undefined && hasProperty(globalConfiguration.classes, classItemKey)) {
+        classes[classItemKey] = globalConfiguration.classes[classItemKey];
+      } else if (defaultConfiguration !== undefined && defaultConfiguration.classes !== undefined && hasProperty(defaultConfiguration.classes, classItemKey)) {
+        classes[classItemKey] = defaultConfiguration.classes[classItemKey];
+      }
+    }
+
+    if (!clearFixedClasses) {
+      if (props.fixedClasses !== undefined && hasProperty(props.fixedClasses, classItemKey)) {
+        fixedClasses[classItemKey] = props.fixedClasses[classItemKey];
+      } else if (globalConfiguration !== undefined && globalConfiguration.fixedClasses !== undefined && hasProperty(globalConfiguration.fixedClasses, classItemKey)) {
+        fixedClasses[classItemKey] = globalConfiguration.fixedClasses[classItemKey];
+      } else if (defaultConfiguration !== undefined && defaultConfiguration.fixedClasses !== undefined && hasProperty(defaultConfiguration.fixedClasses, classItemKey)) {
+        fixedClasses[classItemKey] = defaultConfiguration.fixedClasses[classItemKey];
+      }
+    }
 
     if (variant) {
-      classes[classItemKey] = get<typeof props, CSSRawClassesList<ClassesKeys>>(
-        props,
-        `variants.${variant}.classes.${classItemKey}`,
-        get(
-          globalConfiguration,
-          `variants.${variant}.classes.${classItemKey}`,
-          get(
-            defaultConfiguration,
-            `variants.${variant}.classes.${classItemKey}`,
-            classes[classItemKey],
-          ),
-        ),
-      );
+      if (!clearClasses) {
+        if (props.variants !== undefined && props.variants[variant] !== undefined) {
+          const propsVariant = props.variants[variant] as WithVariantProps<P>;
 
-      fixedClasses[classItemKey] = get<typeof props, CSSRawClassesList<ClassesKeys>>(
-        props,
-        `variants.${variant}.fixedClasses.${classItemKey}`,
-        get(
-          globalConfiguration,
-          `variants.${variant}.fixedClasses.${classItemKey}`,
-          get(
-            defaultConfiguration,
-            `variants.${variant}.fixedClasses.${classItemKey}`,
-            fixedClasses[classItemKey],
-          ),
-        ),
-      );
+          if (propsVariant.classes && hasProperty(propsVariant.classes, classItemKey)) {
+            classes[classItemKey] = propsVariant.classes[classItemKey];
+          }
+        } else if (globalConfiguration !== undefined && globalConfiguration.variants !== undefined && globalConfiguration.variants[variant] !== undefined) {
+          const globalConfigurationVariant = globalConfiguration.variants[variant] as WithVariantProps<P>;
+
+          if (globalConfigurationVariant.classes && hasProperty(globalConfigurationVariant.classes, classItemKey)) {
+            classes[classItemKey] = globalConfigurationVariant.classes[classItemKey];
+          }
+        } else if (defaultConfiguration !== undefined && defaultConfiguration.variants !== undefined && defaultConfiguration.variants[variant] !== undefined) {
+          const defaultConfigurationVariant = defaultConfiguration.variants[variant] as WithVariantProps<P>;
+
+          if (defaultConfigurationVariant.classes && hasProperty(defaultConfigurationVariant.classes, classItemKey)) {
+            classes[classItemKey] = defaultConfigurationVariant.classes[classItemKey];
+          }
+        }
+      }
+
+      if (!clearFixedClasses) {
+        if (props.variants !== undefined && props.variants[variant] !== undefined) {
+          const propsVariant = props.variants[variant] as WithVariantProps<P>;
+
+          if (propsVariant.fixedClasses && hasProperty(propsVariant.fixedClasses, classItemKey)) {
+            fixedClasses[classItemKey] = propsVariant.fixedClasses[classItemKey];
+          }
+        } else if (globalConfiguration !== undefined && globalConfiguration.variants !== undefined && globalConfiguration.variants[variant] !== undefined) {
+          const globalConfigurationVariant = globalConfiguration.variants[variant] as WithVariantProps<P>;
+
+          if (globalConfigurationVariant.fixedClasses && hasProperty(globalConfigurationVariant.fixedClasses, classItemKey)) {
+            fixedClasses[classItemKey] = globalConfigurationVariant.fixedClasses[classItemKey];
+          }
+        } else if (defaultConfiguration !== undefined && defaultConfiguration.variants !== undefined && defaultConfiguration.variants[variant] !== undefined) {
+          const defaultConfigurationVariant = defaultConfiguration.variants[variant] as WithVariantProps<P>;
+
+          if (defaultConfigurationVariant.fixedClasses && hasProperty(defaultConfigurationVariant.fixedClasses, classItemKey)) {
+            fixedClasses[classItemKey] = defaultConfigurationVariant.fixedClasses[classItemKey];
+          }
+        }
+      }
     }
   });
 

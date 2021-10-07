@@ -85,6 +85,107 @@ describe('parse variants with classes list function', () => {
     expect(parseVariantWithClassesList(props, [], configuration)).toEqual(props);
   });
 
+  it('uses the props over the configuration for classes list', () => {
+    const props = {
+      classes: {
+        wrapper: 'p-3',
+        body: 'text-gray-500',
+      },
+    };
+
+    const configuration = {
+      classes: {
+        wrapper: 'p-4',
+        body: 'text-red-500',
+      },
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration)).toEqual({
+      classesList: props.classes,
+    });
+  });
+
+  it('overrides only the props defined from the configuration', () => {
+    const props = {
+      classes: {
+        wrapper: 'p-3',
+      },
+    };
+
+    const configuration = {
+      classes: {
+        wrapper: 'p-4',
+        body: 'text-red-500',
+      },
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration)).toEqual({
+      classesList: {
+        body: 'text-red-500',
+        wrapper: 'p-3',
+      },
+    });
+  });
+
+  it('accepts undefined values', () => {
+    const props = {
+      classes: {
+        wrapper: undefined,
+        body: 'text-gray-500',
+      },
+    };
+
+    const configuration = {
+      classes: {
+        wrapper: 'p-4',
+        body: 'text-red-500',
+      },
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], {}, configuration)).toEqual({
+      classesList: {
+        wrapper: undefined,
+        body: 'text-gray-500',
+      },
+    });
+  });
+
+  it('pass `undefined` in the classes props clear any value', () => {
+    const props = {
+      classes: undefined,
+    };
+
+    const configuration = {
+      classes: {
+        wrapper: 'p-3',
+        body: 'text-gray-500',
+      },
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration)).toEqual({
+      wrapper: undefined,
+      body: undefined,
+    });
+  });
+
+  it('pass `undefined` in the fixedClasses props clear any value', () => {
+    const props = {
+      fixedClasses: undefined,
+    };
+
+    const configuration = {
+      fixedClasses: {
+        wrapper: 'p-3',
+        body: 'text-gray-500',
+      },
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration)).toEqual({
+      wrapper: undefined,
+      body: undefined,
+    });
+  });
+
   it('use the variant from the configuration', () => {
     const props = {
       variant: 'alt',
