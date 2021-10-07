@@ -8,7 +8,7 @@ import pick from './helpers/pick';
 
 import mergeClasses from './mergeClasses';
 import { CSSClassesList, CSSRawClassesList } from './types';
-import hasProperty from './hasProperty';
+import hasProperty from './helpers/hasProperty';
 
 const getCustomPropsFromVariant = <
   P extends ObjectWithClassesList,

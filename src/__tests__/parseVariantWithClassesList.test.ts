@@ -356,6 +356,110 @@ describe('parse variants with classes list function', () => {
     });
   });
 
+  it('pass `undefined` in the variant classes props clear any value', () => {
+    const props = {
+      variants: {
+        empty: {
+          classes: undefined,
+        },
+      },
+      variant: 'empty',
+    };
+
+    const configuration = {
+      classes: {
+        wrapper: 'p-3',
+        body: 'text-gray-500',
+      },
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration)).toEqual({
+      wrapper: undefined,
+      body: undefined,
+    });
+  });
+
+  it('pass `undefined` in the variant fixedClasses props clear any value', () => {
+    const props = {
+      variants: {
+        empty: {
+          fixedClasses: undefined,
+        },
+      },
+      variant: 'empty',
+    };
+
+    const configuration = {
+      fixedClasses: {
+        wrapper: 'p-3',
+        body: 'text-gray-500',
+      },
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration)).toEqual({
+      wrapper: undefined,
+      body: undefined,
+    });
+  });
+
+  it('considers not defined values from the configuration variant', () => {
+    const props = {
+      variant: 'error',
+    };
+
+    const configuration = {
+      variants: {
+        error: {
+          fixedClasses: {
+            wrapper: 'p-3',
+          },
+          classes: {
+            wrapper: 'border',
+          },
+        },
+      },
+    };
+
+    const defaultConfiguration = {
+
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration, defaultConfiguration)).toEqual({
+      classesList: {
+        wrapper: 'border p-3',
+      },
+    });
+  });
+
+  it('considers not defined values from the defaultConfiguration variant', () => {
+    const props = {
+      variant: 'error',
+    };
+
+    const configuration = {
+
+    };
+
+    const defaultConfiguration = {
+      variants: {
+        error: {
+          fixedClasses: {
+            wrapper: 'p-3',
+          },
+          classes: {
+            wrapper: 'border',
+          },
+        },
+      },
+    };
+
+    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration, defaultConfiguration)).toEqual({
+      classesList: {
+        wrapper: 'border p-3',
+      },
+    });
+  });
+
   it('use the variant from the configuration', () => {
     const props = {
       variant: 'alt',
