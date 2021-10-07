@@ -12,3 +12,4 @@ export { default as getFocusableElements } from './getFocusableElements';
 export { default as isTouchOnlyDevice } from './isTouchOnlyDevice';
 export { default as normalizeMeasure } from './normalizeMeasure';
 export { default as normalizedOptionIsDisabled } from './normalizedOptionIsDisabled';
+export { default as hasProperty } from './hasProperty';
