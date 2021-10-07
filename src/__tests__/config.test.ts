@@ -17,6 +17,7 @@ it('exports all the configs and keys', () => {
     'TDialogClassesKeys',
     'DialogHideReason',
     'DialogType',
+    'DialogIcon',
     'TAlertConfig',
     'TAlertClassesKeys',
     'TInputGroupConfig',

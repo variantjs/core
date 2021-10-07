@@ -10,7 +10,7 @@ export {
   default as TModalConfig, TModalClassesKeys, TModalClassesValidKeys, ModalShowFn, ModalHideFn,
 } from './TModalConfig';
 export {
-  default as TDialogConfig, TDialogClassesKeys, TDialogClassesValidKeys, DialogBeforeCloseParams, DialogHideFn, DialogShowFn, DialogResponse, DialogHideReason, DialogInput, DialogType, DialogPreconfirmFn,
+  default as TDialogConfig, TDialogClassesKeys, TDialogClassesValidKeys, DialogBeforeCloseParams, DialogHideFn, DialogShowFn, DialogResponse, DialogHideReason, DialogInput, DialogType, DialogIcon, DialogPreconfirmFn,
 } from './TDialogConfig';
 export { default as TAlertConfig, TAlertClassesKeys, TAlertClassesValidKeys } from './TAlertConfig';
 export { default as TInputGroupConfig, TInputGroupClassesKeys, TInputGroupClassesValidKeys } from './TInputGroupConfig';
