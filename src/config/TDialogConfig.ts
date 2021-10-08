@@ -109,6 +109,8 @@ export type DialogBeforeCloseParams = {
   response: any;
 };
 
+export type DialogInputValidatorFn = (value: DialogInput) => string | Promise<string> | null | undefined;
+
 // @TODO: see if was can get use a more specific typing
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type DialogPreconfirmFn = ((params: any) => Promise<any> | any);
