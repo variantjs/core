@@ -10,7 +10,7 @@ const TDialogConfig = {
     close: 'absolute top-0 right-0 flex items-center justify-center w-8 h-8 -m-3 text-gray-700 transition ease-in-out bg-gray-100 rounded-full shadow duration-400 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 hover:bg-gray-200',
     closeIcon: 'w-4 h-4',
     dialog: 'bg-white rounded shadow',
-    body: 'p-3',
+    body: 'p-3 space-y-2',
     content: 'flex flex-col justify-center w-full',
 
     iconWrapper: 'flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-gray-100 rounded-full',
@@ -26,17 +26,7 @@ const TDialogConfig = {
     cancelButton: 'block w-full max-w-xs px-4 py-2 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm hover:bg-gray-100 focus:border-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
     okButton: 'block w-full max-w-xs px-4 py-2 text-white transition duration-100 ease-in-out bg-blue-500 border border-transparent rounded shadow-sm hover:bg-blue-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
 
-    inputWrapper: 'mt-3 flex items-center space-x-3',
-    input: 'block w-full px-3 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed w-full',
-    select: 'block w-full px-3 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50  disabled:opacity-50 disabled:cursor-not-allowed w-full',
-
-    radioWrapper: 'flex items-center space-x-2',
-    radio: 'text-blue-500 transition duration-100 ease-in-out border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0  disabled:opacity-50 disabled:cursor-not-allowed',
-    radioText: '',
-
-    checkboxWrapper: 'flex items-center space-x-2',
-    checkbox: 'text-blue-500 transition duration-100 ease-in-out border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 focus:ring-offset-0  disabled:opacity-50 disabled:cursor-not-allowed',
-    checkboxText: '',
+    inputWrapper: 'mt-3 flex',
 
     errorMessage: 'text-red-500 block text-sm',
 
@@ -84,14 +74,13 @@ export enum DialogHideReason {
   Ok = 'ok',
 }
 
-export type DialogInput = string | string[] | null;
-
 export type DialogResponse = {
   hideReason: DialogHideReason;
   isOk: boolean;
   isCancel: boolean;
   isDismissed: boolean;
-  input?: DialogInput;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  input?: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response: any;
 };
@@ -104,12 +93,14 @@ export type DialogBeforeCloseParams = {
   cancel: () => void;
   event: Event;
   reason: DialogHideReason;
-  input: DialogInput;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  input: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response: any;
 };
 
-export type DialogInputValidatorFn = (value: DialogInput) => string | Promise<string> | null | undefined;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type DialogInputValidatorFn = (value: any) => string | Promise<string> | null | undefined;
 
 // @TODO: see if was can get use a more specific typing
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
