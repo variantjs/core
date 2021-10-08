@@ -34,6 +34,7 @@ export enum ModalHideReason {
   Esc = 'esc',
   Method = 'method',
   Value = 'value',
+  Other = 'other',
 }
 
 export type ModalShowFn = (name: string, params?: Record<string, unknown>) => void;

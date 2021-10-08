@@ -79,6 +79,7 @@ export enum DialogHideReason {
   Esc = 'esc',
   Method = 'method',
   Value = 'value',
+  Other = 'other',
   Cancel = 'cancel',
   Ok = 'ok',
 }
