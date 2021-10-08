@@ -7,7 +7,7 @@ export { default as TRadioConfig } from './TRadioConfig';
 export { default as TTagConfig } from './TTagConfig';
 export { default as TCardConfig, TCardClassesKeys, TCardClassesValidKeys } from './TCardConfig';
 export {
-  default as TModalConfig, TModalClassesKeys, TModalClassesValidKeys, ModalShowFn, ModalHideFn,
+  default as TModalConfig, TModalClassesKeys, TModalClassesValidKeys, ModalShowFn, ModalHideFn, ModalHideReason,
 } from './TModalConfig';
 export {
   default as TDialogConfig, TDialogClassesKeys, TDialogClassesValidKeys, DialogBeforeCloseParams, DialogHideFn, DialogShowFn, DialogResponse, DialogHideReason, DialogInput, DialogType, DialogIcon, DialogPreconfirmFn,

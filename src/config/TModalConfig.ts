@@ -28,6 +28,14 @@ export const TModalConfig = {
   },
 };
 
+export enum ModalHideReason {
+  Outside = 'outside',
+  Close = 'close',
+  Esc = 'esc',
+  Method = 'method',
+  Value = 'value',
+}
+
 export type ModalShowFn = (name: string, params?: Record<string, unknown>) => void;
 
 export type ModalHideFn = (name: string) => void;

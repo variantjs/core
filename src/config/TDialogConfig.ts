@@ -77,10 +77,10 @@ export enum DialogHideReason {
   Outside = 'outside',
   Close = 'close',
   Esc = 'esc',
-  Cancel = 'cancel',
-  Ok = 'ok',
   Method = 'method',
   Value = 'value',
+  Cancel = 'cancel',
+  Ok = 'ok',
 }
 
 export type DialogInput = string | string[] | null;

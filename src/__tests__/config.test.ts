@@ -13,6 +13,7 @@ it('exports all the configs and keys', () => {
     'TCardClassesKeys',
     'TModalConfig',
     'TModalClassesKeys',
+    'ModalHideReason',
     'TDialogConfig',
     'TDialogClassesKeys',
     'DialogHideReason',
