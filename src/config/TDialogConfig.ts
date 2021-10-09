@@ -135,7 +135,7 @@ export type DialogInputValidatorFn = (value: any) => string | Promise<string> | 
 
 // @TODO: see if was can get use a more specific typing
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type DialogPreconfirmFn = ((params: any) => Promise<any> | any);
+export type DialogPreconfirmFn = ((input: any) => Promise<any> | any);
 
 export const TDialogClassesKeys = Object.keys(TDialogConfig.classes);
 
