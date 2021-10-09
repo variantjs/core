@@ -126,6 +126,12 @@ export type DialogBeforeHideParams = {
   response?: DialogResponse;
 };
 
+export type DialogBeforeShowParams = {
+  cancel: PromiseRejectFn;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  params?: any;
+};
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type DialogInputValidatorFn = (value: any) => string | Promise<string> | null | undefined;
 
