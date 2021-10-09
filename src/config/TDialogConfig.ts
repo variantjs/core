@@ -1,3 +1,4 @@
+import { PromiseRejectFn } from '../types/Misc';
 import TInputConfig from './TInputConfig';
 // eslint-disable-next-line import/no-named-as-default
 import TModalConfig from './TModalConfig';
@@ -113,21 +114,16 @@ export type DialogResponse = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   input?: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  response: any;
+  response?: any;
 };
 
 export type DialogShowFn = (name: string) => Promise<DialogResponse>;
 
 export type DialogHideFn = (name: string) => void;
 
-export type DialogBeforeCloseParams = {
-  cancel: () => void;
-  event: Event;
-  reason: DialogHideReason;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  input: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  response: any;
+export type DialogBeforeHideParams = {
+  cancel: PromiseRejectFn;
+  response?: DialogResponse;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
