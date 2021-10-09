@@ -2,11 +2,11 @@ export const TModalConfig = {
   fixedClasses: {
     overlay: 'fixed top-0 bottom-0 left-0 right-0 w-full h-full overflow-auto scrolling-touch',
     wrapper: 'relative mx-auto',
-    modal: 'overflow-visible relative ',
+    modal: 'overflow-visible relative',
   },
   classes: {
     overlay: 'z-40 bg-black bg-opacity-50',
-    wrapper: 'relative z-50 max-w-lg px-3 py-12 mx-auto',
+    wrapper: 'z-50 max-w-lg px-3 py-12',
     close: 'absolute top-0 right-0 flex items-center justify-center w-8 h-8 -m-3 text-gray-700 transition ease-in-out bg-gray-100 rounded-full shadow duration-400 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 hover:bg-gray-200',
     closeIcon: 'w-4 h-4',
     modal: 'bg-white rounded shadow',

@@ -1,15 +1,44 @@
+import TInputConfig from './TInputConfig';
+import TModalConfig from './TModalConfig';
+
+const {
+  overlay: fixedOverlay,
+  wrapper: fixedWrapper,
+  modal: fixedDialog,
+} = TModalConfig.fixedClasses;
+
+const {
+  overlay,
+  wrapper,
+  close,
+  closeIcon,
+  modal: dialog,
+  overlayEnterActiveClass,
+  overlayEnterFromClass,
+  overlayEnterToClass,
+  overlayLeaveActiveClass,
+  overlayLeaveFromClass,
+  overlayLeaveToClass,
+  enterActiveClass,
+  enterFromClass,
+  enterToClass,
+  leaveActiveClass,
+  leaveFromClass,
+  leaveToClass,
+} = TModalConfig.classes;
+
 const TDialogConfig = {
   fixedClasses: {
-    overlay: 'fixed top-0 bottom-0 left-0 right-0 w-full h-full overflow-auto scrolling-touch',
-    wrapper: '',
-    dialog: 'overflow-visible relative ',
+    overlay: fixedOverlay,
+    wrapper: fixedWrapper,
+    dialog: fixedDialog,
   },
   classes: {
-    overlay: 'z-40 bg-black bg-opacity-50',
-    wrapper: 'relative z-50 max-w-lg px-3 py-12 mx-auto',
-    close: 'absolute top-0 right-0 flex items-center justify-center w-8 h-8 -m-3 text-gray-700 transition ease-in-out bg-gray-100 rounded-full shadow duration-400 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 hover:bg-gray-200',
-    closeIcon: 'w-4 h-4',
-    dialog: 'bg-white rounded shadow',
+    overlay,
+    wrapper,
+    close,
+    closeIcon,
+    dialog,
     body: 'p-3 space-y-2',
     content: 'flex flex-col justify-center w-full',
 
@@ -27,25 +56,26 @@ const TDialogConfig = {
     okButton: 'block w-full max-w-xs px-4 py-2 text-white transition duration-100 ease-in-out bg-blue-500 border border-transparent rounded shadow-sm hover:bg-blue-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
 
     inputWrapper: 'mt-3 flex',
+    input: TInputConfig.classes,
 
     errorMessage: 'text-red-500 block text-sm',
 
     busyWrapper: 'absolute bg-opacity-50 bg-white flex h-full items-center justify-center left-0 top-0 w-full',
     busyIcon: 'animate-spin h-6 w-6 fill-current text-gray-500',
 
-    enterActiveClass: 'transition duration-100 ease-out',
-    enterFromClass: 'transform scale-95 opacity-0',
-    enterToClass: 'transform scale-100 opacity-100',
-    leaveActiveClass: 'transition duration-100 ease-in',
-    leaveFromClass: 'transform scale-100 opacity-100',
-    leaveToClass: 'transform scale-95 opacity-0',
+    enterActiveClass,
+    enterFromClass,
+    enterToClass,
+    leaveActiveClass,
+    leaveFromClass,
+    leaveToClass,
 
-    overlayEnterActiveClass: 'transition ease-out duration-300',
-    overlayEnterFromClass: 'transform opacity-0',
-    overlayEnterToClass: 'transform opacity-100',
-    overlayLeaveActiveClass: 'transition duration-300 ease-in',
-    overlayLeaveFromClass: 'transform opacity-100',
-    overlayLeaveToClass: 'transform opacity-0',
+    overlayEnterActiveClass,
+    overlayEnterFromClass,
+    overlayEnterToClass,
+    overlayLeaveActiveClass,
+    overlayLeaveFromClass,
+    overlayLeaveToClass,
   },
 };
 
