@@ -1,4 +1,5 @@
 import TInputConfig from './TInputConfig';
+// eslint-disable-next-line import/no-named-as-default
 import TModalConfig from './TModalConfig';
 
 const {
