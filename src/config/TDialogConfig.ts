@@ -38,10 +38,10 @@ const TDialogConfig = {
   classes: {
     overlay,
     wrapper,
-    close,
+    close: `${close} disabled:text-opacity-50 disabled:cursor-not-allowed`,
     closeIcon,
     dialog,
-    body: 'p-3 space-y-2',
+    body: 'p-3 space-y-2 relative',
     content: 'flex flex-col justify-center w-full',
 
     iconWrapper: 'flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-gray-100 rounded-full',
@@ -62,8 +62,8 @@ const TDialogConfig = {
 
     errorMessage: 'text-red-500 block text-sm',
 
-    busyWrapper: 'absolute bg-opacity-50 bg-white flex h-full items-center justify-center left-0 top-0 w-full',
-    busyIcon: 'animate-spin h-6 w-6 fill-current text-gray-500',
+    busyWrapper: 'absolute bg-opacity-75 bg-white flex h-full items-center justify-center left-0 top-0 w-full',
+    busyIcon: 'h-6 w-6 text-gray-500',
 
     enterActiveClass,
     enterFromClass,
