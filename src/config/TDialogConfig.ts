@@ -38,32 +38,45 @@ const TDialogConfig = {
   classes: {
     overlay,
     wrapper,
+    // @tw
     close: `${close} disabled:text-opacity-50 disabled:cursor-not-allowed`,
     closeIcon,
     dialog,
-    body: 'p-3 space-y-2 relative',
+    // @tw
+    body: 'relative p-3 space-y-2',
+    // @tw
     content: 'flex flex-col justify-center w-full',
-
+    // @tw
     iconWrapper: 'flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-gray-100 rounded-full',
+    // @tw
     icon: 'w-6 h-6 text-gray-700',
-
+    // @tw
     titleWrapper: '',
+    // @tw
     title: 'text-lg font-medium leading-6 text-center text-gray-900',
-
+    // @tw
     textWrapper: 'w-full text-center',
+    // @tw
     text: 'text-sm text-gray-500',
 
+    // @tw
     buttons: 'flex justify-center p-3 space-x-4 bg-gray-100 rounded-b',
+    // @tw
     cancelButton: 'block w-full max-w-xs px-4 py-2 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm hover:bg-gray-100 focus:border-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
+    // @tw
     okButton: 'block w-full max-w-xs px-4 py-2 text-white transition duration-100 ease-in-out bg-blue-500 border border-transparent rounded shadow-sm hover:bg-blue-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
 
-    inputWrapper: 'mt-3 flex',
+    // @tw
+    inputWrapper: 'flex mt-3',
     input: TInputConfig.classes,
 
-    errorMessage: 'text-red-500 block text-sm',
+    // @tw
+    errorMessage: 'block text-sm text-red-500',
 
-    busyWrapper: 'absolute bg-opacity-75 bg-white flex h-full items-center justify-center left-0 top-0 w-full',
-    busyIcon: 'h-6 w-6 text-gray-500',
+    // @tw
+    busyWrapper: 'absolute top-0 left-0 flex items-center justify-center w-full h-full bg-white bg-opacity-75',
+    // @tw
+    busyIcon: 'w-6 h-6 text-gray-500',
 
     enterActiveClass,
     enterFromClass,

@@ -4,7 +4,8 @@ import { enterAndLeave } from './transitions';
 const TDropdownConfig = {
   classes: {
     trigger: TButtonConfig.classes,
-    dropdown: 'w-56 rounded shadow bg-white',
+    // @tw
+    dropdown: 'w-56 bg-white rounded shadow',
     ...enterAndLeave,
   },
 };

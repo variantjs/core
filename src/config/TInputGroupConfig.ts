@@ -1,10 +1,15 @@
 const TInputGroupConfig = {
   classes: {
+    // @tw
     wrapper: '',
+    // @tw
     label: 'block',
+    // @tw
     body: '',
-    feedback: 'text-gray-400 text-sm',
-    description: 'text-gray-400 text-sm',
+    // @tw
+    feedback: 'text-sm text-gray-400',
+    // @tw
+    description: 'text-sm text-gray-400',
   },
 };
 
