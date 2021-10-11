@@ -43,11 +43,11 @@ const TDialogConfig = {
     closeIcon,
     dialog,
     // @tw
-    body: 'relative p-3 space-y-2',
+    body: 'relative p-3',
     // @tw
     content: 'flex flex-col justify-center w-full',
     // @tw
-    iconWrapper: 'flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-gray-100 rounded-full',
+    iconWrapper: 'flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto mb-2 bg-gray-100 rounded-full',
     // @tw
     icon: 'w-6 h-6 text-gray-700',
     // @tw
