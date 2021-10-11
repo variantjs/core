@@ -71,7 +71,7 @@ const TDialogConfig = {
     input: TInputConfig.classes,
 
     // @tw
-    errorMessage: 'block text-sm text-red-500',
+    errorMessage: 'block p-3 mb-3 -mx-3 -mt-3 text-sm text-center text-red-500 rounded-t bg-red-50',
 
     // @tw
     busyWrapper: 'absolute top-0 left-0 flex items-center justify-center w-full h-full bg-white bg-opacity-75',
