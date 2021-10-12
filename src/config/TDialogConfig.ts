@@ -1,4 +1,4 @@
-import { PromiseRejectFn } from '../types/Misc';
+import { PromiseRejectFn, Data } from '../types/Misc';
 import TInputConfig from './TInputConfig';
 // eslint-disable-next-line import/no-named-as-default
 import TModalConfig from './TModalConfig';
@@ -131,6 +131,8 @@ export type DialogResponse = {
 };
 
 export type DialogShowFn = (name: string) => Promise<DialogResponse>;
+
+export type DialogProgramaticallyShowFn = <Options extends Data>(titleOrDialogOptions: Options | string, text?: string, icon?: string) => Promise<DialogResponse>;
 
 export type DialogHideFn = (name: string) => void;
 
