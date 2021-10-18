@@ -29,13 +29,13 @@ const TToggleConfig = {
     // @tw
     wrapperCheckedDisabled: 'relative inline-flex flex-shrink-0 transition-colors duration-200 ease-in-out opacity-50 cursor-pointer cursor-not-allowed',
     // @tw
-    button: 'absolute inline-block transition duration-200 ease-in-out transform translate-x-0',
+    button: 'absolute transition duration-200 ease-in-out transform translate-x-0',
     // @tw
-    buttonChecked: 'absolute inline-block transition duration-200 ease-in-out transform translate-x-full',
+    buttonChecked: 'absolute transition duration-200 ease-in-out transform translate-x-full',
     // @tw
-    checkedPlaceholder: 'inline-block',
+    checkedPlaceholder: '',
     // @tw
-    uncheckedPlaceholder: 'inline-block',
+    uncheckedPlaceholder: '',
   },
 };
 
