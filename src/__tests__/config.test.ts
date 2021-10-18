@@ -28,6 +28,8 @@ it('exports all the configs and keys', () => {
     'TDropdownClassesKeys',
     'TRichSelectConfig',
     'TRichSelectClassesKeys',
+    'TToggleConfig',
+    'TToggleClassesKeys',
     'TDatepickerConfig',
     'TDatepickerClassesKeys',
     'TWrappedRadioConfig',

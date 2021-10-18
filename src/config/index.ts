@@ -19,5 +19,6 @@ export {
 } from './TDropdownConfig';
 export { default as TRichSelectConfig, TRichSelectClassesKeys, TRichSelectClassesValidKeys } from './TRichSelectConfig';
 export { default as TDatepickerConfig, TDatepickerClassesKeys, TDatepickerClassesValidKeys } from './TDatepickerConfig';
+export { default as TToggleConfig, TToggleClassesKeys, TToggleClassesValidKeys } from './TToggleConfig';
 export { default as TWrappedRadioConfig, TWrappedRadioClassesKeys, TWrappedRadioClassesValidKeys } from './TWrappedRadioConfig';
 export { default as TWrappedCheckboxConfig, TWrappedCheckboxClassesKeys, TWrappedCheckboxClassesValidKeys } from './TWrappedCheckboxConfig';
