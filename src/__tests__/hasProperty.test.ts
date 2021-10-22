@@ -36,4 +36,8 @@ describe('hasProperty', () => {
   it('returns `false` if undefined object ', () => {
     expect(hasProperty(undefined, 'foo')).toBe(false);
   });
+
+  it('returns `false` if passes `null`', () => {
+    expect(hasProperty(null, 'foo')).toBe(false);
+  });
 });
