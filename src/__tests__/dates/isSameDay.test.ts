@@ -14,7 +14,7 @@ describe('isSameDay', () => {
     expect(isSameDay(date1, date2)).toBe(true);
   });
 
-  it('determines that a date is not the same if differnet month', () => {
+  it('determines that a date is not the same if different month', () => {
     const date1 = new Date(2020, 0, 15);
     const date2 = new Date(2020, 1, 15);
 
