@@ -1,7 +1,7 @@
 import clone from '../helpers/clone';
 
 import {
-  DateValue, DateLocale, TokenRegex, RevFormat, DateFormats, RevFormatFn, DateToken,
+  DateValue, DateLocale, TokenRegex, DateAdjustFunctions, DateFormats, DateAdjustFunction, DateToken,
 } from '../types/Dates';
 
 import { English } from './l10n/default';
@@ -18,7 +18,7 @@ const monthToStr = (
   locale: DateLocale,
 ): string => locale.months[shorthand ? 'shorthand' : 'longhand'][monthNumber];
 
-const revFormat: RevFormat = {
+const dateAdjustFunctions: DateAdjustFunctions = {
   D: doNothing,
   F(dateObj: Date, monthName: string, locale: DateLocale) {
     dateObj.setMonth(locale.months.longhand.indexOf(monthName));
@@ -207,14 +207,23 @@ export const formats: DateFormats = {
 };
 
 const tokenRegex: TokenRegex = {
+  // A textual representation of a day (regex matches any word)
   D: '(\\w+)',
+  // A full textual representation of a month (regex matches any word)
   F: '(\\w+)',
+  // Hours, 2 digits with leading zeros (regex matches a number with 1 or 2 digits)
   G: '(\\d\\d|\\d)',
+  // Hours (24 hours) regex matches a number with 1 or 2 digits
   H: '(\\d\\d|\\d)',
+  // Day of the month without leading zeros and ordinal suffix (regex matches a number with 1 or 2 digits and an optional ordinal suffix)
   J: '(\\d\\d|\\d)\\w+',
-  K: '', // locale-dependent, setup on runtime
+  // locale-dependent, setup on runtime (am/pm)
+  K: '',
+  // A short textual representation of a month (regex matches any word)
   M: '(\\w+)',
+  // Seconds, 2 digits (regex matches a number with 1 or 2 digits)
   S: '(\\d\\d|\\d)',
+  // The number of seconds since the Unix Epoch (Regex accepts any value)
   U: '(.+)',
   W: '(\\d\\d|\\d)',
   Y: '(\\d{4})',
@@ -239,6 +248,8 @@ const isGMTString = (date: string): boolean => date.toLowerCase().endsWith('gmt'
 
 const isIsoString = (date: string): boolean => date.toLowerCase().endsWith('z');
 
+const getIsBackSlash = (char: string | undefined): boolean => char === '\\';
+
 const parseDate = (date: DateValue, format = 'Y-m-d H:i:S', timeless?: boolean, customLocale?: DateLocale): Date | undefined => {
   if (date !== 0 && !date) {
     return undefined;
@@ -262,15 +273,6 @@ const parseDate = (date: DateValue, format = 'Y-m-d H:i:S', timeless?: boolean, 
     // New date from timestamp
     parsedDate = new Date(date);
   } else if (typeof date === 'string') {
-    // if (!userConfig.dateFormat && (userConfig.enableTime || timeMode)) {
-    //   const defaultDateFormat =
-    //     flatpickr.defaultConfig.dateFormat || defaultOptions.dateFormat;
-    //   formats.dateFormat =
-    //     userConfig.noCalendar || timeMode
-    //       ? "H:i" + (userConfig.enableSeconds ? ":S" : "")
-    //       : defaultDateFormat + " H:i" + (userConfig.enableSeconds ? ":S" : "");
-    // }
-
     const cleanDateString = String(date).trim();
 
     if (cleanDateString === 'today') {
@@ -278,46 +280,53 @@ const parseDate = (date: DateValue, format = 'Y-m-d H:i:S', timeless?: boolean, 
     } else if (isGMTString(date) || isIsoString(date)) {
       parsedDate = new Date(date);
     } else {
-      parsedDate = new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0);
-      // parsedDate = !config || !config.noCalendar
-      //   ? new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0)
-      //   : (new Date(new Date().setHours(0, 0, 0, 0)) as Date);
+      const baseDate = new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0);
 
-      let matched;
-      const ops: { fn: RevFormatFn; val: string }[] = [];
+      const operations: { fn: DateAdjustFunction; match: string }[] = [];
 
-      for (let i = 0, matchIndex = 0, regexStr = ''; i < format.length; i += 1) {
-        const token2 = format[i] as DateToken;
-        const isBackSlash = (token2 as string) === '\\';
-        const escaped = format[i - 1] === '\\' || isBackSlash;
+      let regexString = '';
+      let matchIndex = 0;
+      let matched = false;
 
-        if (localeTokenRegex[token2] && !escaped) {
-          regexStr += localeTokenRegex[token2];
-          const match = new RegExp(regexStr).exec(date);
+      format.split('').forEach((token: string | DateToken, tokenIndex: number) => {
+        const isBackSlash = getIsBackSlash(token);
+        const isEscaped = getIsBackSlash(format[tokenIndex - 1]) || isBackSlash;
+        const regex: string | undefined = localeTokenRegex[token as DateToken];
+
+        if (!isEscaped && regex) {
+          regexString += regex;
+          const match = new RegExp(regexString).exec(date);
+
           if (match) {
             matched = true;
-            ops[token2 !== 'Y' ? 'push' : 'unshift']({
-              fn: revFormat[token2],
-              val: match[matchIndex += 1],
-            });
+            matchIndex += 1;
+            if (token === 'Y') {
+              operations.unshift({
+                fn: dateAdjustFunctions[token],
+                match: match[matchIndex],
+              });
+            } else {
+              operations.push({
+                fn: dateAdjustFunctions[token],
+                match: match[matchIndex],
+              });
+            }
           }
         } else if (!isBackSlash) {
-          regexStr += '.'; // don't really care
+          // Meaning any character
+          regexString += '.';
         }
+      });
 
-        // eslint-disable-next-line no-loop-func
-        ops.forEach((op) => {
-          const { fn } = op;
-          const { val } = op;
-          parsedDate = fn(parsedDate as Date, String(val), locale) || parsedDate;
-        });
-      }
+      operations.forEach((operation) => {
+        const { fn, match } = operation;
+        parsedDate = fn(baseDate, String(match), locale) || baseDate;
+      });
 
       parsedDate = matched ? parsedDate : undefined;
     }
   }
 
-  /* istanbul ignore next */
   // eslint-disable-next-line no-restricted-globals
   if (!(parsedDate instanceof Date && !isNaN(parsedDate.getTime()))) {
     throw new Error(`Invalid date provided: ${originalDate}`);

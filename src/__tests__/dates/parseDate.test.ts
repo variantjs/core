@@ -23,6 +23,10 @@ describe('parseDate', () => {
       expect(parseDate('2021-10-23T20:58:11.733Z'))
         .toEqual(new Date(Date.UTC(2021, 9, 23, 20, 58, 11, 733)));
     });
+
+    it('parses a date in the default format', () => {
+      expect(parseDate('2020-02-18 12:34:56')).toEqual(new Date(2020, 1, 18, 12, 34, 56));
+    });
   });
 
   describe('Numeric values parsing', () => {

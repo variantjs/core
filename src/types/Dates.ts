@@ -218,13 +218,13 @@ export type DateToken =
   | 'w'
   | 'y';
 
-export type RevFormatFn = (
+export type DateAdjustFunction = (
   date: Date,
   data: string,
   locale: DateLocale
 ) => Date | void | undefined;
 
-export type RevFormat = Record<string, RevFormatFn>;
+export type DateAdjustFunctions = Record<string, DateAdjustFunction>;
 
 export type TokenRegex = { [k in DateToken]: string };
 
