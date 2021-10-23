@@ -35,4 +35,13 @@ describe('getLastDayOfMonth', () => {
 
     expect(getLastDayOfMonth(date)).toEqual(new Date(2020, 3, 30));
   });
+
+  it('doesnt affects the original date', () => {
+    const originalDate = new Date(2020, 0, 15, 10, 11, 12);
+    const date = new Date(2020, 0, 15, 10, 11, 12);
+
+    getLastDayOfMonth(date);
+
+    expect(date).toEqual(originalDate);
+  });
 });
