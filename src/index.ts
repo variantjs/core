@@ -6,4 +6,5 @@ export { default as flattenOptions } from './flattenOptions';
 export { default as filterOptions } from './filterOptions';
 export * from './config';
 export * from './helpers';
+export * from './dates';
 export * from './types';

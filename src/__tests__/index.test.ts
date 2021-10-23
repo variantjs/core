@@ -1,4 +1,5 @@
 import * as helpers from '../helpers/index';
+import * as dateHelpers from '../dates/index';
 
 it('exports all the helpers', () => {
   expect(Object.keys(helpers).length).toBe(17);
@@ -20,4 +21,10 @@ it('exports all the helpers', () => {
   expect(typeof helpers.normalizedOptionIsDisabled).toBe('function');
   expect(typeof helpers.promisify).toBe('function');
   expect(typeof helpers.promisifyFunctionResult).toBe('function');
+});
+
+it('exports all the date-related helpers', () => {
+  expect(Object.keys(dateHelpers).length).toBe(1);
+
+  expect(typeof dateHelpers.visibleDaysInMonthView).toBe('function');
 });
