@@ -1,6 +1,5 @@
 import { DateLocale } from '../../types/Dates';
 
-
 export const English: DateLocale = {
   weekdays: {
     shorthand: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
