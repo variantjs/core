@@ -323,8 +323,6 @@ const parseDate = (date: DateValue, fromFormat = 'Y-m-d H:i:S', timeless?: boole
     // New date from timestamp
     parsedDate = new Date(date);
   } else if (typeof date === 'string') {
-    const cleanDateString = String(date).trim();
-
     if (isGMTString(date) || isIsoString(date)) {
       parsedDate = new Date(date);
     } else {

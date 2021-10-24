@@ -11,7 +11,8 @@ describe('parseDate', () => {
     });
 
     it('returns today date if passed `today`', () => {
-      expect(parseDate('today')).toEqual(new Date());
+      const today = new Date(new Date().getFullYear(), (new Date()).getMonth(), (new Date()).getDate(), 0, 0, 0, 0);
+      expect(parseDate('today')).toEqual(today);
     });
 
     it('parses gmt dates', () => {
@@ -26,6 +27,91 @@ describe('parseDate', () => {
 
     it('parses a date in the default format', () => {
       expect(parseDate('2020-02-18 12:34:56')).toEqual(new Date(2020, 1, 18, 12, 34, 56));
+    });
+
+    describe('parse a single token', () => {
+      let baseDate: Date;
+
+      beforeEach(() => {
+        baseDate = new Date('2021-01-01T06:00:00.000Z');
+
+        jest
+          .useFakeTimers()
+          .setSystemTime(baseDate.getTime());
+      });
+
+      afterEach(() => {
+        jest.useRealTimers();
+      });
+
+      // d / Day of the month, 2 digits with leading zeros / 01 to 31
+      it('d', () => {
+        expect(parseDate('05', 'd')).toEqual(new Date('2021-01-05T06:00:00.000Z'));
+      });
+
+      // D / A textual representation of a day / Mon through Sun
+      it('D', () => {
+        // Doesnt affect the date when parsing
+        expect(parseDate('Tue', 'D')).toEqual(new Date('2021-01-01T06:00:00.000Z'));
+      });
+
+      // l (lowercase 'L') / A full textual representation of the day of the week / Sunday through Saturday
+      it('l', () => {
+        // Doesnt affect the date when parsing
+        expect(parseDate('Saturday', 'l')).toEqual(new Date('2021-01-01T06:00:00.000Z'));
+      });
+
+      // j / Day of the month without leading zeros / 1 to 31
+      it('j', () => {
+        expect(parseDate('10', 'j')).toEqual(new Date('2021-01-10T06:00:00.000Z'));
+      });
+
+      // J / Day of the month without leading zeros and ordinal suffix / 1st, 2nd, to 31st
+      it('J', () => {
+        expect(parseDate('22nd', 'J')).toEqual(new Date('2021-01-22T06:00:00.000Z'));
+      });
+      // w / Numeric representation of the day of the week / 0 (for Sunday) through 6 (for Saturday)
+      it('w', () => {
+        // Doesnt affect the date when parsing
+        expect(parseDate('4', 'w')).toEqual(new Date('2021-01-01T06:00:00.000Z'));
+      });
+      // W / Numeric representation of the week / 0 (first week of the year) through 52 (last week of the year)
+      it('W', () => {
+        expect(parseDate('32', 'W')).toEqual(new Date('2021-08-01T05:00:00.000Z'));
+      });
+      // F / A full textual representation of a month / January through December
+      it('F', () => {
+        expect(parseDate('November', 'F')).toEqual(new Date('2021-11-01T06:00:00.000Z'));
+      });
+      // m / Numeric representation of a month, with leading zero / 01 through 12
+      it('m', () => {
+        expect(parseDate('11', 'm')).toEqual(new Date('2021-11-01T06:00:00.000Z'));
+      });
+      // n / Numeric representation of a month, without leading zeros / 1 through 12
+      it('n', () => {
+        // Timezone affected because the daylight saving
+        expect(parseDate('9', 'n')).toEqual(new Date('2021-09-01T05:00:00.000Z'));
+      });
+      // M / A short textual representation of a month / Jan through Dec
+      it('M', () => {
+        expect(parseDate('Feb', 'M')).toEqual(new Date('2021-02-01T06:00:00.000Z'));
+      });
+      // U / The number of seconds since the Unix Epoch / 1413704993
+      it('U', () => {
+        expect(parseDate('1635080656', 'U')).toEqual(new Date('2021-10-24T13:04:16.000Z'));
+      });
+      // y / A two digit representation of a year / 99 or 03
+      it('y', () => {
+        expect(parseDate('20', 'y')).toEqual(new Date('2020-01-01T06:00:00.000Z'));
+      });
+      // Y / A full numeric representation of a year, 4 digits / 1999 or 2003
+      it('Y', () => {
+        expect(parseDate('2019', 'Y')).toEqual(new Date('2019-01-01T06:00:00.000Z'));
+      });
+      // Z / ISO Date format / 2017-03-04T01:23:43.000Z
+      it('Z', () => {
+        expect(parseDate('2019-01-01T06:00:00.000Z', 'Z')).toEqual(new Date('2019-01-01T06:00:00.000Z'));
+      });
     });
   });
 
