@@ -120,6 +120,14 @@ describe('parseDate', () => {
       it('Z', () => {
         expect(parseDate('2019-01-01T06:00:00.000Z', 'Z')).toEqual(new Date('2019-01-01T06:00:00.000Z'));
       });
+
+      // H / Hours (24 hours) / 00 to 23
+      // h / Hours / 1 to 12
+      // G / Hours, 2 digits with leading zeros / 1 to 12
+      // i / Minutes / 00 to 59
+      // S / Seconds, 2 digits / 00 to 59
+      // s / Seconds / 0, 1 to 59
+      // K / AM/PM	AM or PM
     });
   });
 
