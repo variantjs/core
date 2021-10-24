@@ -238,8 +238,7 @@ const tokenRegex: TokenRegex = {
   y: '(\\d{2})',
 };
 
-// The Date timestamp returns and instance of `Number` which has the `toFixed` method
-const isTimestamp = (date: string | number): boolean => typeof date === 'number' && date.toFixed !== undefined;
+const isTimestamp = (date: string | number): boolean => typeof date === 'number';
 
 const isGMTString = (date: string): boolean => date.toLowerCase().endsWith('gmt');
 
@@ -337,6 +336,8 @@ const parseDate = (date: DateValue, fromFormat = 'Y-m-d H:i:S', timeless?: boole
         });
       }
     }
+  } else {
+    throw new Error(`Invalid date provided: ${originalDate}`);
   }
 
   // eslint-disable-next-line no-restricted-globals

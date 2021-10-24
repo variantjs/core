@@ -10,6 +10,17 @@ describe('parseDate', () => {
       expect(parseDate('')).toBeUndefined();
     });
 
+    it('returns undefined if NaN', () => {
+      expect(parseDate(NaN)).toBeUndefined();
+    });
+
+    it('returns undefined if passes a function', () => {
+      const fn = (() => {}) as any;
+
+      const parser = () => parseDate(fn);
+      expect(parser).toThrow(new Error('Invalid date provided: () => { }'));
+    });
+
     it('returns today date if passed `today`', () => {
       const today = new Date(new Date().getFullYear(), (new Date()).getMonth(), (new Date()).getDate(), 0, 0, 0, 0);
       expect(parseDate('today')).toEqual(today);
@@ -41,6 +52,12 @@ describe('parseDate', () => {
       const parser = () => parseDate('2020-11-12', 'X');
 
       expect(parser).toThrow(new Error('Invalid date provided: 2020-11-12'));
+    });
+
+    it('returns undefined if dates doesnt matchs the format', () => {
+      const parser = () => parseDate('18021987', 'K');
+
+      expect(parser).toThrow(new Error('Invalid date provided: 18021987'));
     });
 
     describe('parse a single token', () => {
@@ -154,6 +171,9 @@ describe('parseDate', () => {
       // K / AM/PM / AM or PM
       it('K', () => {
         expect(parseDate('PM', 'K')).toEqual(new Date('2021-01-01T18:00:00.000Z'));
+      });
+      it('K for AM', () => {
+        expect(parseDate('AM', 'K')).toEqual(new Date('2021-01-01T06:00:00.000Z'));
       });
     });
   });
