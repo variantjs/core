@@ -122,12 +122,33 @@ describe('parseDate', () => {
       });
 
       // H / Hours (24 hours) / 00 to 23
+      it('H', () => {
+        expect(parseDate('14', 'H')).toEqual(new Date('2021-01-01T20:00:00.000Z'));
+      });
       // h / Hours / 1 to 12
+      it('h', () => {
+        expect(parseDate('6', 'h')).toEqual(new Date('2021-01-01T12:00:00.000Z'));
+      });
       // G / Hours, 2 digits with leading zeros / 1 to 12
+      it('G', () => {
+        expect(parseDate('10', 'G')).toEqual(new Date('2021-01-01T16:00:00.000Z'));
+      });
       // i / Minutes / 00 to 59
+      it('i', () => {
+        expect(parseDate('35', 'i')).toEqual(new Date('2021-01-01T06:35:00.000Z'));
+      });
       // S / Seconds, 2 digits / 00 to 59
+      it('S', () => {
+        expect(parseDate('42', 'S')).toEqual(new Date('2021-01-01T06:00:42.000Z'));
+      });
       // s / Seconds / 0, 1 to 59
-      // K / AM/PM	AM or PM
+      it('s', () => {
+        expect(parseDate('18', 's')).toEqual(new Date('2021-01-01T06:00:18.000Z'));
+      });
+      // K / AM/PM / AM or PM
+      it('K', () => {
+        expect(parseDate('PM', 'K')).toEqual(new Date('2021-01-01T18:00:00.000Z'));
+      });
     });
   });
 
