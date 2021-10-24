@@ -29,6 +29,14 @@ describe('parseDate', () => {
       expect(parseDate('2020-02-18 12:34:56')).toEqual(new Date(2020, 1, 18, 12, 34, 56));
     });
 
+    it('parses a date ignoring time', () => {
+      expect(parseDate('2020-02-18 12:34:56', defaultFormat, timeless)).toEqual(new Date(2020, 1, 18, 0, 0, 0));
+    });
+
+    it('escapes the token', () => {
+      expect(parseDate('2020Y-02-18 12m:34:56', 'Y\\Y-m-d H\\m:i:S')).toEqual(new Date(2020, 1, 18, 12, 34, 56));
+    });
+
     describe('parse a single token', () => {
       let baseDate: Date;
 
