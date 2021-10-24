@@ -65,7 +65,6 @@ const tokenParsingFunctions: TokenParsingFunctions = {
     dateObj.setFullYear(parseFloat(year));
   },
   Z: (_: Date, ISODate: string) => new Date(ISODate),
-
   d: (dateObj: Date, day: string) => {
     dateObj.setDate(parseFloat(day));
   },
@@ -88,7 +87,6 @@ const tokenParsingFunctions: TokenParsingFunctions = {
   s: (dateObj: Date, seconds: string) => {
     dateObj.setSeconds(parseFloat(seconds));
   },
-  u: (_: Date, unixMillSeconds: string) => new Date(parseFloat(unixMillSeconds)),
   w: doNothing,
   y: (dateObj: Date, year: string) => {
     dateObj.setFullYear(2000 + parseFloat(year));
@@ -236,7 +234,6 @@ const tokenRegex: TokenRegex = {
   m: '(\\d\\d|\\d)',
   n: '(\\d\\d|\\d)',
   s: '(\\d\\d|\\d)',
-  u: '(.+)',
   w: '(\\d\\d|\\d)',
   y: '(\\d{2})',
 };

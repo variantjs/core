@@ -37,6 +37,12 @@ describe('parseDate', () => {
       expect(parseDate('2020Y-02-18 12m:34:56', 'Y\\Y-m-d H\\m:i:S')).toEqual(new Date(2020, 1, 18, 12, 34, 56));
     });
 
+    it('returns undefined if using an invalid format', () => {
+      const parser = () => parseDate('2020-11-12', 'X');
+
+      expect(parser).toThrow(new Error('Invalid date provided: 2020-11-12'));
+    });
+
     describe('parse a single token', () => {
       let baseDate: Date;
 
@@ -118,7 +124,7 @@ describe('parseDate', () => {
       });
       // Z / ISO Date format / 2017-03-04T01:23:43.000Z
       it('Z', () => {
-        expect(parseDate('2019-01-01T06:00:00.000Z', 'Z')).toEqual(new Date('2019-01-01T06:00:00.000Z'));
+        expect(parseDate('2020-01-01T06:00:00.000', 'Z')).toEqual(new Date('2020-01-01T12:00:00.000Z'));
       });
 
       // H / Hours (24 hours) / 00 to 23

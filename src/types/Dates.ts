@@ -214,7 +214,6 @@ export type DateToken =
   | 'm'
   | 'n'
   | 's'
-  | 'u'
   | 'w'
   | 'y';
 
