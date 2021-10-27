@@ -24,4 +24,8 @@ describe('isTouchOnlyDevice.', () => {
   it('uses the global window and navigator by default', () => {
     expect(isTouchOnlyDevice()).toBe(false);
   });
+
+  it('returns `false` if window is not defined', () => {
+    expect(isTouchOnlyDevice()).toBe(false);
+  });
 });
