@@ -231,3 +231,14 @@ export type TokenFormattingFunctions = Record<
 DateToken,
 (date: Date, locale: DateLocale) => string | number
 >;
+
+export type DateParser = (
+  date: DateValue,
+  givenFormat?: string,
+  timeless?: boolean,
+  customLocale?: DateLocale,
+) => Date | undefined;
+
+export type DateCondition = DateValue | ((date: Date) => boolean);
+
+export type DateConditions = DateCondition | DateCondition[];
