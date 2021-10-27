@@ -2,7 +2,6 @@ import { DateLocale } from '../../types/Dates';
 import formatDate from '../../dates/formatDate';
 import { English as defaultLocale } from '../../dates/l10n/default';
 import { Spanish } from '../../dates/l10n/es';
-// import clone from '../../helpers/clone';
 
 describe('formatDate', () => {
   const format = 'Y-m-d H:i:S';
