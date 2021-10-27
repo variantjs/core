@@ -2,7 +2,6 @@ import parseDate from '../../dates/parseDate';
 
 describe('parseDate', () => {
   const defaultFormat = 'Y-m-d H:i:S';
-  // const defaultTimeless = false;
   const timeless = true;
 
   describe('String parsing', () => {

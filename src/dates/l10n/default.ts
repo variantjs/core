@@ -47,7 +47,6 @@ export const English: DateLocale = {
   firstDayOfWeek: 0,
   ordinal: (nth: number) => {
     const s = nth % 100;
-    if (s > 3 && s < 21) return 'th';
     switch (s % 10) {
       case 1:
         return 'st';
