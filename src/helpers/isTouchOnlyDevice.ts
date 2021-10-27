@@ -1,3 +1,4 @@
+
 const isTouchOnlyDevice = (w?: Window): boolean => {
   if (w === undefined) {
     return false;
