@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { LocaleName, CustomDateLocale } from '../../types/Dates';
+import { DateLocaleName, CustomDateLocale } from '../../types/Dates';
 
 import { Arabic as ar } from './ar';
 import { Austria as at } from './at';
@@ -62,7 +62,7 @@ import { Vietnamese as vn } from './vn';
 import { Mandarin as zh } from './zh';
 import { MandarinTraditional as zh_tw } from './zh-tw';
 
-const l10n: Record<LocaleName, CustomDateLocale> = {
+const l10n: Record<DateLocaleName, CustomDateLocale> = {
   ar,
   at,
   az,
