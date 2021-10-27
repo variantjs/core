@@ -1,10 +1,7 @@
-const isTouchOnlyDevice = (w?: Window | undefined): boolean => {
-  if (typeof w === 'undefined') {
-    if (typeof window === 'undefined') {
-      return false;
-    }
 
-    w = window;
+const isTouchOnlyDevice = (w?: Window): boolean => {
+  if (w === undefined) {
+    return false;
   }
 
   return !!(w.matchMedia && w.matchMedia('(any-hover: none)').matches);
