@@ -15,6 +15,7 @@ describe('parseDate', () => {
     });
 
     it('returns undefined if passes a function', () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const fn = (() => {}) as any;
 
       const parser = () => parseDate(fn);
