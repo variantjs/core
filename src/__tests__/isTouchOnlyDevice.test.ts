@@ -26,6 +26,11 @@ describe('isTouchOnlyDevice.', () => {
   });
 
   it('returns `false` if window is not defined', () => {
+    const windowSpy = jest.spyOn(window, 'window', 'get');
+    windowSpy.mockImplementation(() => undefined as unknown as Window & typeof globalThis);
+
     expect(isTouchOnlyDevice()).toBe(false);
+
+    windowSpy.mockRestore();
   });
 });
