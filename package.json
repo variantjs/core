@@ -1,6 +1,6 @@
 {
   "name": "@variantjs/core",
-  "version": "0.0.69",
+  "version": "0.0.70",
   "description": "VariantJS common functions and utilities",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.umd.js",
