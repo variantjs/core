@@ -240,8 +240,8 @@ export type DateParser = (
 ) => Date | undefined;
 
 export type DateFormatter = (
-  dateObj: Date | null,
-  format: string,
+  date: Date | null,
+  format?: string,
   overrideLocale?: DateLocale,
 ) => string;
 
