@@ -5,5 +5,6 @@
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
   "modulePathIgnorePatterns": ["<rootDir>/dist/"],
-  "testEnvironment": "jsdom"
+  "testEnvironment": "jsdom",
+  "coverageReporters": ["text", "json", "html"]
 }
