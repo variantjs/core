@@ -24,8 +24,9 @@ it('exports all the helpers', () => {
 });
 
 it('exports all the date-related helpers', () => {
-  expect(Object.keys(dateHelpers).length).toBe(13);
+  expect(Object.keys(dateHelpers).length).toBe(14);
 
+  expect(typeof dateHelpers.dateEnglishLocale).toBe('object');
   expect(typeof dateHelpers.visibleDaysInMonthView).toBe('function');
   expect(typeof dateHelpers.isSameDay).toBe('function');
   expect(typeof dateHelpers.isSameMonth).toBe('function');
