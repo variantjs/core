@@ -239,6 +239,12 @@ export type DateParser = (
   customLocale?: DateLocale,
 ) => Date | undefined;
 
+export type DateFormatter = (
+  dateObj: Date | null,
+  format: string,
+  overrideLocale?: DateLocale,
+) => string;
+
 export type DateCondition = DateValue | ((date: Date) => boolean);
 
 export type DateConditions = DateCondition | DateCondition[];

@@ -9,3 +9,5 @@ export { default as dateIsPartOfTheRange } from './dateIsPartOfTheRange';
 export { default as dayIsPartOfTheConditions } from './dayIsPartOfTheConditions';
 export { default as parseDate } from './parseDate';
 export { default as formatDate } from './formatDate';
+export { default as buildDateParser } from './buildDateParser';
+export { default as buildDateFormatter } from './buildDateFormatter';
