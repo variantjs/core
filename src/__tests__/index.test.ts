@@ -32,6 +32,7 @@ it('exports all the date-related helpers', () => {
   expect(typeof dateHelpers.isToday).toBe('function');
   expect(typeof dateHelpers.addDays).toBe('function');
   expect(typeof dateHelpers.addMonths).toBe('function');
+  expect(typeof dateHelpers.addYears).toBe('function');
   expect(typeof dateHelpers.dateIsPartOfTheRange).toBe('function');
   expect(typeof dateHelpers.dayIsPartOfTheConditions).toBe('function');
   expect(typeof dateHelpers.parseDate).toBe('function');
