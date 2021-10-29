@@ -233,14 +233,14 @@ DateToken,
 >;
 
 export type DateParser = (
-  date: DateValue,
+  date: DateValue | null | undefined,
   givenFormat?: string,
   timeless?: boolean,
   customLocale?: DateLocale,
 ) => Date | undefined;
 
 export type DateFormatter = (
-  date: Date | null,
+  date: Date | null | undefined,
   format?: string,
   overrideLocale?: DateLocale,
 ) => string;

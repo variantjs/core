@@ -118,7 +118,7 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
   y: (date: Date) => String(date.getFullYear()).substring(2),
 };
 
-const formatDate = (date: Date | null, format: string, customLocale?: DateLocale): string => {
+const formatDate = (date: Date | null | undefined, format: string, customLocale?: DateLocale): string => {
   if (!date) {
     return '';
   }
