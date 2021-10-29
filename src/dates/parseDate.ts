@@ -181,7 +181,7 @@ const getToday = (): Date => {
   return today;
 };
 
-const parseDate = (date: DateValue, fromFormat = 'Y-m-d H:i:S', timeless?: boolean, customLocale?: DateLocale): Date | undefined => {
+const parseDate = (date: DateValue | undefined | null, fromFormat = 'Y-m-d H:i:S', timeless?: boolean, customLocale?: DateLocale): Date | undefined => {
   if (date !== 0 && !date) {
     return undefined;
   }
