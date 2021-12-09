@@ -15,10 +15,10 @@ describe('merge classes function', () => {
 
   it('allows functions that can manipulate the classes interactively', () => {
     expect(mergeClasses(['hello'], ({ clear, add }) => {
-      clear()
-      add('no')
-    }, ['world'], ({ remove  }) => {
-      remove('world')
+      clear();
+      add('no');
+    }, ['world'], ({ remove }) => {
+      remove('world');
     })).toBe('no');
   });
 
@@ -36,7 +36,7 @@ describe('merge classes function', () => {
         {
           world: 1,
           universe: null,
-        } as any,
+        } as unknown,
       ),
     ).toBe('hello world');
   });
