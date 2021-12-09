@@ -13,7 +13,7 @@ export type CSSClass =
   | boolean
   | ((modifiers: {
     clear: () => void
-    add: (cssClass: string) => void
+    add: (...cssClass: string[]) => void
     remove: (cssClass: string) => void
   }) => void);
 
