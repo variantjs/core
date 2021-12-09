@@ -1,5 +1,5 @@
 /* Russian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Russian: CustomDateLocale = {
   weekdays: {
@@ -38,13 +38,13 @@ export const Russian: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return ''
+    return '';
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'Нед.',
   amPM: ['ДП', 'ПП'],
   yearAriaLabel: 'Год',
   time24hr: true,
-}
+};
 
-export default Russian
+export default Russian;

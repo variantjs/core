@@ -1,5 +1,5 @@
 /* Norwegian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Norwegian: CustomDateLocale = {
   weekdays: {
@@ -31,6 +31,6 @@ export const Norwegian: CustomDateLocale = {
   time24hr: true,
 
   ordinal: () => '.',
-}
+};
 
-export default Norwegian
+export default Norwegian;

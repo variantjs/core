@@ -1,5 +1,5 @@
 /* Austria locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Austria: CustomDateLocale = {
   weekdays: {
@@ -28,6 +28,6 @@ export const Austria: CustomDateLocale = {
   firstDayOfWeek: 1,
   weekAbbreviation: 'KW',
   rangeSeparator: ' bis ',
-}
+};
 
-export default Austria
+export default Austria;

@@ -1,5 +1,5 @@
 /* Khmer locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Khmer: CustomDateLocale = {
   weekdays: {
@@ -42,6 +42,6 @@ export const Khmer: CustomDateLocale = {
   weekAbbreviation: 'សប្តាហ៍',
   yearAriaLabel: 'ឆ្នាំ',
   time24hr: true,
-}
+};
 
-export default Khmer
+export default Khmer;

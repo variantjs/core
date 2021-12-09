@@ -1,5 +1,5 @@
 /* Kazakh locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Kazakh: CustomDateLocale = {
   weekdays: {
@@ -25,12 +25,12 @@ export const Kazakh: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return ''
+    return '';
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'Апта',
   amPM: ['ТД', 'ТК'],
   yearAriaLabel: 'Жыл',
-}
+};
 
-export default Kazakh
+export default Kazakh;

@@ -1,5 +1,5 @@
 /* Arabic locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Arabic: CustomDateLocale = {
   weekdays: {
@@ -26,6 +26,6 @@ export const Arabic: CustomDateLocale = {
   },
 
   rangeSeparator: ' - ',
-}
+};
 
-export default Arabic
+export default Arabic;

@@ -1,5 +1,5 @@
 /* Portuguese locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Portuguese: CustomDateLocale = {
   weekdays: {
@@ -35,6 +35,6 @@ export const Portuguese: CustomDateLocale = {
 
   rangeSeparator: ' até ',
   time24hr: true,
-}
+};
 
-export default Portuguese
+export default Portuguese;

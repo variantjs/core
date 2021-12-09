@@ -1,5 +1,5 @@
 /* Mongolian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Mongolian: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -40,6 +40,6 @@ export const Mongolian: CustomDateLocale = {
   },
   rangeSeparator: '-с ',
   time24hr: true,
-}
+};
 
-export default Mongolian
+export default Mongolian;

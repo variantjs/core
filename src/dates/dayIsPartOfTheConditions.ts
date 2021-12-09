@@ -1,35 +1,35 @@
-import isSameDay from './isSameDay'
+import isSameDay from './isSameDay';
 
-import { DateParser, DateConditions } from '../types/Dates'
+import { DateParser, DateConditions } from '../types/Dates';
 
 const dayIsPartOfTheConditions = (
   date: Date | null | undefined,
   condition: DateConditions | undefined,
   dateParser: DateParser,
-  dateFormat?: string
+  dateFormat?: string,
 ): boolean => {
   if (!date) {
-    return false
+    return false;
   }
 
   if (typeof condition === 'function') {
-    return condition(date)
+    return condition(date);
   }
 
   if (typeof condition === 'string' || condition instanceof String) {
-    const disabledDate = dateParser(condition as string, dateFormat)
-    return isSameDay(disabledDate, date)
+    const disabledDate = dateParser(condition as string, dateFormat);
+    return isSameDay(disabledDate, date);
   }
 
   if (condition instanceof Date) {
-    return isSameDay(condition, date)
+    return isSameDay(condition, date);
   }
 
   if (Array.isArray(condition)) {
-    return condition.some((c) => dayIsPartOfTheConditions(date, c, dateParser, dateFormat))
+    return condition.some((c) => dayIsPartOfTheConditions(date, c, dateParser, dateFormat));
   }
 
-  return false
-}
+  return false;
+};
 
-export default dayIsPartOfTheConditions
+export default dayIsPartOfTheConditions;

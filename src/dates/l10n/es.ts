@@ -1,5 +1,5 @@
 /* Spanish locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Spanish: CustomDateLocale = {
   weekdays: {
@@ -32,6 +32,6 @@ export const Spanish: CustomDateLocale = {
   time24hr: true,
   timeLabel: 'Hora',
   okLabel: 'Ok',
-}
+};
 
-export default Spanish
+export default Spanish;

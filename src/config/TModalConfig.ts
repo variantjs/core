@@ -50,7 +50,7 @@ export const TModalConfig = {
     // @tw
     leaveToClass: 'transform scale-95 opacity-0',
   },
-}
+};
 
 export enum ModalHideReason {
   Outside = 'outside',
@@ -61,12 +61,12 @@ export enum ModalHideReason {
   Other = 'other',
 }
 
-export type ModalShowFn = (name: string, params?: Record<string, unknown>) => void
+export type ModalShowFn = (name: string, params?: Record<string, unknown>) => void;
 
-export type ModalHideFn = (name: string) => void
+export type ModalHideFn = (name: string) => void;
 
-export const TModalClassesKeys = Object.keys(TModalConfig.classes)
+export const TModalClassesKeys = Object.keys(TModalConfig.classes);
 
-export type TModalClassesValidKeys = keyof typeof TModalConfig.classes
+export type TModalClassesValidKeys = keyof typeof TModalConfig.classes;
 
-export default TModalConfig
+export default TModalConfig;

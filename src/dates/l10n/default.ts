@@ -1,4 +1,4 @@
-import { DateLocale } from '../../types/Dates'
+import { DateLocale } from '../../types/Dates';
 
 export const English: DateLocale = {
   weekdays: {
@@ -25,16 +25,16 @@ export const English: DateLocale = {
   daysInMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
   firstDayOfWeek: 0,
   ordinal: (nth: number) => {
-    const s = nth % 100
+    const s = nth % 100;
     switch (s % 10) {
       case 1:
-        return 'st'
+        return 'st';
       case 2:
-        return 'nd'
+        return 'nd';
       case 3:
-        return 'rd'
+        return 'rd';
       default:
-        return 'th'
+        return 'th';
     }
   },
   rangeSeparator: ' to ',
@@ -47,6 +47,6 @@ export const English: DateLocale = {
   time24hr: false,
   timeLabel: 'Time',
   okLabel: 'Ok',
-}
+};
 
-export default English
+export default English;

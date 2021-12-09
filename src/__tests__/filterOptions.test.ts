@@ -1,5 +1,5 @@
-import { filterOptions } from '../index'
-import { NormalizedOptions } from '../types'
+import { filterOptions } from '../index';
+import { NormalizedOptions } from '../types';
 
 describe('filterOptions', () => {
   const options: NormalizedOptions = [
@@ -21,15 +21,15 @@ describe('filterOptions', () => {
     },
     { value: 'C', text: 'C' },
     { value: 'redy', text: 'Reddy' },
-  ]
+  ];
 
   it('returns the same options is no query', () => {
-    const filteredOptions = filterOptions(options, '')
-    expect(filteredOptions).toEqual(options)
-  })
+    const filteredOptions = filterOptions(options, '');
+    expect(filteredOptions).toEqual(options);
+  });
 
   it('filters deep', () => {
-    const filteredOptions = filterOptions(options, 'red')
+    const filteredOptions = filterOptions(options, 'red');
     expect(filteredOptions).toEqual([
       {
         value: 'B',
@@ -43,6 +43,6 @@ describe('filterOptions', () => {
         ],
       },
       { value: 'redy', text: 'Reddy' },
-    ])
-  })
-})
+    ]);
+  });
+});

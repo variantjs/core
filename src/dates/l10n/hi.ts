@@ -1,5 +1,5 @@
 /* Hindi locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Hindi: CustomDateLocale = {
   weekdays: {
@@ -37,6 +37,6 @@ export const Hindi: CustomDateLocale = {
       'दिसम्बर',
     ],
   },
-}
+};
 
-export default Hindi
+export default Hindi;

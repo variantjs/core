@@ -1,5 +1,5 @@
 /* Italian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Italian: CustomDateLocale = {
   weekdays: {
@@ -29,6 +29,6 @@ export const Italian: CustomDateLocale = {
   rangeSeparator: ' al ',
   weekAbbreviation: 'Se',
   time24hr: true,
-}
+};
 
-export default Italian
+export default Italian;

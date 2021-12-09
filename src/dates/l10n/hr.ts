@@ -1,5 +1,5 @@
 /* Croatian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Croatian: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -40,6 +40,6 @@ export const Croatian: CustomDateLocale = {
     ],
   },
   time24hr: true,
-}
+};
 
-export default Croatian
+export default Croatian;

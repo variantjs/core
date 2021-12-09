@@ -1,5 +1,5 @@
 /* Thai locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Thai: CustomDateLocale = {
   weekdays: {
@@ -43,6 +43,6 @@ export const Thai: CustomDateLocale = {
   time24hr: true,
 
   ordinal: () => '',
-}
+};
 
-export default Thai
+export default Thai;

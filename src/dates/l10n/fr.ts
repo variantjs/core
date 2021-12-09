@@ -1,5 +1,5 @@
 /* French locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const French: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -41,13 +41,13 @@ export const French: CustomDateLocale = {
   },
 
   ordinal: (nth) => {
-    if (nth > 1) return ''
+    if (nth > 1) return '';
 
-    return 'er'
+    return 'er';
   },
   rangeSeparator: ' au ',
   weekAbbreviation: 'Sem',
   time24hr: true,
-}
+};
 
-export default French
+export default French;

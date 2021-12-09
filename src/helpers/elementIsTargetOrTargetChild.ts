@@ -1,12 +1,12 @@
 const elementIsTargetOrTargetChild = (
   target: EventTarget | null,
-  wrapper: HTMLElement
+  wrapper: HTMLElement,
 ): boolean => {
   if (!(target instanceof Element)) {
-    return false
+    return false;
   }
 
-  return wrapper.contains(target)
-}
+  return wrapper.contains(target);
+};
 
-export default elementIsTargetOrTargetChild
+export default elementIsTargetOrTargetChild;

@@ -1,5 +1,5 @@
 /* Czech locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Czech: CustomDateLocale = {
   weekdays: {
@@ -25,13 +25,13 @@ export const Czech: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return '.'
+    return '.';
   },
   rangeSeparator: ' do ',
   weekAbbreviation: 'Týd.',
   amPM: ['dop.', 'odp.'],
   yearAriaLabel: 'Rok',
   time24hr: true,
-}
+};
 
-export default Czech
+export default Czech;

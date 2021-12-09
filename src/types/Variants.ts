@@ -1,4 +1,4 @@
-import { CSSClass, CSSClassesList } from './CSSClass'
+import { CSSClass, CSSClassesList } from './CSSClass';
 
 export type WithVariantProps<P> = {
   classes?: CSSClass
@@ -6,7 +6,7 @@ export type WithVariantProps<P> = {
   variants?: Variants<P>
   variant?: string
   class?: string
-} & P
+} & P;
 
 export interface Variants<P> {
   [key: string]: WithVariantProps<P> | undefined
@@ -14,15 +14,15 @@ export interface Variants<P> {
 
 export type ObjectWithClassName = {
   class?: string
-}
+};
 
 export type ObjectWithClassesList = ObjectWithClassName & {
   classesList?: CSSClassesList
-}
+};
 
 export type WithVariantPropsAndClassesList<P, ClassesKeys extends string> = WithVariantProps<P> & {
   classesList?: CSSClassesList<ClassesKeys>
-}
+};
 export interface VariantsWithClassesList<P, ClassesKeys extends string> {
   [key: string]: WithVariantPropsAndClassesList<P, ClassesKeys> | undefined
 }

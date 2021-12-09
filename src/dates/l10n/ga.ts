@@ -1,5 +1,5 @@
 /* Gaelic Irish locale for flatpickr */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Irish: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -35,6 +35,6 @@ export const Irish: CustomDateLocale = {
     ],
   },
   time24hr: true,
-}
+};
 
-export default Irish
+export default Irish;

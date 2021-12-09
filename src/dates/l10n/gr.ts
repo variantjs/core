@@ -1,5 +1,5 @@
 /* Greek locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Greek: CustomDateLocale = {
   weekdays: {
@@ -28,13 +28,13 @@ export const Greek: CustomDateLocale = {
   firstDayOfWeek: 1,
 
   ordinal() {
-    return ''
+    return '';
   },
 
   weekAbbreviation: 'Εβδ',
   rangeSeparator: ' έως ',
 
   amPM: ['ΠΜ', 'ΜΜ'],
-}
+};
 
-export default Greek
+export default Greek;

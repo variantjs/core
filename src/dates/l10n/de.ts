@@ -1,5 +1,5 @@
 /* German locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const German: CustomDateLocale = {
   weekdays: {
@@ -29,6 +29,6 @@ export const German: CustomDateLocale = {
   weekAbbreviation: 'KW',
   rangeSeparator: ' bis ',
   time24hr: true,
-}
+};
 
-export default German
+export default German;

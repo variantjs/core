@@ -1,5 +1,5 @@
 /* Macedonian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Macedonian: CustomDateLocale = {
   weekdays: {
@@ -29,6 +29,6 @@ export const Macedonian: CustomDateLocale = {
   weekAbbreviation: 'Нед.',
   rangeSeparator: ' до ',
   time24hr: true,
-}
+};
 
-export default Macedonian
+export default Macedonian;

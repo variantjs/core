@@ -1,4 +1,3 @@
-const getLastDayOfPrevMonth = (fromDate: Date): Date =>
-  new Date(fromDate.getFullYear(), fromDate.getMonth(), 0)
+const getLastDayOfPrevMonth = (fromDate: Date): Date => new Date(fromDate.getFullYear(), fromDate.getMonth(), 0);
 
-export default getLastDayOfPrevMonth
+export default getLastDayOfPrevMonth;

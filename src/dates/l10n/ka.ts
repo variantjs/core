@@ -1,5 +1,5 @@
 /* Georgian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Georgian: CustomDateLocale = {
   weekdays: {
@@ -25,13 +25,13 @@ export const Georgian: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return ''
+    return '';
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'კვ.',
   amPM: ['AM', 'PM'],
   yearAriaLabel: 'წელი',
   time24hr: true,
-}
+};
 
-export default Georgian
+export default Georgian;

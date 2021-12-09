@@ -1,5 +1,5 @@
 /* Danish locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Danish: CustomDateLocale = {
   weekdays: {
@@ -31,6 +31,6 @@ export const Danish: CustomDateLocale = {
   rangeSeparator: ' til ',
   weekAbbreviation: 'uge',
   time24hr: true,
-}
+};
 
-export default Danish
+export default Danish;

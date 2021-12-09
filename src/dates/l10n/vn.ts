@@ -1,5 +1,5 @@
 /* Vietnamese locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Vietnamese: CustomDateLocale = {
   weekdays: {
@@ -40,6 +40,6 @@ export const Vietnamese: CustomDateLocale = {
 
   firstDayOfWeek: 1,
   rangeSeparator: ' đến ',
-}
+};
 
-export default Vietnamese
+export default Vietnamese;

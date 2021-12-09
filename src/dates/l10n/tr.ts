@@ -1,5 +1,5 @@
 /* Turkish locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Turkish: CustomDateLocale = {
   weekdays: {
@@ -30,6 +30,6 @@ export const Turkish: CustomDateLocale = {
   weekAbbreviation: 'Hf',
   amPM: ['ÖÖ', 'ÖS'],
   time24hr: true,
-}
+};
 
-export default Turkish
+export default Turkish;

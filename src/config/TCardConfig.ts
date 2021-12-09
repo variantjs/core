@@ -9,10 +9,10 @@ export const TCardConfig = {
     // @tw
     footer: 'p-3 border-t border-gray-100 rounded-b',
   },
-}
+};
 
-export const TCardClassesKeys = Object.keys(TCardConfig.classes)
+export const TCardClassesKeys = Object.keys(TCardConfig.classes);
 
-export type TCardClassesValidKeys = keyof typeof TCardConfig.classes
+export type TCardClassesValidKeys = keyof typeof TCardConfig.classes;
 
-export default TCardConfig
+export default TCardConfig;

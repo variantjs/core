@@ -1,22 +1,22 @@
-import clone from '../helpers/clone'
+import clone from '../helpers/clone';
 
 describe('clone', () => {
   it('clones an array', () => {
-    const arr = [1, 2, 3]
-    expect(clone(arr)).toEqual(arr)
-  })
+    const arr = [1, 2, 3];
+    expect(clone(arr)).toEqual(arr);
+  });
 
   it('clones a date', () => {
-    const originalDate = new Date(2020, 3, 15, 11, 30, 59)
-    const date = new Date(2020, 3, 15, 11, 30, 59)
-    expect(clone(date)).toEqual(originalDate)
-    expect(date).toEqual(originalDate)
-  })
+    const originalDate = new Date(2020, 3, 15, 11, 30, 59);
+    const date = new Date(2020, 3, 15, 11, 30, 59);
+    expect(clone(date)).toEqual(originalDate);
+    expect(date).toEqual(originalDate);
+  });
 
   it('clones an array with mixed values', () => {
-    const arr = [1, '2', null, '', { a: 1 }]
-    expect(clone(arr)).toEqual(arr)
-  })
+    const arr = [1, '2', null, '', { a: 1 }];
+    expect(clone(arr)).toEqual(arr);
+  });
 
   it('clones an object with mixed values', () => {
     const obj = {
@@ -25,9 +25,9 @@ describe('clone', () => {
       'some-propery': 'some-value',
       'other-value': undefined,
       oneMore: null,
-    }
-    expect(clone(obj)).toEqual(obj)
-  })
+    };
+    expect(clone(obj)).toEqual(obj);
+  });
 
   it('makes a deep clone', () => {
     const obj = [
@@ -43,8 +43,8 @@ describe('clone', () => {
       null,
       [],
       { a: 1, b: 2, c: 3 },
-    ]
+    ];
 
-    expect(clone(obj)).toEqual(obj)
-  })
-})
+    expect(clone(obj)).toEqual(obj);
+  });
+});

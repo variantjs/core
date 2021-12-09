@@ -1,37 +1,37 @@
-import { normalizeOptions } from '../index'
-import { InputOptions, NormalizedOptions } from '../types'
+import { normalizeOptions } from '../index';
+import { InputOptions, NormalizedOptions } from '../types';
 
 describe('options as strings', () => {
   it('returns an empty array if no value', () => {
-    expect(normalizeOptions()).toEqual([])
-  })
+    expect(normalizeOptions()).toEqual([]);
+  });
 
   it('accepts the options as array of strings', () => {
-    const options: InputOptions = ['Option A', 'Option B', 'Option C']
+    const options: InputOptions = ['Option A', 'Option B', 'Option C'];
 
     const expectedOptions: NormalizedOptions = [
       { value: 'Option A', text: 'Option A', raw: 'Option A' },
       { value: 'Option B', text: 'Option B', raw: 'Option B' },
       { value: 'Option C', text: 'Option C', raw: 'Option C' },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
-})
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
+});
 
 describe('options as numbers', () => {
   it('accepts the options as array of numbers', () => {
-    const options: InputOptions = [1, 2, 5]
+    const options: InputOptions = [1, 2, 5];
 
     const expectedOptions: NormalizedOptions = [
       { value: 1, text: 1, raw: 1 },
       { value: 2, text: 2, raw: 2 },
       { value: 5, text: 5, raw: 5 },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
-})
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
+});
 
 describe('options as key => value pair', () => {
   it('accepts the options as key => value pair', () => {
@@ -39,17 +39,17 @@ describe('options as key => value pair', () => {
       1: 'Option 1',
       A: 'Option A',
       'Option 3': 'Option 3',
-    }
+    };
 
     const expectedOptions: NormalizedOptions = [
       { value: '1', text: 'Option 1' },
       { value: 'A', text: 'Option A' },
       { value: 'Option 3', text: 'Option 3' },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
-})
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
+});
 
 describe('options as array of objects', () => {
   it('accepts the options on the default format', () => {
@@ -57,23 +57,23 @@ describe('options as array of objects', () => {
       { value: 1, text: 'Option 1' },
       { value: 'A', text: 'Option A' },
       { value: 'Option 3', text: 'Option 3' },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       { value: 1, text: 'Option 1', raw: { value: 1, text: 'Option 1' } },
       { value: 'A', text: 'Option A', raw: { value: 'A', text: 'Option A' } },
       { value: 'Option 3', text: 'Option 3', raw: { value: 'Option 3', text: 'Option 3' } },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
 
   it('handles the disabled attribute', () => {
     const options: InputOptions = [
       { value: '1', text: 'Option 1' },
       { value: 'A', text: 'Option A', disabled: true },
       { value: 'Option 3', text: 'Option 3', disabled: false },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       { value: '1', text: 'Option 1', raw: { value: '1', text: 'Option 1' } },
@@ -88,11 +88,11 @@ describe('options as array of objects', () => {
         text: 'Option 3',
         raw: { value: 'Option 3', text: 'Option 3', disabled: false },
       },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
-})
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
+});
 
 describe('options with children', () => {
   it('handles the children in default format', () => {
@@ -105,7 +105,7 @@ describe('options with children', () => {
           { value: 2, text: 'Children 2' },
         ],
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -117,10 +117,10 @@ describe('options with children', () => {
         ],
         raw: options[0],
       },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
 
   it('handles the children as arrays of strings', () => {
     const options = [
@@ -129,7 +129,7 @@ describe('options with children', () => {
         text: 'Option A',
         children: ['Children 1', 'Children 2'],
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -141,10 +141,10 @@ describe('options with children', () => {
         ],
         raw: options[0],
       },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
 
   it('handles the children as arrays of numbers', () => {
     const options = [
@@ -153,7 +153,7 @@ describe('options with children', () => {
         text: 'Option A',
         children: [1, 2, 3],
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -166,10 +166,10 @@ describe('options with children', () => {
         ],
         raw: options[0],
       },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
 
   it('handles the children as value => key pair', () => {
     const options = [
@@ -181,7 +181,7 @@ describe('options with children', () => {
           A: 'Option A',
         },
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -193,11 +193,11 @@ describe('options with children', () => {
         ],
         raw: options[0],
       },
-    ]
+    ];
 
-    expect(normalizeOptions(options)).toEqual(expectedOptions)
-  })
-})
+    expect(normalizeOptions(options)).toEqual(expectedOptions);
+  });
+});
 
 describe('guess option and values', () => {
   it('get the text with the `textAttribute` param', () => {
@@ -210,7 +210,7 @@ describe('guess option and values', () => {
         value: 'B',
         label: 'Option B',
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -223,10 +223,10 @@ describe('guess option and values', () => {
         text: 'Option B',
         raw: options[1],
       },
-    ]
+    ];
 
-    expect(normalizeOptions(options, 'label')).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options, 'label')).toEqual(expectedOptions);
+  });
 
   it('get the text with the `textAttribute` param using dot notation', () => {
     const options = [
@@ -250,7 +250,7 @@ describe('guess option and values', () => {
           },
         },
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -263,12 +263,12 @@ describe('guess option and values', () => {
         text: 'User',
         raw: options[1],
       },
-    ]
+    ];
 
-    const textAttribute = 'user.role.label'
+    const textAttribute = 'user.role.label';
 
-    expect(normalizeOptions(options, textAttribute)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options, textAttribute)).toEqual(expectedOptions);
+  });
 
   it('returns an empty string if the `textAttribute` param doesnt exist', () => {
     const options = [
@@ -284,7 +284,7 @@ describe('guess option and values', () => {
           name: 'Sauda',
         },
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -297,12 +297,12 @@ describe('guess option and values', () => {
         text: '',
         raw: options[1],
       },
-    ]
+    ];
 
-    const textAttribute = 'user.role.label'
+    const textAttribute = 'user.role.label';
 
-    expect(normalizeOptions(options, textAttribute)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options, textAttribute)).toEqual(expectedOptions);
+  });
 
   it('returns the text as an string if the text attribute is not `number` or `string`', () => {
     const options = [
@@ -326,7 +326,7 @@ describe('guess option and values', () => {
           },
         },
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -339,12 +339,12 @@ describe('guess option and values', () => {
         text: '[object Object]',
         raw: options[1],
       },
-    ]
+    ];
 
-    const textAttribute = 'user.role.label'
+    const textAttribute = 'user.role.label';
 
-    expect(normalizeOptions(options, textAttribute)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options, textAttribute)).toEqual(expectedOptions);
+  });
 
   it('get the value with the `valueAttribute` param', () => {
     const options = [
@@ -356,7 +356,7 @@ describe('guess option and values', () => {
         id: 'B',
         text: 'Option B',
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -369,10 +369,10 @@ describe('guess option and values', () => {
         text: 'Option B',
         raw: options[1],
       },
-    ]
+    ];
 
-    expect(normalizeOptions(options, undefined, 'id')).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options, undefined, 'id')).toEqual(expectedOptions);
+  });
 
   it('get the value with the `valueAttribute` param using dot notation', () => {
     const options = [
@@ -396,7 +396,7 @@ describe('guess option and values', () => {
           },
         },
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -409,12 +409,12 @@ describe('guess option and values', () => {
         text: 'B',
         raw: options[1],
       },
-    ]
+    ];
 
-    const valueAttribute = 'user.role.id'
+    const valueAttribute = 'user.role.id';
 
-    expect(normalizeOptions(options, undefined, valueAttribute)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options, undefined, valueAttribute)).toEqual(expectedOptions);
+  });
 
   it('returns an `undefined` if the `valueAttribute` param doesnt exist', () => {
     const options = [
@@ -430,7 +430,7 @@ describe('guess option and values', () => {
           role: 'user',
         },
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -443,12 +443,12 @@ describe('guess option and values', () => {
         text: 'Saida',
         raw: options[1],
       },
-    ]
+    ];
 
-    const valueAttribute = 'user.role.id'
+    const valueAttribute = 'user.role.id';
 
-    expect(normalizeOptions(options, undefined, valueAttribute)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options, undefined, valueAttribute)).toEqual(expectedOptions);
+  });
 
   it('returns `null` as value if the `valueAttribute` param is `null`', () => {
     const options = [
@@ -466,7 +466,7 @@ describe('guess option and values', () => {
           role: 'user',
         },
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -479,12 +479,12 @@ describe('guess option and values', () => {
         text: 'Saida',
         raw: options[1],
       },
-    ]
+    ];
 
-    const valueAttribute = 'user.id'
+    const valueAttribute = 'user.id';
 
-    expect(normalizeOptions(options, undefined, valueAttribute)).toEqual(expectedOptions)
-  })
+    expect(normalizeOptions(options, undefined, valueAttribute)).toEqual(expectedOptions);
+  });
 
   it('returns the value as an string if the value attribute is not `number` or `string`', () => {
     const options = [
@@ -508,7 +508,7 @@ describe('guess option and values', () => {
           },
         },
       },
-    ]
+    ];
 
     const expectedOptions: NormalizedOptions = [
       {
@@ -521,10 +521,10 @@ describe('guess option and values', () => {
         value: '[object Object]',
         raw: options[1],
       },
-    ]
+    ];
 
-    const valueAttribute = 'user.role.label'
+    const valueAttribute = 'user.role.label';
 
-    expect(normalizeOptions(options, undefined, valueAttribute)).toEqual(expectedOptions)
-  })
-})
+    expect(normalizeOptions(options, undefined, valueAttribute)).toEqual(expectedOptions);
+  });
+});

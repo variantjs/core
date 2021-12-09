@@ -49,10 +49,10 @@ const TToggleConfig = {
     // @tw
     uncheckedPlaceholder: '',
   },
-}
+};
 
-export const TToggleClassesKeys = Object.keys(TToggleConfig.classes)
+export const TToggleClassesKeys = Object.keys(TToggleConfig.classes);
 
-export type TToggleClassesValidKeys = keyof typeof TToggleConfig.classes
+export type TToggleClassesValidKeys = keyof typeof TToggleConfig.classes;
 
-export default TToggleConfig
+export default TToggleConfig;

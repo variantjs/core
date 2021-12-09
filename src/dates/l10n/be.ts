@@ -1,5 +1,5 @@
 /* Belarusian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Belarusian: CustomDateLocale = {
   weekdays: {
@@ -25,13 +25,13 @@ export const Belarusian: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return ''
+    return '';
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'Тыд.',
   amPM: ['ДП', 'ПП'],
   yearAriaLabel: 'Год',
   time24hr: true,
-}
+};
 
-export default Belarusian
+export default Belarusian;

@@ -1,4 +1,4 @@
-import { enterAndLeave } from './transitions'
+import { enterAndLeave } from './transitions';
 
 const TRichSelectConfig = {
   classes: {
@@ -102,10 +102,10 @@ const TRichSelectConfig = {
 
     ...enterAndLeave,
   },
-}
+};
 
-export const TRichSelectClassesKeys = Object.keys(TRichSelectConfig.classes)
+export const TRichSelectClassesKeys = Object.keys(TRichSelectConfig.classes);
 
-export type TRichSelectClassesValidKeys = keyof typeof TRichSelectConfig.classes
+export type TRichSelectClassesValidKeys = keyof typeof TRichSelectConfig.classes;
 
-export default TRichSelectConfig
+export default TRichSelectConfig;

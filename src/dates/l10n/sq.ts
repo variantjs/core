@@ -1,5 +1,5 @@
 /* Albanian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Albanian: CustomDateLocale = {
   weekdays: {
@@ -25,6 +25,6 @@ export const Albanian: CustomDateLocale = {
     ],
   },
   time24hr: true,
-}
+};
 
-export default Albanian
+export default Albanian;

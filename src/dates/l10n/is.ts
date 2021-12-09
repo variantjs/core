@@ -1,5 +1,5 @@
 /* Icelandic locale for flatpickr */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Icelandic: CustomDateLocale = {
   weekdays: {
@@ -40,6 +40,6 @@ export const Icelandic: CustomDateLocale = {
   weekAbbreviation: 'vika',
   yearAriaLabel: 'Ár',
   time24hr: true,
-}
+};
 
-export default Icelandic
+export default Icelandic;

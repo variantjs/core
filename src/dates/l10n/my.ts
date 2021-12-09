@@ -1,5 +1,5 @@
 /* Burmese locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Burmese: CustomDateLocale = {
   weekdays: {
@@ -42,6 +42,6 @@ export const Burmese: CustomDateLocale = {
 
   ordinal: () => '',
   time24hr: true,
-}
+};
 
-export default Burmese
+export default Burmese;

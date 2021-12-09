@@ -1,5 +1,5 @@
 /* Bosnian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Bosnian: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -27,6 +27,6 @@ export const Bosnian: CustomDateLocale = {
     ],
   },
   time24hr: true,
-}
+};
 
-export default Bosnian
+export default Bosnian;

@@ -175,10 +175,10 @@ const TDatepickerConfig = {
       'flex items-center justify-center w-6 h-6 text-xs text-gray-500 rounded-sm',
     // ...enterAndLeave,
   },
-}
+};
 
-export const TDatepickerClassesKeys = Object.keys(TDatepickerConfig.classes)
+export const TDatepickerClassesKeys = Object.keys(TDatepickerConfig.classes);
 
-export type TDatepickerClassesValidKeys = keyof typeof TDatepickerConfig.classes
+export type TDatepickerClassesValidKeys = keyof typeof TDatepickerConfig.classes;
 
-export default TDatepickerConfig
+export default TDatepickerConfig;

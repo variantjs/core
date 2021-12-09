@@ -1,5 +1,5 @@
 /* Mandarin locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const MandarinTraditional: CustomDateLocale = {
   weekdays: {
@@ -38,6 +38,6 @@ export const MandarinTraditional: CustomDateLocale = {
   },
   rangeSeparator: ' 至 ',
   weekAbbreviation: '週',
-}
+};
 
-export default MandarinTraditional
+export default MandarinTraditional;

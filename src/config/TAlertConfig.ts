@@ -1,4 +1,4 @@
-import { enterAndLeave } from './transitions'
+import { enterAndLeave } from './transitions';
 
 const TAlertConfig = {
   classes: {
@@ -14,10 +14,10 @@ const TAlertConfig = {
     closeIcon: 'w-4 h-4',
     ...enterAndLeave,
   },
-}
+};
 
-export const TAlertClassesKeys = Object.keys(TAlertConfig.classes)
+export const TAlertClassesKeys = Object.keys(TAlertConfig.classes);
 
-export type TAlertClassesValidKeys = keyof typeof TAlertConfig.classes
+export type TAlertClassesValidKeys = keyof typeof TAlertConfig.classes;
 
-export default TAlertConfig
+export default TAlertConfig;

@@ -1,5 +1,5 @@
 /* Republic of Korea locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Korean: CustomDateLocale = {
   weekdays: {
@@ -41,6 +41,6 @@ export const Korean: CustomDateLocale = {
   ordinal: () => '일',
 
   rangeSeparator: ' ~ ',
-}
+};
 
-export default Korean
+export default Korean;

@@ -1,4 +1,4 @@
-import * as config from '../config/index'
+import * as config from '../config/index';
 
 it('exports all the configs and keys', () => {
   const keys = [
@@ -36,12 +36,12 @@ it('exports all the configs and keys', () => {
     'TWrappedRadioClassesKeys',
     'TWrappedCheckboxConfig',
     'TWrappedCheckboxClassesKeys',
-  ]
+  ];
 
-  expect(Object.keys(config)).toEqual(keys)
+  expect(Object.keys(config)).toEqual(keys);
 
   keys.forEach((key) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    expect((config as any)[key]).toBeTruthy()
-  })
-})
+    expect((config as any)[key]).toBeTruthy();
+  });
+});

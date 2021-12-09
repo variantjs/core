@@ -1,5 +1,5 @@
 /* Ukrainian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Ukrainian: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -27,6 +27,6 @@ export const Ukrainian: CustomDateLocale = {
     ],
   },
   time24hr: true,
-}
+};
 
-export default Ukrainian
+export default Ukrainian;

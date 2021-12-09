@@ -1,5 +1,5 @@
 /* Japanese locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Japanese: CustomDateLocale = {
   weekdays: {
@@ -40,6 +40,6 @@ export const Japanese: CustomDateLocale = {
   time24hr: true,
   rangeSeparator: ' から ',
   firstDayOfWeek: 1,
-}
+};
 
-export default Japanese
+export default Japanese;

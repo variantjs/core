@@ -1,5 +1,5 @@
 /* Lithuanian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Lithuanian: CustomDateLocale = {
   weekdays: {
@@ -36,11 +36,11 @@ export const Lithuanian: CustomDateLocale = {
   firstDayOfWeek: 1,
 
   ordinal() {
-    return '-a'
+    return '-a';
   },
   rangeSeparator: ' iki ',
   weekAbbreviation: 'Sav',
   time24hr: true,
-}
+};
 
-export default Lithuanian
+export default Lithuanian;

@@ -1,5 +1,5 @@
 /* Bulgarian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Bulgarian: CustomDateLocale = {
   weekdays: {
@@ -39,6 +39,6 @@ export const Bulgarian: CustomDateLocale = {
   },
   time24hr: true,
   firstDayOfWeek: 1,
-}
+};
 
-export default Bulgarian
+export default Bulgarian;

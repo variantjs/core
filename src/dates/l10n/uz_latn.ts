@@ -1,5 +1,5 @@
 /* Uzbek locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const UzbekLatin: CustomDateLocale = {
   weekdays: {
@@ -38,13 +38,13 @@ export const UzbekLatin: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return ''
+    return '';
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'Hafta',
   amPM: ['AM', 'PM'],
   yearAriaLabel: 'Yil',
   time24hr: true,
-}
+};
 
-export default UzbekLatin
+export default UzbekLatin;

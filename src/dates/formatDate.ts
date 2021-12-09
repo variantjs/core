@@ -1,13 +1,12 @@
-import { DateLocale, TokenFormattingFunctions, DateToken } from '../types/Dates'
+import { DateLocale, TokenFormattingFunctions, DateToken } from '../types/Dates';
 
-import { English } from './l10n/default'
+import { English } from './l10n/default';
 
-const boolToInt = (bool: boolean): 1 | 0 => (bool === true ? 1 : 0)
+const boolToInt = (bool: boolean): 1 | 0 => (bool === true ? 1 : 0);
 
-const pad = (number: string | number, length = 2): string => `000${number}`.slice(length * -1)
+const pad = (number: string | number, length = 2): string => `000${number}`.slice(length * -1);
 
-const monthToString = (monthNumber: number, shorthand: boolean, locale: DateLocale): string =>
-  locale.months[shorthand ? 'shorthand' : 'longhand'][monthNumber]
+const monthToString = (monthNumber: number, shorthand: boolean, locale: DateLocale): string => locale.months[shorthand ? 'shorthand' : 'longhand'][monthNumber];
 
 export const tokenFormatingFunctions: TokenFormattingFunctions = {
   // get the date in UTC
@@ -15,17 +14,17 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
 
   // weekday name, short, e.g. Thu
   D(date: Date, locale: DateLocale) {
-    return locale.weekdays.shorthand[tokenFormatingFunctions.w(date, locale) as number]
+    return locale.weekdays.shorthand[tokenFormatingFunctions.w(date, locale) as number];
   },
 
   // full month name e.g. January
   F(date: Date, locale: DateLocale) {
-    return monthToString((tokenFormatingFunctions.n(date, locale) as number) - 1, false, locale)
+    return monthToString((tokenFormatingFunctions.n(date, locale) as number) - 1, false, locale);
   },
 
   // padded hour 1-12
   G(date: Date, locale: DateLocale) {
-    return pad(tokenFormatingFunctions.h(date, locale))
+    return pad(tokenFormatingFunctions.h(date, locale));
   },
 
   // hours with leading zero e.g. 03
@@ -33,7 +32,7 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
 
   // day (1-30) with ordinal suffix e.g. 1st, 2nd
   J(date: Date, locale: DateLocale) {
-    return date.getDate() + locale.ordinal(date.getDate())
+    return date.getDate() + locale.ordinal(date.getDate());
   },
 
   // AM/PM
@@ -41,7 +40,7 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
 
   // shorthand month e.g. Jan, Sep, Oct, etc
   M(date: Date, locale: DateLocale) {
-    return monthToString(date.getMonth(), true, locale)
+    return monthToString(date.getMonth(), true, locale);
   },
 
   // seconds 00-59
@@ -52,22 +51,22 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
 
   W(givenDate: Date) {
     // return options.getWeek(date);
-    const date = new Date(givenDate.getTime())
-    date.setHours(0, 0, 0, 0)
+    const date = new Date(givenDate.getTime());
+    date.setHours(0, 0, 0, 0);
 
     // Thursday in current week decides the year.
-    date.setDate(date.getDate() + 3 - ((date.getDay() + 6) % 7))
+    date.setDate(date.getDate() + 3 - ((date.getDay() + 6) % 7));
 
     // January 4 is always in week 1.
-    const week1 = new Date(date.getFullYear(), 0, 4)
+    const week1 = new Date(date.getFullYear(), 0, 4);
 
     // Adjust to Thursday in week 1 and count number of weeks from date to week1.
     return (
-      1 +
-      Math.round(
-        ((date.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7
+      1
+      + Math.round(
+        ((date.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7,
       )
-    )
+    );
   },
 
   // full year e.g. 2016, padded (0001-9999)
@@ -87,7 +86,7 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
 
   // weekday name, full, e.g. Thursday
   l(date: Date, locale: DateLocale) {
-    return locale.weekdays.longhand[date.getDay()]
+    return locale.weekdays.longhand[date.getDay()];
   },
 
   // padded month number (01-12)
@@ -104,31 +103,31 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
 
   // last two digits of year e.g. 16 for 2016
   y: (date: Date) => String(date.getFullYear()).substring(2),
-}
+};
 
 const formatDate = (
   date: Date | null | undefined,
   format: string,
-  customLocale?: DateLocale
+  customLocale?: DateLocale,
 ): string => {
   if (!date) {
-    return ''
+    return '';
   }
 
-  const locale = customLocale || English
+  const locale = customLocale || English;
 
   return format
     .split('')
     .map((char, i, arr) => {
       if (tokenFormatingFunctions[char as DateToken] && arr[i - 1] !== '\\') {
-        return tokenFormatingFunctions[char as DateToken](date, locale)
+        return tokenFormatingFunctions[char as DateToken](date, locale);
       }
       if (char !== '\\') {
-        return char
+        return char;
       }
-      return ''
+      return '';
     })
-    .join('')
-}
+    .join('');
+};
 
-export default formatDate
+export default formatDate;

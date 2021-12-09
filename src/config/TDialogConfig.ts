@@ -1,13 +1,13 @@
-import { PromiseRejectFn, Data } from '../types/Misc'
-import TInputConfig from './TInputConfig'
+import { PromiseRejectFn, Data } from '../types/Misc';
+import TInputConfig from './TInputConfig';
 // eslint-disable-next-line import/no-named-as-default
-import TModalConfig from './TModalConfig'
+import TModalConfig from './TModalConfig';
 
 const {
   overlay: fixedOverlay,
   wrapper: fixedWrapper,
   modal: fixedDialog,
-} = TModalConfig.fixedClasses
+} = TModalConfig.fixedClasses;
 
 const {
   overlay,
@@ -27,7 +27,7 @@ const {
   leaveActiveClass,
   leaveFromClass,
   leaveToClass,
-} = TModalConfig.classes
+} = TModalConfig.classes;
 
 const TDialogConfig = {
   fixedClasses: {
@@ -98,7 +98,7 @@ const TDialogConfig = {
     overlayLeaveFromClass,
     overlayLeaveToClass,
   },
-}
+};
 
 export enum DialogType {
   Alert = 'alert',
@@ -134,38 +134,38 @@ export type DialogResponse = {
   input?: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response?: any
-}
+};
 
-export type DialogShowFn = (name: string) => Promise<DialogResponse>
+export type DialogShowFn = (name: string) => Promise<DialogResponse>;
 
 export type DialogProgramaticallyShowFn = <Options extends Data>(
   titleOrDialogOptions: Options | string,
   text?: string,
   icon?: string
-) => Promise<DialogResponse>
+) => Promise<DialogResponse>;
 
-export type DialogHideFn = (name: string) => void
+export type DialogHideFn = (name: string) => void;
 
 export type DialogBeforeHideParams = {
   cancel: PromiseRejectFn
   response?: DialogResponse
-}
+};
 
 export type DialogBeforeShowParams = {
   cancel: PromiseRejectFn
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   params?: any
-}
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type DialogInputValidatorFn = (value: any) => string | Promise<string> | null | undefined
+export type DialogInputValidatorFn = (value: any) => string | Promise<string> | null | undefined;
 
 // @TODO: see if was can get use a more specific typing
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type DialogPreconfirmFn = (input: any) => Promise<any> | any
+export type DialogPreconfirmFn = (input: any) => Promise<any> | any;
 
-export const TDialogClassesKeys = Object.keys(TDialogConfig.classes)
+export const TDialogClassesKeys = Object.keys(TDialogConfig.classes);
 
-export type TDialogClassesValidKeys = keyof typeof TDialogConfig.classes
+export type TDialogClassesValidKeys = keyof typeof TDialogConfig.classes;
 
-export default TDialogConfig
+export default TDialogConfig;

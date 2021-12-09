@@ -1,5 +1,5 @@
 /* Farsi (Persian) locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Persian: CustomDateLocale = {
   weekdays: {
@@ -39,6 +39,6 @@ export const Persian: CustomDateLocale = {
   },
   firstDayOfWeek: 6,
   ordinal: () => '',
-}
+};
 
-export default Persian
+export default Persian;

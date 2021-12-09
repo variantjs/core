@@ -1,5 +1,5 @@
 /* Slovenian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Slovenian: CustomDateLocale = {
   weekdays: {
@@ -29,8 +29,8 @@ export const Slovenian: CustomDateLocale = {
   rangeSeparator: ' do ',
   time24hr: true,
   ordinal() {
-    return '.'
+    return '.';
   },
-}
+};
 
-export default Slovenian
+export default Slovenian;

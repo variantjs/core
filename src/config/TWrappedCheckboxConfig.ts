@@ -1,5 +1,5 @@
-import { CSSClass } from '../types'
-import TCheckboxConfig from './TCheckboxConfig'
+import { CSSClass } from '../types';
+import TCheckboxConfig from './TCheckboxConfig';
 
 export const TWrappedCheckboxClassesKeys = [
   'wrapper',
@@ -9,7 +9,7 @@ export const TWrappedCheckboxClassesKeys = [
   'input',
   'label',
   'labelChecked',
-]
+];
 
 export type TWrappedCheckboxClassesValidKeys =
   | 'wrapper'
@@ -18,7 +18,7 @@ export type TWrappedCheckboxClassesValidKeys =
   | 'inputWrapperChecked'
   | 'input'
   | 'label'
-  | 'labelChecked'
+  | 'labelChecked';
 
 export const TWrappedCheckboxConfig: {
   classes: {
@@ -31,6 +31,6 @@ export const TWrappedCheckboxConfig: {
     label: '',
     input: TCheckboxConfig.classes,
   },
-}
+};
 
-export default TWrappedCheckboxConfig
+export default TWrappedCheckboxConfig;

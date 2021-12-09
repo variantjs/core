@@ -1,5 +1,5 @@
 /* Hungarian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Hungarian: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -41,12 +41,12 @@ export const Hungarian: CustomDateLocale = {
   },
 
   ordinal() {
-    return '.'
+    return '.';
   },
 
   weekAbbreviation: 'Hét',
   rangeSeparator: ' - ',
   time24hr: true,
-}
+};
 
-export default Hungarian
+export default Hungarian;

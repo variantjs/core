@@ -1,5 +1,5 @@
 /* Serbian Cyrillic locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const SerbianCyrillic: CustomDateLocale = {
   weekdays: {
@@ -28,6 +28,6 @@ export const SerbianCyrillic: CustomDateLocale = {
   firstDayOfWeek: 1,
   weekAbbreviation: 'Нед.',
   rangeSeparator: ' до ',
-}
+};
 
-export default SerbianCyrillic
+export default SerbianCyrillic;

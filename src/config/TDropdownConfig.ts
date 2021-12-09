@@ -1,5 +1,5 @@
-import TButtonConfig from './TButtonConfig'
-import { enterAndLeave } from './transitions'
+import TButtonConfig from './TButtonConfig';
+import { enterAndLeave } from './transitions';
 
 const TDropdownConfig = {
   classes: {
@@ -8,11 +8,11 @@ const TDropdownConfig = {
     dropdown: 'w-56 bg-white rounded shadow',
     ...enterAndLeave,
   },
-}
+};
 
-export const TDropdownClassesKeys = Object.keys(TDropdownConfig.classes)
+export const TDropdownClassesKeys = Object.keys(TDropdownConfig.classes);
 
-export type TDropdownClassesValidKeys = keyof typeof TDropdownConfig.classes
+export type TDropdownClassesValidKeys = keyof typeof TDropdownConfig.classes;
 
 export const TDropdownPopperDefaultOptions = {
   placement: 'bottom',
@@ -26,6 +26,6 @@ export const TDropdownPopperDefaultOptions = {
   ],
   strategy: 'absolute',
   onFirstUpdate: undefined,
-}
+};
 
-export default TDropdownConfig
+export default TDropdownConfig;

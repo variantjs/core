@@ -1,5 +1,5 @@
 /* Esperanto locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates'
+import { CustomDateLocale } from '../../types/Dates';
 
 export const Esperanto: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -32,6 +32,6 @@ export const Esperanto: CustomDateLocale = {
 
   ordinal: () => '-a',
   time24hr: true,
-}
+};
 
-export default Esperanto
+export default Esperanto;
