@@ -1,18 +1,10 @@
 /* Catalan locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Catalan: CustomDateLocale = {
   weekdays: {
     shorthand: ['Dg', 'Dl', 'Dt', 'Dc', 'Dj', 'Dv', 'Ds'],
-    longhand: [
-      'Diumenge',
-      'Dilluns',
-      'Dimarts',
-      'Dimecres',
-      'Dijous',
-      'Divendres',
-      'Dissabte',
-    ],
+    longhand: ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
   },
 
   months: {
@@ -47,24 +39,24 @@ export const Catalan: CustomDateLocale = {
   },
 
   ordinal: (nth) => {
-    const s = nth % 100;
-    if (s > 3 && s < 21) return 'è';
+    const s = nth % 100
+    if (s > 3 && s < 21) return 'è'
     switch (s % 10) {
       case 1:
-        return 'r';
+        return 'r'
       case 2:
-        return 'n';
+        return 'n'
       case 3:
-        return 'r';
+        return 'r'
       case 4:
-        return 't';
+        return 't'
       default:
-        return 'è';
+        return 'è'
     }
   },
 
   firstDayOfWeek: 1,
   time24hr: true,
-};
+}
 
-export default Catalan;
+export default Catalan

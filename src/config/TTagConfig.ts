@@ -1,6 +1,6 @@
 const TTagConfig = {
   // @tw
   classes: '',
-};
+}
 
-export default TTagConfig;
+export default TTagConfig

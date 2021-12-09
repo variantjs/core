@@ -1,5 +1,5 @@
 /* Faroese locale for flatpickr */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Faroese: CustomDateLocale = {
   weekdays: {
@@ -16,20 +16,7 @@ export const Faroese: CustomDateLocale = {
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Mai',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Des',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
     longhand: [
       'Januar',
       'Februar',
@@ -53,6 +40,6 @@ export const Faroese: CustomDateLocale = {
   weekAbbreviation: 'vika',
   yearAriaLabel: 'Ár',
   time24hr: true,
-};
+}
 
-export default Faroese;
+export default Faroese

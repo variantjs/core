@@ -1,46 +1,44 @@
-import { ObjectWithClassName, Variants, WithVariantProps } from './types/Variants';
-import mergeClasses from './mergeClasses';
+import { ObjectWithClassName, Variants, WithVariantProps } from './types/Variants'
+import mergeClasses from './mergeClasses'
 
 const getCustomPropsFromVariant = <P extends ObjectWithClassName>(
   variants?: Variants<P>,
-  variant?: string,
+  variant?: string
 ): WithVariantProps<P> | undefined => {
   if (variant !== undefined && variants) {
-    return variants[variant];
+    return variants[variant]
   }
 
-  return undefined;
-};
+  return undefined
+}
 
 const parseVariant = <P extends ObjectWithClassName>(
   props: WithVariantProps<P>,
   globalConfiguration?: WithVariantProps<P>,
-  defaultConfiguration?: WithVariantProps<P>,
+  defaultConfiguration?: WithVariantProps<P>
 ): P => {
   const { variants, variant, ...mainProps } = {
     ...defaultConfiguration,
     ...globalConfiguration,
     ...props,
-  };
+  }
 
-  const customProps = getCustomPropsFromVariant(variants, variant);
+  const customProps = getCustomPropsFromVariant(variants, variant)
 
   const mergedProps = {
     ...mainProps,
     ...customProps,
-  };
-
-  const {
-    classes, fixedClasses, class: className, ...componentProps
-  } = mergedProps;
-
-  const mergedClasses: string = mergeClasses(className, classes, fixedClasses);
-
-  if (mergedClasses) {
-    (componentProps as P).class = mergedClasses;
   }
 
-  return componentProps as P;
-};
+  const { classes, fixedClasses, class: className, ...componentProps } = mergedProps
 
-export default parseVariant;
+  const mergedClasses: string = mergeClasses(className, classes, fixedClasses)
+
+  if (mergedClasses) {
+    ;(componentProps as P).class = mergedClasses
+  }
+
+  return componentProps as P
+}
+
+export default parseVariant

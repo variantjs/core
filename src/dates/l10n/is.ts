@@ -1,5 +1,5 @@
 /* Icelandic locale for flatpickr */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Icelandic: CustomDateLocale = {
   weekdays: {
@@ -16,20 +16,7 @@ export const Icelandic: CustomDateLocale = {
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Maí',
-      'Jún',
-      'Júl',
-      'Ágú',
-      'Sep',
-      'Okt',
-      'Nóv',
-      'Des',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maí', 'Jún', 'Júl', 'Ágú', 'Sep', 'Okt', 'Nóv', 'Des'],
     longhand: [
       'Janúar',
       'Febrúar',
@@ -53,6 +40,6 @@ export const Icelandic: CustomDateLocale = {
   weekAbbreviation: 'vika',
   yearAriaLabel: 'Ár',
   time24hr: true,
-};
+}
 
-export default Icelandic;
+export default Icelandic

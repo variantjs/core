@@ -1,5 +1,5 @@
 /* Swedish locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Swedish: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -7,32 +7,11 @@ export const Swedish: CustomDateLocale = {
 
   weekdays: {
     shorthand: ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör'],
-    longhand: [
-      'Söndag',
-      'Måndag',
-      'Tisdag',
-      'Onsdag',
-      'Torsdag',
-      'Fredag',
-      'Lördag',
-    ],
+    longhand: ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Maj',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
     longhand: [
       'Januari',
       'Februari',
@@ -51,6 +30,6 @@ export const Swedish: CustomDateLocale = {
   time24hr: true,
 
   ordinal: () => '.',
-};
+}
 
-export default Swedish;
+export default Swedish

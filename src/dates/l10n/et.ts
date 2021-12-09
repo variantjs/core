@@ -1,18 +1,10 @@
 /* Estonian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Estonian: CustomDateLocale = {
   weekdays: {
     shorthand: ['P', 'E', 'T', 'K', 'N', 'R', 'L'],
-    longhand: [
-      'Pühapäev',
-      'Esmaspäev',
-      'Teisipäev',
-      'Kolmapäev',
-      'Neljapäev',
-      'Reede',
-      'Laupäev',
-    ],
+    longhand: ['Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev'],
   },
 
   months: {
@@ -49,12 +41,12 @@ export const Estonian: CustomDateLocale = {
   firstDayOfWeek: 1,
 
   ordinal() {
-    return '.';
+    return '.'
   },
 
   weekAbbreviation: 'Näd',
   rangeSeparator: ' kuni ',
   time24hr: true,
-};
+}
 
-export default Estonian;
+export default Estonian

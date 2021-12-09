@@ -1,18 +1,10 @@
 /* Sinhala locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Sinhala: CustomDateLocale = {
   weekdays: {
     shorthand: ['ඉ', 'ස', 'අ', 'බ', 'බ්‍ර', 'සි', 'සෙ'],
-    longhand: [
-      'ඉරිදා',
-      'සඳුදා',
-      'අඟහරුවාදා',
-      'බදාදා',
-      'බ්‍රහස්පතින්දා',
-      'සිකුරාදා',
-      'සෙනසුරාදා',
-    ],
+    longhand: ['ඉරිදා', 'සඳුදා', 'අඟහරුවාදා', 'බදාදා', 'බ්‍රහස්පතින්දා', 'සිකුරාදා', 'සෙනසුරාදා'],
   },
 
   months: {
@@ -46,6 +38,6 @@ export const Sinhala: CustomDateLocale = {
     ],
   },
   time24hr: true,
-};
+}
 
-export default Sinhala;
+export default Sinhala

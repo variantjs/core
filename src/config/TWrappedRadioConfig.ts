@@ -1,10 +1,25 @@
-import { CSSClass } from '../types/CSSClass';
+import { CSSClass } from '../types/CSSClass'
 
-import TRadioConfig from './TRadioConfig';
+import TRadioConfig from './TRadioConfig'
 
-export const TWrappedRadioClassesKeys = ['wrapper', 'wrapperChecked', 'inputWrapper', 'inputWrapperChecked', 'input', 'label', 'labelChecked'];
+export const TWrappedRadioClassesKeys = [
+  'wrapper',
+  'wrapperChecked',
+  'inputWrapper',
+  'inputWrapperChecked',
+  'input',
+  'label',
+  'labelChecked',
+]
 
-export type TWrappedRadioClassesValidKeys = 'wrapper' | 'wrapperChecked' | 'inputWrapper' | 'inputWrapperChecked' | 'input' | 'label' | 'labelChecked';
+export type TWrappedRadioClassesValidKeys =
+  | 'wrapper'
+  | 'wrapperChecked'
+  | 'inputWrapper'
+  | 'inputWrapperChecked'
+  | 'input'
+  | 'label'
+  | 'labelChecked'
 
 export const TWrappedRadioConfig: {
   classes: {
@@ -17,6 +32,6 @@ export const TWrappedRadioConfig: {
     label: '',
     input: TRadioConfig.classes,
   },
-};
+}
 
-export default TWrappedRadioConfig;
+export default TWrappedRadioConfig

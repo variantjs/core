@@ -1,5 +1,5 @@
 /* Azerbaijan locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Azerbaijan: CustomDateLocale = {
   weekdays: {
@@ -16,20 +16,7 @@ export const Azerbaijan: CustomDateLocale = {
   },
 
   months: {
-    shorthand: [
-      'Yan',
-      'Fev',
-      'Mar',
-      'Apr',
-      'May',
-      'İyn',
-      'İyl',
-      'Avq',
-      'Sen',
-      'Okt',
-      'Noy',
-      'Dek',
-    ],
+    shorthand: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'İyn', 'İyl', 'Avq', 'Sen', 'Okt', 'Noy', 'Dek'],
     longhand: [
       'Yanvar',
       'Fevral',
@@ -51,6 +38,6 @@ export const Azerbaijan: CustomDateLocale = {
   weekAbbreviation: 'Hf',
   amPM: ['GƏ', 'GS'],
   time24hr: true,
-};
+}
 
-export default Azerbaijan;
+export default Azerbaijan

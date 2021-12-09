@@ -1,3 +1,4 @@
-const getDateInDayNumber = (date: Date, dayNumber: number): Date => new Date(date.getFullYear(), date.getMonth(), dayNumber);
+const getDateInDayNumber = (date: Date, dayNumber: number): Date =>
+  new Date(date.getFullYear(), date.getMonth(), dayNumber)
 
-export default getDateInDayNumber;
+export default getDateInDayNumber

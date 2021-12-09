@@ -1,5 +1,5 @@
 /* Gaelic Irish locale for flatpickr */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Irish: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -18,20 +18,7 @@ export const Irish: CustomDateLocale = {
   },
 
   months: {
-    shorthand: [
-      'Ean',
-      'Fea',
-      'Már',
-      'Aib',
-      'Bea',
-      'Mei',
-      'Iúi',
-      'Lún',
-      'MFo',
-      'DFo',
-      'Sam',
-      'Nol',
-    ],
+    shorthand: ['Ean', 'Fea', 'Már', 'Aib', 'Bea', 'Mei', 'Iúi', 'Lún', 'MFo', 'DFo', 'Sam', 'Nol'],
     longhand: [
       'Eanáir',
       'Feabhra',
@@ -48,6 +35,6 @@ export const Irish: CustomDateLocale = {
     ],
   },
   time24hr: true,
-};
+}
 
-export default Irish;
+export default Irish

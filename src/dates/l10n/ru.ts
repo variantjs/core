@@ -1,18 +1,10 @@
 /* Russian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Russian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-    longhand: [
-      'Воскресенье',
-      'Понедельник',
-      'Вторник',
-      'Среда',
-      'Четверг',
-      'Пятница',
-      'Суббота',
-    ],
+    longhand: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
   },
   months: {
     shorthand: [
@@ -46,13 +38,13 @@ export const Russian: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return '';
+    return ''
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'Нед.',
   amPM: ['ДП', 'ПП'],
   yearAriaLabel: 'Год',
   time24hr: true,
-};
+}
 
-export default Russian;
+export default Russian

@@ -1,5 +1,5 @@
 /* Latvian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Latvian: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -18,20 +18,7 @@ export const Latvian: CustomDateLocale = {
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Mai',
-      'Jūn',
-      'Jūl',
-      'Aug',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jūn', 'Jūl', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
     longhand: [
       'Janvāris',
       'Februāris',
@@ -50,6 +37,6 @@ export const Latvian: CustomDateLocale = {
 
   rangeSeparator: ' līdz ',
   time24hr: true,
-};
+}
 
-export default Latvian;
+export default Latvian

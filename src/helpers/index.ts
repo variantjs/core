@@ -1,17 +1,17 @@
-export { default as get } from './get';
-export { default as pick } from './pick';
-export { default as isPrimitive } from './isPrimitive';
-export { default as isEqual } from './isEqual';
-export { default as clone } from './clone';
-export { default as debounce, DebouncedFn } from './debounce';
-export { default as throttle } from './throttle';
-export { default as addToArray } from './addToArray';
-export { default as substractFromArray } from './substractFromArray';
-export { default as elementIsTargetOrTargetChild } from './elementIsTargetOrTargetChild';
-export { default as getFocusableElements } from './getFocusableElements';
-export { default as isTouchOnlyDevice } from './isTouchOnlyDevice';
-export { default as normalizeMeasure } from './normalizeMeasure';
-export { default as normalizedOptionIsDisabled } from './normalizedOptionIsDisabled';
-export { default as hasProperty } from './hasProperty';
-export { default as promisify } from './promisify';
-export { default as promisifyFunctionResult } from './promisifyFunctionResult';
+export { default as get } from './get'
+export { default as pick } from './pick'
+export { default as isPrimitive } from './isPrimitive'
+export { default as isEqual } from './isEqual'
+export { default as clone } from './clone'
+export { default as debounce, DebouncedFn } from './debounce'
+export { default as throttle } from './throttle'
+export { default as addToArray } from './addToArray'
+export { default as substractFromArray } from './substractFromArray'
+export { default as elementIsTargetOrTargetChild } from './elementIsTargetOrTargetChild'
+export { default as getFocusableElements } from './getFocusableElements'
+export { default as isTouchOnlyDevice } from './isTouchOnlyDevice'
+export { default as normalizeMeasure } from './normalizeMeasure'
+export { default as normalizedOptionIsDisabled } from './normalizedOptionIsDisabled'
+export { default as hasProperty } from './hasProperty'
+export { default as promisify } from './promisify'
+export { default as promisifyFunctionResult } from './promisifyFunctionResult'

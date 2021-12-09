@@ -1,4 +1,4 @@
-import { enterAndLeave } from './transitions';
+import { enterAndLeave } from './transitions'
 
 const TRichSelectConfig = {
   classes: {
@@ -7,7 +7,8 @@ const TRichSelectConfig = {
 
     // TDropdown Component
     // @tw
-    trigger: 'flex items-center justify-between w-full px-3 py-2 text-left text-black transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
+    trigger:
+      'flex items-center justify-between w-full px-3 py-2 text-left text-black transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
     dropdown: 'z-10 bg-white rounded shadow-lg',
     // Dropdown content
@@ -16,7 +17,8 @@ const TRichSelectConfig = {
 
     // Clear button
     // @tw
-    clearButton: 'absolute flex items-center justify-center w-6 h-6 text-gray-600 transition duration-100 ease-in-out rounded mt-2.5 mr-2 top-0 right-0 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
+    clearButton:
+      'absolute flex items-center justify-center w-6 h-6 text-gray-600 transition duration-100 ease-in-out rounded mt-2.5 mr-2 top-0 right-0 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
 
     // Option list
     // @tw
@@ -60,7 +62,8 @@ const TRichSelectConfig = {
     // @tw
     searchWrapper: 'inline-block w-full placeholder-gray-400',
     // @tw
-    searchInput: 'inline-block w-full px-3 py-2 text-sm border border-gray-300 rounded shadow-inner bg-gray-50 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
+    searchInput:
+      'inline-block w-full px-3 py-2 text-sm border border-gray-300 rounded shadow-inner bg-gray-50 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
 
     // State texts
     // @tw
@@ -92,16 +95,17 @@ const TRichSelectConfig = {
     // @tw
     tagLabel: 'px-3',
     // @tw
-    tagDeleteButton: '-ml-1.5 h-full hover:bg-blue-600 hover:shadow-sm inline-flex items-center px-2 transition focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 rounded-r',
+    tagDeleteButton:
+      '-ml-1.5 h-full hover:bg-blue-600 hover:shadow-sm inline-flex items-center px-2 transition focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 rounded-r',
     // @tw
     tagDeleteButtonIcon: 'w-3 h-3',
 
     ...enterAndLeave,
   },
-};
+}
 
-export const TRichSelectClassesKeys = Object.keys(TRichSelectConfig.classes);
+export const TRichSelectClassesKeys = Object.keys(TRichSelectConfig.classes)
 
-export type TRichSelectClassesValidKeys = keyof typeof TRichSelectConfig.classes;
+export type TRichSelectClassesValidKeys = keyof typeof TRichSelectConfig.classes
 
-export default TRichSelectConfig;
+export default TRichSelectConfig

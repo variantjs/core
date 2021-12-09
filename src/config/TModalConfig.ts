@@ -13,7 +13,8 @@ export const TModalConfig = {
     // @tw
     wrapper: 'z-50 max-w-lg px-3 py-12',
     // @tw
-    close: 'absolute top-0 right-0 z-10 flex items-center justify-center w-8 h-8 -m-3 text-gray-700 transition ease-in-out bg-gray-100 rounded-full shadow duration-400 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 hover:bg-gray-200',
+    close:
+      'absolute top-0 right-0 z-10 flex items-center justify-center w-8 h-8 -m-3 text-gray-700 transition ease-in-out bg-gray-100 rounded-full shadow duration-400 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 hover:bg-gray-200',
     // @tw
     closeIcon: 'w-4 h-4',
     // @tw
@@ -49,7 +50,7 @@ export const TModalConfig = {
     // @tw
     leaveToClass: 'transform scale-95 opacity-0',
   },
-};
+}
 
 export enum ModalHideReason {
   Outside = 'outside',
@@ -60,12 +61,12 @@ export enum ModalHideReason {
   Other = 'other',
 }
 
-export type ModalShowFn = (name: string, params?: Record<string, unknown>) => void;
+export type ModalShowFn = (name: string, params?: Record<string, unknown>) => void
 
-export type ModalHideFn = (name: string) => void;
+export type ModalHideFn = (name: string) => void
 
-export const TModalClassesKeys = Object.keys(TModalConfig.classes);
+export const TModalClassesKeys = Object.keys(TModalConfig.classes)
 
-export type TModalClassesValidKeys = keyof typeof TModalConfig.classes;
+export type TModalClassesValidKeys = keyof typeof TModalConfig.classes
 
-export default TModalConfig;
+export default TModalConfig

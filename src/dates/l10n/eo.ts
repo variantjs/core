@@ -1,5 +1,5 @@
 /* Esperanto locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Esperanto: CustomDateLocale = {
   firstDayOfWeek: 1,
@@ -9,32 +9,11 @@ export const Esperanto: CustomDateLocale = {
 
   weekdays: {
     shorthand: ['Dim', 'Lun', 'Mar', 'Mer', 'Ĵaŭ', 'Ven', 'Sab'],
-    longhand: [
-      'dimanĉo',
-      'lundo',
-      'mardo',
-      'merkredo',
-      'ĵaŭdo',
-      'vendredo',
-      'sabato',
-    ],
+    longhand: ['dimanĉo', 'lundo', 'mardo', 'merkredo', 'ĵaŭdo', 'vendredo', 'sabato'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Maj',
-      'Jun',
-      'Jul',
-      'Aŭg',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aŭg', 'Sep', 'Okt', 'Nov', 'Dec'],
     longhand: [
       'januaro',
       'februaro',
@@ -53,6 +32,6 @@ export const Esperanto: CustomDateLocale = {
 
   ordinal: () => '-a',
   time24hr: true,
-};
+}
 
-export default Esperanto;
+export default Esperanto

@@ -1,37 +1,16 @@
 /* Bosnian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Bosnian: CustomDateLocale = {
   firstDayOfWeek: 1,
 
   weekdays: {
     shorthand: ['Ned', 'Pon', 'Uto', 'Sri', 'Čet', 'Pet', 'Sub'],
-    longhand: [
-      'Nedjelja',
-      'Ponedjeljak',
-      'Utorak',
-      'Srijeda',
-      'Četvrtak',
-      'Petak',
-      'Subota',
-    ],
+    longhand: ['Nedjelja', 'Ponedjeljak', 'Utorak', 'Srijeda', 'Četvrtak', 'Petak', 'Subota'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Maj',
-      'Jun',
-      'Jul',
-      'Avg',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'],
     longhand: [
       'Januar',
       'Februar',
@@ -48,6 +27,6 @@ export const Bosnian: CustomDateLocale = {
     ],
   },
   time24hr: true,
-};
+}
 
-export default Bosnian;
+export default Bosnian

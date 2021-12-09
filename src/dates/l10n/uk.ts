@@ -1,37 +1,16 @@
 /* Ukrainian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Ukrainian: CustomDateLocale = {
   firstDayOfWeek: 1,
 
   weekdays: {
     shorthand: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-    longhand: [
-      'Неділя',
-      'Понеділок',
-      'Вівторок',
-      'Середа',
-      'Четвер',
-      "П'ятниця",
-      'Субота',
-    ],
+    longhand: ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', "П'ятниця", 'Субота'],
   },
 
   months: {
-    shorthand: [
-      'Січ',
-      'Лют',
-      'Бер',
-      'Кві',
-      'Тра',
-      'Чер',
-      'Лип',
-      'Сер',
-      'Вер',
-      'Жов',
-      'Лис',
-      'Гру',
-    ],
+    shorthand: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру'],
     longhand: [
       'Січень',
       'Лютий',
@@ -48,6 +27,6 @@ export const Ukrainian: CustomDateLocale = {
     ],
   },
   time24hr: true,
-};
+}
 
-export default Ukrainian;
+export default Ukrainian

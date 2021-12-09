@@ -1,51 +1,51 @@
-import throttle from '../helpers/throttle';
+import throttle from '../helpers/throttle'
 
 describe('throttle', () => {
   it('runs the method after 200 ms by default', () => {
-    const mockFn = jest.fn();
+    const mockFn = jest.fn()
 
-    jest.useFakeTimers();
+    jest.useFakeTimers()
 
-    const throttledFn = throttle(mockFn);
+    const throttledFn = throttle(mockFn)
 
-    throttledFn();
+    throttledFn()
 
-    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
-    jest.advanceTimersByTime(199);
+    jest.advanceTimersByTime(199)
 
-    throttledFn();
+    throttledFn()
 
-    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
-    jest.advanceTimersByTime(1);
+    jest.advanceTimersByTime(1)
 
-    throttledFn();
+    throttledFn()
 
-    expect(mockFn).toHaveBeenCalledTimes(2);
-  });
+    expect(mockFn).toHaveBeenCalledTimes(2)
+  })
 
   it('runs the method inmediatly once', () => {
-    const mockFn = jest.fn();
+    const mockFn = jest.fn()
 
-    jest.useFakeTimers();
+    jest.useFakeTimers()
 
-    const throttledFn = throttle(mockFn, 300);
+    const throttledFn = throttle(mockFn, 300)
 
-    throttledFn();
+    throttledFn()
 
-    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
-    jest.advanceTimersByTime(299);
+    jest.advanceTimersByTime(299)
 
-    throttledFn();
+    throttledFn()
 
-    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
-    jest.advanceTimersByTime(1);
+    jest.advanceTimersByTime(1)
 
-    throttledFn();
+    throttledFn()
 
-    expect(mockFn).toHaveBeenCalledTimes(2);
-  });
-});
+    expect(mockFn).toHaveBeenCalledTimes(2)
+  })
+})

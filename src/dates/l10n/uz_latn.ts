@@ -1,18 +1,10 @@
 /* Uzbek locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const UzbekLatin: CustomDateLocale = {
   weekdays: {
     shorthand: ['Ya', 'Du', 'Se', 'Cho', 'Pa', 'Ju', 'Sha'],
-    longhand: [
-      'Yakshanba',
-      'Dushanba',
-      'Seshanba',
-      'Chorshanba',
-      'Payshanba',
-      'Juma',
-      'Shanba',
-    ],
+    longhand: ['Yakshanba', 'Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma', 'Shanba'],
   },
   months: {
     shorthand: [
@@ -46,13 +38,13 @@ export const UzbekLatin: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return '';
+    return ''
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'Hafta',
   amPM: ['AM', 'PM'],
   yearAriaLabel: 'Yil',
   time24hr: true,
-};
+}
 
-export default UzbekLatin;
+export default UzbekLatin

@@ -1,34 +1,13 @@
 /* Kazakh locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Kazakh: CustomDateLocale = {
   weekdays: {
     shorthand: ['Жс', 'Дс', 'Сc', 'Ср', 'Бс', 'Жм', 'Сб'],
-    longhand: [
-      'Жексенбi',
-      'Дүйсенбi',
-      'Сейсенбi',
-      'Сәрсенбi',
-      'Бейсенбi',
-      'Жұма',
-      'Сенбi',
-    ],
+    longhand: ['Жексенбi', 'Дүйсенбi', 'Сейсенбi', 'Сәрсенбi', 'Бейсенбi', 'Жұма', 'Сенбi'],
   },
   months: {
-    shorthand: [
-      'Қаң',
-      'Ақп',
-      'Нау',
-      'Сәу',
-      'Мам',
-      'Мау',
-      'Шiл',
-      'Там',
-      'Қыр',
-      'Қаз',
-      'Қар',
-      'Жел',
-    ],
+    shorthand: ['Қаң', 'Ақп', 'Нау', 'Сәу', 'Мам', 'Мау', 'Шiл', 'Там', 'Қыр', 'Қаз', 'Қар', 'Жел'],
     longhand: [
       'Қаңтар',
       'Ақпан',
@@ -46,12 +25,12 @@ export const Kazakh: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return '';
+    return ''
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'Апта',
   amPM: ['ТД', 'ТК'],
   yearAriaLabel: 'Жыл',
-};
+}
 
-export default Kazakh;
+export default Kazakh

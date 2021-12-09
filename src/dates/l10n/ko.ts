@@ -1,18 +1,10 @@
 /* Republic of Korea locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Korean: CustomDateLocale = {
   weekdays: {
     shorthand: ['일', '월', '화', '수', '목', '금', '토'],
-    longhand: [
-      '일요일',
-      '월요일',
-      '화요일',
-      '수요일',
-      '목요일',
-      '금요일',
-      '토요일',
-    ],
+    longhand: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
   },
 
   months: {
@@ -49,6 +41,6 @@ export const Korean: CustomDateLocale = {
   ordinal: () => '일',
 
   rangeSeparator: ' ~ ',
-};
+}
 
-export default Korean;
+export default Korean

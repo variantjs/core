@@ -1,34 +1,13 @@
 /* Georgian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Georgian: CustomDateLocale = {
   weekdays: {
     shorthand: ['კვ', 'ორ', 'სა', 'ოთ', 'ხუ', 'პა', 'შა'],
-    longhand: [
-      'კვირა',
-      'ორშაბათი',
-      'სამშაბათი',
-      'ოთხშაბათი',
-      'ხუთშაბათი',
-      'პარასკევი',
-      'შაბათი',
-    ],
+    longhand: ['კვირა', 'ორშაბათი', 'სამშაბათი', 'ოთხშაბათი', 'ხუთშაბათი', 'პარასკევი', 'შაბათი'],
   },
   months: {
-    shorthand: [
-      'იან',
-      'თებ',
-      'მარ',
-      'აპრ',
-      'მაი',
-      'ივნ',
-      'ივლ',
-      'აგვ',
-      'სექ',
-      'ოქტ',
-      'ნოე',
-      'დეკ',
-    ],
+    shorthand: ['იან', 'თებ', 'მარ', 'აპრ', 'მაი', 'ივნ', 'ივლ', 'აგვ', 'სექ', 'ოქტ', 'ნოე', 'დეკ'],
     longhand: [
       'იანვარი',
       'თებერვალი',
@@ -46,13 +25,13 @@ export const Georgian: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return '';
+    return ''
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'კვ.',
   amPM: ['AM', 'PM'],
   yearAriaLabel: 'წელი',
   time24hr: true,
-};
+}
 
-export default Georgian;
+export default Georgian

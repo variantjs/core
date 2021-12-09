@@ -1,18 +1,10 @@
 /* Bangla locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Bangla: CustomDateLocale = {
   weekdays: {
     shorthand: ['রবি', 'সোম', 'মঙ্গল', 'বুধ', 'বৃহস্পতি', 'শুক্র', 'শনি'],
-    longhand: [
-      'রবিবার',
-      'সোমবার',
-      'মঙ্গলবার',
-      'বুধবার',
-      'বৃহস্পতিবার',
-      'শুক্রবার',
-      'শনিবার',
-    ],
+    longhand: ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'],
   },
 
   months: {
@@ -45,6 +37,6 @@ export const Bangla: CustomDateLocale = {
       'ডিসেম্বর',
     ],
   },
-};
+}
 
-export default Bangla;
+export default Bangla

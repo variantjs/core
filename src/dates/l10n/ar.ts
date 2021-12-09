@@ -1,18 +1,10 @@
 /* Arabic locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Arabic: CustomDateLocale = {
   weekdays: {
     shorthand: ['أحد', 'اثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'],
-    longhand: [
-      'الأحد',
-      'الاثنين',
-      'الثلاثاء',
-      'الأربعاء',
-      'الخميس',
-      'الجمعة',
-      'السبت',
-    ],
+    longhand: ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
   },
 
   months: {
@@ -34,6 +26,6 @@ export const Arabic: CustomDateLocale = {
   },
 
   rangeSeparator: ' - ',
-};
+}
 
-export default Arabic;
+export default Arabic

@@ -1,18 +1,10 @@
 /* Vietnamese locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Vietnamese: CustomDateLocale = {
   weekdays: {
     shorthand: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
-    longhand: [
-      'Chủ nhật',
-      'Thứ hai',
-      'Thứ ba',
-      'Thứ tư',
-      'Thứ năm',
-      'Thứ sáu',
-      'Thứ bảy',
-    ],
+    longhand: ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'],
   },
 
   months: {
@@ -48,6 +40,6 @@ export const Vietnamese: CustomDateLocale = {
 
   firstDayOfWeek: 1,
   rangeSeparator: ' đến ',
-};
+}
 
-export default Vietnamese;
+export default Vietnamese

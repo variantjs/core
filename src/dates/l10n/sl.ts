@@ -1,35 +1,14 @@
 /* Slovenian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Slovenian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Ned', 'Pon', 'Tor', 'Sre', 'Čet', 'Pet', 'Sob'],
-    longhand: [
-      'Nedelja',
-      'Ponedeljek',
-      'Torek',
-      'Sreda',
-      'Četrtek',
-      'Petek',
-      'Sobota',
-    ],
+    longhand: ['Nedelja', 'Ponedeljek', 'Torek', 'Sreda', 'Četrtek', 'Petek', 'Sobota'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Maj',
-      'Jun',
-      'Jul',
-      'Avg',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'],
     longhand: [
       'Januar',
       'Februar',
@@ -50,8 +29,8 @@ export const Slovenian: CustomDateLocale = {
   rangeSeparator: ' do ',
   time24hr: true,
   ordinal() {
-    return '.';
+    return '.'
   },
-};
+}
 
-export default Slovenian;
+export default Slovenian

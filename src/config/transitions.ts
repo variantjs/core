@@ -12,4 +12,4 @@ export const enterAndLeave = {
   leaveFromClass: 'transform scale-100 opacity-100',
   // @tw
   leaveToClass: 'transform scale-95 opacity-0',
-};
+}

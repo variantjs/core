@@ -11,13 +11,13 @@ export enum WeekDay {
   Saturday = 6,
 }
 
-export type DateValue = Date | string | number;
+export type DateValue = Date | string | number
 
 export type DateLocale = {
   weekdays: {
-    shorthand: [string, string, string, string, string, string, string];
-    longhand: [string, string, string, string, string, string, string];
-  };
+    shorthand: [string, string, string, string, string, string, string]
+    longhand: [string, string, string, string, string, string, string]
+  }
   months: {
     shorthand: [
       string,
@@ -31,8 +31,8 @@ export type DateLocale = {
       string,
       string,
       string,
-      string,
-    ];
+      string
+    ]
     longhand: [
       string,
       string,
@@ -45,9 +45,9 @@ export type DateLocale = {
       string,
       string,
       string,
-      string,
-    ];
-  };
+      string
+    ]
+  }
   daysInMonth: [
     number,
     number,
@@ -60,39 +60,39 @@ export type DateLocale = {
     number,
     number,
     number,
-    number,
-  ];
-  firstDayOfWeek: number;
-  ordinal: (nth: number) => string;
-  rangeSeparator: string;
-  weekAbbreviation: string;
-  amPM: [string, string];
-  yearAriaLabel: string;
-  monthAriaLabel: string;
-  hourAriaLabel: string;
-  minuteAriaLabel: string;
-  time24hr: boolean;
-  timeLabel: string;
-  okLabel: string;
-};
+    number
+  ]
+  firstDayOfWeek: number
+  ordinal: (nth: number) => string
+  rangeSeparator: string
+  weekAbbreviation: string
+  amPM: [string, string]
+  yearAriaLabel: string
+  monthAriaLabel: string
+  hourAriaLabel: string
+  minuteAriaLabel: string
+  time24hr: boolean
+  timeLabel: string
+  okLabel: string
+}
 
 export type CustomDateLocale = {
-  ordinal?: DateLocale['ordinal'];
-  daysInMonth?: DateLocale['daysInMonth'];
-  firstDayOfWeek?: DateLocale['firstDayOfWeek'];
-  rangeSeparator?: DateLocale['rangeSeparator'];
-  weekAbbreviation?: DateLocale['weekAbbreviation'];
-  yearAriaLabel?: string;
-  hourAriaLabel?: string;
-  minuteAriaLabel?: string;
-  amPM?: DateLocale['amPM'];
-  time24hr?: DateLocale['time24hr'];
-  timeLabel?: DateLocale['timeLabel'];
-  okLabel?: DateLocale['okLabel'];
+  ordinal?: DateLocale['ordinal']
+  daysInMonth?: DateLocale['daysInMonth']
+  firstDayOfWeek?: DateLocale['firstDayOfWeek']
+  rangeSeparator?: DateLocale['rangeSeparator']
+  weekAbbreviation?: DateLocale['weekAbbreviation']
+  yearAriaLabel?: string
+  hourAriaLabel?: string
+  minuteAriaLabel?: string
+  amPM?: DateLocale['amPM']
+  time24hr?: DateLocale['time24hr']
+  timeLabel?: DateLocale['timeLabel']
+  okLabel?: DateLocale['okLabel']
   weekdays: {
-    shorthand: [string, string, string, string, string, string, string];
-    longhand: [string, string, string, string, string, string, string];
-  };
+    shorthand: [string, string, string, string, string, string, string]
+    longhand: [string, string, string, string, string, string, string]
+  }
   months: {
     shorthand: [
       string,
@@ -106,8 +106,8 @@ export type CustomDateLocale = {
       string,
       string,
       string,
-      string,
-    ];
+      string
+    ]
     longhand: [
       string,
       string,
@@ -120,10 +120,10 @@ export type CustomDateLocale = {
       string,
       string,
       string,
-      string,
-    ];
-  };
-};
+      string
+    ]
+  }
+}
 
 export type DateLocaleName =
   | 'ar'
@@ -187,11 +187,11 @@ export type DateLocaleName =
   | 'zh'
   | 'uz'
   | 'uz_latn'
-  | 'zh_tw';
+  | 'zh_tw'
 
 export type DateLocales = {
   [key in DateLocaleName]: DateLocale
-};
+}
 
 export type DateToken =
   | 'D'
@@ -215,36 +215,36 @@ export type DateToken =
   | 'n'
   | 's'
   | 'w'
-  | 'y';
+  | 'y'
 
 export type TokenParsingFunction = (
   date: Date,
   data: string,
   locale: DateLocale
-) => Date | void | undefined;
+) => Date | void | undefined
 
-export type TokenParsingFunctions = Record<string, TokenParsingFunction>;
+export type TokenParsingFunctions = Record<string, TokenParsingFunction>
 
-export type TokenRegex = { [k in DateToken]: string };
+export type TokenRegex = { [k in DateToken]: string }
 
 export type TokenFormattingFunctions = Record<
-DateToken,
-(date: Date, locale: DateLocale) => string | number
->;
+  DateToken,
+  (date: Date, locale: DateLocale) => string | number
+>
 
 export type DateParser = (
   date: DateValue | null | undefined,
   givenFormat?: string,
   timeless?: boolean,
-  customLocale?: DateLocale,
-) => Date | undefined;
+  customLocale?: DateLocale
+) => Date | undefined
 
 export type DateFormatter = (
   date: Date | null | undefined,
   format?: string,
-  overrideLocale?: DateLocale,
-) => string;
+  overrideLocale?: DateLocale
+) => string
 
-export type DateCondition = DateValue | ((date: Date) => boolean);
+export type DateCondition = DateValue | ((date: Date) => boolean)
 
-export type DateConditions = DateCondition | DateCondition[];
+export type DateConditions = DateCondition | DateCondition[]

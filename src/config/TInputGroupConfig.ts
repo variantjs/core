@@ -11,10 +11,10 @@ const TInputGroupConfig = {
     // @tw
     description: 'text-sm text-gray-400',
   },
-};
+}
 
-export const TInputGroupClassesKeys = Object.keys(TInputGroupConfig.classes);
+export const TInputGroupClassesKeys = Object.keys(TInputGroupConfig.classes)
 
-export type TInputGroupClassesValidKeys = keyof typeof TInputGroupConfig.classes;
+export type TInputGroupClassesValidKeys = keyof typeof TInputGroupConfig.classes
 
-export default TInputGroupConfig;
+export default TInputGroupConfig

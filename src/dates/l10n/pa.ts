@@ -1,35 +1,14 @@
 /* Punjabi locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Punjabi: CustomDateLocale = {
   weekdays: {
     shorthand: ['ਐਤ', 'ਸੋਮ', 'ਮੰਗਲ', 'ਬੁੱਧ', 'ਵੀਰ', 'ਸ਼ੁੱਕਰ', 'ਸ਼ਨਿੱਚਰ'],
-    longhand: [
-      'ਐਤਵਾਰ',
-      'ਸੋਮਵਾਰ',
-      'ਮੰਗਲਵਾਰ',
-      'ਬੁੱਧਵਾਰ',
-      'ਵੀਰਵਾਰ',
-      'ਸ਼ੁੱਕਰਵਾਰ',
-      'ਸ਼ਨਿੱਚਰਵਾਰ',
-    ],
+    longhand: ['ਐਤਵਾਰ', 'ਸੋਮਵਾਰ', 'ਮੰਗਲਵਾਰ', 'ਬੁੱਧਵਾਰ', 'ਵੀਰਵਾਰ', 'ਸ਼ੁੱਕਰਵਾਰ', 'ਸ਼ਨਿੱਚਰਵਾਰ'],
   },
 
   months: {
-    shorthand: [
-      'ਜਨ',
-      'ਫ਼ਰ',
-      'ਮਾਰ',
-      'ਅਪ੍ਰੈ',
-      'ਮਈ',
-      'ਜੂਨ',
-      'ਜੁਲਾ',
-      'ਅਗ',
-      'ਸਤੰ',
-      'ਅਕ',
-      'ਨਵੰ',
-      'ਦਸੰ',
-    ],
+    shorthand: ['ਜਨ', 'ਫ਼ਰ', 'ਮਾਰ', 'ਅਪ੍ਰੈ', 'ਮਈ', 'ਜੂਨ', 'ਜੁਲਾ', 'ਅਗ', 'ਸਤੰ', 'ਅਕ', 'ਨਵੰ', 'ਦਸੰ'],
     longhand: [
       'ਜਨਵਰੀ',
       'ਫ਼ਰਵਰੀ',
@@ -46,6 +25,6 @@ export const Punjabi: CustomDateLocale = {
     ],
   },
   time24hr: true,
-};
+}
 
-export default Punjabi;
+export default Punjabi

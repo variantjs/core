@@ -1,34 +1,13 @@
 /* Belarusian locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Belarusian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Нд', 'Пн', 'Аў', 'Ср', 'Чц', 'Пт', 'Сб'],
-    longhand: [
-      'Нядзеля',
-      'Панядзелак',
-      'Аўторак',
-      'Серада',
-      'Чацвер',
-      'Пятніца',
-      'Субота',
-    ],
+    longhand: ['Нядзеля', 'Панядзелак', 'Аўторак', 'Серада', 'Чацвер', 'Пятніца', 'Субота'],
   },
   months: {
-    shorthand: [
-      'Сту',
-      'Лют',
-      'Сак',
-      'Кра',
-      'Тра',
-      'Чэр',
-      'Ліп',
-      'Жні',
-      'Вер',
-      'Кас',
-      'Ліс',
-      'Сне',
-    ],
+    shorthand: ['Сту', 'Лют', 'Сак', 'Кра', 'Тра', 'Чэр', 'Ліп', 'Жні', 'Вер', 'Кас', 'Ліс', 'Сне'],
     longhand: [
       'Студзень',
       'Люты',
@@ -46,13 +25,13 @@ export const Belarusian: CustomDateLocale = {
   },
   firstDayOfWeek: 1,
   ordinal() {
-    return '';
+    return ''
   },
   rangeSeparator: ' — ',
   weekAbbreviation: 'Тыд.',
   amPM: ['ДП', 'ПП'],
   yearAriaLabel: 'Год',
   time24hr: true,
-};
+}
 
-export default Belarusian;
+export default Belarusian

@@ -1,35 +1,14 @@
 /* Greek locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Greek: CustomDateLocale = {
   weekdays: {
     shorthand: ['Κυ', 'Δε', 'Τρ', 'Τε', 'Πέ', 'Πα', 'Σά'],
-    longhand: [
-      'Κυριακή',
-      'Δευτέρα',
-      'Τρίτη',
-      'Τετάρτη',
-      'Πέμπτη',
-      'Παρασκευή',
-      'Σάββατο',
-    ],
+    longhand: ['Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο'],
   },
 
   months: {
-    shorthand: [
-      'Ιαν',
-      'Φεβ',
-      'Μάρ',
-      'Απρ',
-      'Μάι',
-      'Ιού',
-      'Ιού',
-      'Αύγ',
-      'Σεπ',
-      'Οκτ',
-      'Νοέ',
-      'Δεκ',
-    ],
+    shorthand: ['Ιαν', 'Φεβ', 'Μάρ', 'Απρ', 'Μάι', 'Ιού', 'Ιού', 'Αύγ', 'Σεπ', 'Οκτ', 'Νοέ', 'Δεκ'],
     longhand: [
       'Ιανουάριος',
       'Φεβρουάριος',
@@ -49,13 +28,13 @@ export const Greek: CustomDateLocale = {
   firstDayOfWeek: 1,
 
   ordinal() {
-    return '';
+    return ''
   },
 
   weekAbbreviation: 'Εβδ',
   rangeSeparator: ' έως ',
 
   amPM: ['ΠΜ', 'ΜΜ'],
-};
+}
 
-export default Greek;
+export default Greek

@@ -1,18 +1,10 @@
 /* Hindi locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Hindi: CustomDateLocale = {
   weekdays: {
     shorthand: ['रवि', 'सोम', 'मंगल', 'बुध', 'गुरु', 'शुक्र', 'शनि'],
-    longhand: [
-      'रविवार',
-      'सोमवार',
-      'मंगलवार',
-      'बुधवार',
-      'गुरुवार',
-      'शुक्रवार',
-      'शनिवार',
-    ],
+    longhand: ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'],
   },
 
   months: {
@@ -45,6 +37,6 @@ export const Hindi: CustomDateLocale = {
       'दिसम्बर',
     ],
   },
-};
+}
 
-export default Hindi;
+export default Hindi

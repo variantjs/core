@@ -27,7 +27,8 @@ const TDatepickerConfig = {
     // @tw
     inputWrapper: '',
     // @tw
-    input: 'block w-full px-3 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
+    input:
+      'block w-full px-3 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
     clearButton: 'text-gray-600 transition duration-100 ease-in-out rounded hover:bg-gray-100',
     // @tw
@@ -43,7 +44,8 @@ const TDatepickerConfig = {
     // @tw
     navigator: 'px-3 pt-2',
     // @tw
-    navigatorViewButton: 'inline-flex px-2 py-1 -ml-1 transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-gray-100',
+    navigatorViewButton:
+      'inline-flex px-2 py-1 -ml-1 transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-gray-100',
     // @tw
     navigatorViewButtonIcon: 'text-gray-400 fill-current',
     // @tw
@@ -61,9 +63,11 @@ const TDatepickerConfig = {
     // @tw
     navigatorLabelYear: 'ml-1 text-gray-500',
     // @tw
-    navigatorPrevButton: 'inline-flex p-1 ml-2 ml-auto transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed',
+    navigatorPrevButton:
+      'inline-flex p-1 ml-2 ml-auto transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
-    navigatorNextButton: 'inline-flex p-1 -mr-1 transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed',
+    navigatorNextButton:
+      'inline-flex p-1 -mr-1 transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
     navigatorPrevButtonIcon: 'text-gray-400',
     // @tw
@@ -75,7 +79,8 @@ const TDatepickerConfig = {
     // @tw
     calendarHeaderWrapper: '',
     // @tw
-    calendarHeaderWeekDay: 'flex items-center justify-center w-8 h-8 text-xs text-gray-500 uppercase',
+    calendarHeaderWeekDay:
+      'flex items-center justify-center w-8 h-8 text-xs text-gray-500 uppercase',
     // @tw
     calendarDaysWrapper: '',
     // @tw
@@ -83,7 +88,8 @@ const TDatepickerConfig = {
 
     // Day item
     // @tw
-    otherMonthDay: 'w-8 h-8 mx-auto text-sm text-gray-400 rounded-full hover:bg-blue-100 disabled:opacity-50 disabled:cursor-not-allowed',
+    otherMonthDay:
+      'w-8 h-8 mx-auto text-sm text-gray-400 rounded-full hover:bg-blue-100 disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
     emptyDay: '',
     // @tw
@@ -93,15 +99,19 @@ const TDatepickerConfig = {
     // @tw
     inRangeDay: 'w-full h-8 text-sm bg-blue-200 disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
-    selectedDay: 'w-8 h-8 mx-auto text-sm text-white bg-blue-500 rounded-full disabled:opacity-50 disabled:cursor-not-allowed',
+    selectedDay:
+      'w-8 h-8 mx-auto text-sm text-white bg-blue-500 rounded-full disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
-    activeDay: 'w-8 h-8 mx-auto text-sm bg-blue-100 rounded-full disabled:opacity-50 disabled:cursor-not-allowed',
+    activeDay:
+      'w-8 h-8 mx-auto text-sm bg-blue-100 rounded-full disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
-    highlightedDay: 'w-8 h-8 mx-auto text-sm bg-blue-200 rounded-full disabled:opacity-50 disabled:cursor-not-allowed',
+    highlightedDay:
+      'w-8 h-8 mx-auto text-sm bg-blue-200 rounded-full disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
     day: 'w-8 h-8 mx-auto text-sm rounded-full hover:bg-blue-100 disabled:opacity-50 disabled:cursor-not-allowed',
     // @tw
-    today: 'w-8 h-8 mx-auto text-sm border border-blue-500 rounded-full hover:bg-blue-100 disabled:opacity-50 disabled:cursor-not-allowed',
+    today:
+      'w-8 h-8 mx-auto text-sm border border-blue-500 rounded-full hover:bg-blue-100 disabled:opacity-50 disabled:cursor-not-allowed',
 
     // Months View
     // @tw
@@ -129,35 +139,46 @@ const TDatepickerConfig = {
     // @tw
     timepickerTimeWrapper: 'flex items-center space-x-2',
     // @tw
-    timepickerTimeFieldsWrapper: 'flex items-center w-full text-right bg-gray-100 border border-gray-100 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
+    timepickerTimeFieldsWrapper:
+      'flex items-center w-full text-right bg-gray-100 border border-gray-100 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
     // @tw
-    timepickerOkButton: 'text-sm font-semibold text-blue-600 uppercase transition duration-100 ease-in-out border border-transparent rounded cursor-pointer focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
+    timepickerOkButton:
+      'text-sm font-semibold text-blue-600 uppercase transition duration-100 ease-in-out border border-transparent rounded cursor-pointer focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
     // @tw
-    timepickerInput: 'w-8 h-6 p-0 text-sm text-center transition duration-100 ease-in-out bg-transparent border border-transparent rounded focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
+    timepickerInput:
+      'w-8 h-6 p-0 text-sm text-center transition duration-100 ease-in-out bg-transparent border border-transparent rounded focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
     // @tw
     timepickerTimeLabel: 'flex-grow text-sm text-gray-500',
     // @tw
-    timepickerAmPmWrapper: 'relative inline-flex flex-shrink-0 transition duration-200 ease-in-out bg-gray-100 border border-transparent rounded cursor-pointer focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
+    timepickerAmPmWrapper:
+      'relative inline-flex flex-shrink-0 transition duration-200 ease-in-out bg-gray-100 border border-transparent rounded cursor-pointer focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
     // @tw
-    timepickerAmPmWrapperChecked: 'relative inline-flex flex-shrink-0 transition duration-200 ease-in-out bg-gray-100 border border-transparent rounded cursor-pointer focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
+    timepickerAmPmWrapperChecked:
+      'relative inline-flex flex-shrink-0 transition duration-200 ease-in-out bg-gray-100 border border-transparent rounded cursor-pointer focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50',
     // @tw
-    timepickerAmPmWrapperDisabled: 'relative inline-flex flex-shrink-0 transition duration-200 ease-in-out opacity-50 cursor-not-allowed',
+    timepickerAmPmWrapperDisabled:
+      'relative inline-flex flex-shrink-0 transition duration-200 ease-in-out opacity-50 cursor-not-allowed',
     // @tw
-    timepickerAmPmWrapperCheckedDisabled: 'relative inline-flex flex-shrink-0 transition duration-200 ease-in-out opacity-50 cursor-not-allowed',
+    timepickerAmPmWrapperCheckedDisabled:
+      'relative inline-flex flex-shrink-0 transition duration-200 ease-in-out opacity-50 cursor-not-allowed',
     // @tw
-    timepickerAmPmButton: 'absolute flex items-center justify-center w-6 h-6 text-xs text-gray-800 transition duration-200 ease-in-out transform translate-x-0 bg-white rounded shadow',
+    timepickerAmPmButton:
+      'absolute flex items-center justify-center w-6 h-6 text-xs text-gray-800 transition duration-200 ease-in-out transform translate-x-0 bg-white rounded shadow',
     // @tw
-    timepickerAmPmButtonChecked: 'absolute flex items-center justify-center w-6 h-6 text-xs text-gray-800 transition duration-200 ease-in-out transform translate-x-full bg-white rounded shadow',
+    timepickerAmPmButtonChecked:
+      'absolute flex items-center justify-center w-6 h-6 text-xs text-gray-800 transition duration-200 ease-in-out transform translate-x-full bg-white rounded shadow',
     // @tw
-    timepickerAmPmCheckedPlaceholder: 'flex items-center justify-center w-6 h-6 text-xs text-gray-500 rounded-sm',
+    timepickerAmPmCheckedPlaceholder:
+      'flex items-center justify-center w-6 h-6 text-xs text-gray-500 rounded-sm',
     // @tw
-    timepickerAmPmUncheckedPlaceholder: 'flex items-center justify-center w-6 h-6 text-xs text-gray-500 rounded-sm',
+    timepickerAmPmUncheckedPlaceholder:
+      'flex items-center justify-center w-6 h-6 text-xs text-gray-500 rounded-sm',
     // ...enterAndLeave,
   },
-};
+}
 
-export const TDatepickerClassesKeys = Object.keys(TDatepickerConfig.classes);
+export const TDatepickerClassesKeys = Object.keys(TDatepickerConfig.classes)
 
-export type TDatepickerClassesValidKeys = keyof typeof TDatepickerConfig.classes;
+export type TDatepickerClassesValidKeys = keyof typeof TDatepickerConfig.classes
 
-export default TDatepickerConfig;
+export default TDatepickerConfig

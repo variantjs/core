@@ -1,18 +1,10 @@
 /* Farsi (Persian) locals for vue-tailwind */
-import { CustomDateLocale } from '../../types/Dates';
+import { CustomDateLocale } from '../../types/Dates'
 
 export const Persian: CustomDateLocale = {
   weekdays: {
     shorthand: ['یک', 'دو', 'سه', 'چهار', 'پنج', 'جمعه', 'شنبه'],
-    longhand: [
-      'یک‌شنبه',
-      'دوشنبه',
-      'سه‌شنبه',
-      'چهارشنبه',
-      'پنچ‌شنبه',
-      'جمعه',
-      'شنبه',
-    ],
+    longhand: ['یک‌شنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنچ‌شنبه', 'جمعه', 'شنبه'],
   },
 
   months: {
@@ -47,6 +39,6 @@ export const Persian: CustomDateLocale = {
   },
   firstDayOfWeek: 6,
   ordinal: () => '',
-};
+}
 
-export default Persian;
+export default Persian
