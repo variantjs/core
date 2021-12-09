@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "noEmit": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "jest"],
+    "types": ["vite/client", "jest", "node"],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true
