@@ -21,13 +21,13 @@ const TToggleConfig = {
   },
   fixedClasses: {
     // @tw
-    wrapper: 'relative inline-flex flex-shrink-0 transition-colors duration-200 ease-in-out cursor-pointer',
+    wrapper: 'relative inline-flex flex-shrink-0 items-center transition-colors duration-200 ease-in-out cursor-pointer',
     // @tw
-    wrapperChecked: 'relative inline-flex flex-shrink-0 transition-colors duration-200 ease-in-out cursor-pointer',
+    wrapperChecked: 'relative inline-flex flex-shrink-0 items-center transition-colors duration-200 ease-in-out cursor-pointer',
     // @tw
-    wrapperDisabled: 'relative inline-flex flex-shrink-0 transition-colors duration-200 ease-in-out opacity-50 cursor-pointer cursor-not-allowed',
+    wrapperDisabled: 'relative inline-flex flex-shrink-0 items-center transition-colors duration-200 ease-in-out opacity-50 cursor-pointer cursor-not-allowed',
     // @tw
-    wrapperCheckedDisabled: 'relative inline-flex flex-shrink-0 transition-colors duration-200 ease-in-out opacity-50 cursor-pointer cursor-not-allowed',
+    wrapperCheckedDisabled: 'relative inline-flex flex-shrink-0 items-center transition-colors duration-200 ease-in-out opacity-50 cursor-pointer cursor-not-allowed',
     // @tw
     button: 'absolute transition duration-200 ease-in-out transform translate-x-0',
     // @tw
