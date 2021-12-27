@@ -18,7 +18,9 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "max-len": "off"
+    "max-len": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off"
   }
 }
 
