@@ -22,11 +22,15 @@ describe('isEqual', () => {
   });
 
   it('considers that an array with same values to be equal', () => {
-    expect(isEqual([1, '12', 'string', true, undefined], [1, '12', 'string', true, undefined])).toBe(true);
+    expect(
+      isEqual([1, '12', 'string', true, undefined], [1, '12', 'string', true, undefined]),
+    ).toBe(true);
   });
 
   it('considers that an array with same values in different order to no be equal', () => {
-    expect(isEqual([1, '12', 'string', true, undefined], ['12', 1, 'string', true, undefined])).toBe(false);
+    expect(
+      isEqual([1, '12', 'string', true, undefined], ['12', 1, 'string', true, undefined]),
+    ).toBe(false);
   });
 
   it('considers that `undefined` is equal to `undefined`', () => {
@@ -102,50 +106,74 @@ describe('isEqual', () => {
   });
 
   it('makes a deep comparison', () => {
-    const a = [undefined, {
-      a: 1,
-      test: 2,
-      something: {
+    const a = [
+      undefined,
+      {
         a: 1,
-        hola: 'Mundo',
-        'an-array': [1, undefined, { hello: 'wolrd', test: { foo: '1' } }, ['a', 'b', 'C']],
+        test: 2,
+        something: {
+          a: 1,
+          hola: 'Mundo',
+          'an-array': [1, undefined, { hello: 'wolrd', test: { foo: '1' } }, ['a', 'b', 'C']],
+        },
       },
-    }, null, [], { a: 1, b: 2, c: 3 }];
+      null,
+      [],
+      { a: 1, b: 2, c: 3 },
+    ];
 
-    const b = [undefined, {
-      a: 1,
-      test: 2,
-      something: {
+    const b = [
+      undefined,
+      {
         a: 1,
-        hola: 'Mundo',
-        'an-array': [1, undefined, { hello: 'wolrd', test: { foo: '1' } }, ['a', 'b', 'C']],
+        test: 2,
+        something: {
+          a: 1,
+          hola: 'Mundo',
+          'an-array': [1, undefined, { hello: 'wolrd', test: { foo: '1' } }, ['a', 'b', 'C']],
+        },
       },
-    }, null, [], { a: 1, b: 2, c: 3 }];
+      null,
+      [],
+      { a: 1, b: 2, c: 3 },
+    ];
 
     expect(isEqual(a, b)).toBe(true);
   });
 
   it('makes a deep comparison for something that is not equal', () => {
-    const a = [undefined, {
-      a: 1,
-      test: 2,
-      something: {
+    const a = [
+      undefined,
+      {
         a: 1,
-        hola: 'Mundo',
-        'an-array': [1, undefined, { hello: 'wolrd', test: { foo: '1' } }, ['a', 'b', 'C']],
+        test: 2,
+        something: {
+          a: 1,
+          hola: 'Mundo',
+          'an-array': [1, undefined, { hello: 'wolrd', test: { foo: '1' } }, ['a', 'b', 'C']],
+        },
       },
-    }, null, [], { a: 1, b: 2, c: 3 }];
+      null,
+      [],
+      { a: 1, b: 2, c: 3 },
+    ];
 
-    const b = [undefined, {
-      a: 1,
-      test: 2,
-      something: {
+    const b = [
+      undefined,
+      {
         a: 1,
-        hola: 'Mundo',
-        // The 1 in foo is different
-        'an-array': [1, undefined, { hello: 'wolrd', test: { foo: 1 } }, ['a', 'b', 'C']],
+        test: 2,
+        something: {
+          a: 1,
+          hola: 'Mundo',
+          // The 1 in foo is different
+          'an-array': [1, undefined, { hello: 'wolrd', test: { foo: 1 } }, ['a', 'b', 'C']],
+        },
       },
-    }, null, [], { a: 1, b: 2, c: 3 }];
+      null,
+      [],
+      { a: 1, b: 2, c: 3 },
+    ];
 
     expect(isEqual(a, b)).toBe(false);
   });

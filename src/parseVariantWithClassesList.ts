@@ -9,14 +9,12 @@ import pick from './helpers/pick';
 import mergeClasses from './mergeClasses';
 import { CSSClassesList, CSSRawClassesList } from './types';
 import hasProperty from './helpers/hasProperty';
+import isObject from './helpers/isObject';
 
-const getCustomPropsFromVariant = <
-  P extends ObjectWithClassesList,
-  ClassesKeys extends string,
->(
-    variants?: VariantsWithClassesList<P, ClassesKeys>,
-    variant?: string,
-  ): WithVariantPropsAndClassesList<P, ClassesKeys> | undefined => {
+const getCustomPropsFromVariant = <P extends ObjectWithClassesList, ClassesKeys extends string>(
+  variants?: VariantsWithClassesList<P, ClassesKeys>,
+  variant?: string,
+): WithVariantPropsAndClassesList<P, ClassesKeys> | undefined => {
   if (variant !== undefined && variants) {
     return variants[variant];
   }
@@ -24,10 +22,11 @@ const getCustomPropsFromVariant = <
   return undefined;
 };
 
-const getShouldClearClasses = <
-  P extends ObjectWithClassesList,
-  ClassesKeys extends string,
->(props: WithVariantPropsAndClassesList<P, ClassesKeys>, key: string, variant: string | undefined): boolean => {
+const getShouldClearClasses = <P extends ObjectWithClassesList, ClassesKeys extends string>(
+  props: WithVariantPropsAndClassesList<P, ClassesKeys>,
+  key: string,
+  variant: string | undefined,
+): boolean => {
   if (variant === undefined) {
     return hasProperty(props, key) && (props[key] === undefined || props[key] === null);
   }
@@ -35,21 +34,21 @@ const getShouldClearClasses = <
   if (props.variants !== undefined && props.variants[variant] !== undefined) {
     const propsVariant = props.variants[variant] as WithVariantProps<P>;
 
-    return hasProperty(propsVariant, key) && (propsVariant[key] === undefined || propsVariant[key] === null);
+    return (
+      hasProperty(propsVariant, key)
+      && (propsVariant[key] === undefined || propsVariant[key] === null)
+    );
   }
 
   return false;
 };
 
-const parseVariantWithClassesList = <
-  P extends ObjectWithClassesList,
-  ClassesKeys extends string,
->(
-    props: WithVariantPropsAndClassesList<P, ClassesKeys>,
-    classesListKeys: Readonly<Array<ClassesKeys>>,
-    globalConfiguration?: WithVariantPropsAndClassesList<P, ClassesKeys>,
-    defaultConfiguration?: WithVariantPropsAndClassesList<P, ClassesKeys>,
-  ): P => {
+const parseVariantWithClassesList = <P extends ObjectWithClassesList, ClassesKeys extends string>(
+  props: WithVariantPropsAndClassesList<P, ClassesKeys>,
+  classesListKeys: Readonly<Array<ClassesKeys>>,
+  globalConfiguration?: WithVariantPropsAndClassesList<P, ClassesKeys>,
+  defaultConfiguration?: WithVariantPropsAndClassesList<P, ClassesKeys>,
+): P => {
   const { variants, variant, ...mainProps } = {
     ...defaultConfiguration,
     ...globalConfiguration,
@@ -69,31 +68,67 @@ const parseVariantWithClassesList = <
     });
   } else {
     classesListKeys.forEach((classItemKey) => {
-      if (props.classes !== undefined && hasProperty(props.classes, classItemKey)) {
-        classes[classItemKey] = props.classes[classItemKey];
-      } else if (globalConfiguration !== undefined && globalConfiguration.classes !== undefined && hasProperty(globalConfiguration.classes, classItemKey)) {
+      // Get classes from global configuration or alternatively from library configuration
+      if (
+        globalConfiguration
+        && isObject(globalConfiguration.classes)
+        && classItemKey in globalConfiguration.classes
+      ) {
         classes[classItemKey] = globalConfiguration.classes[classItemKey];
-      } else if (defaultConfiguration !== undefined && defaultConfiguration.classes !== undefined && hasProperty(defaultConfiguration.classes, classItemKey)) {
+      } else if (
+        defaultConfiguration
+        && isObject(defaultConfiguration.classes)
+        && classItemKey in defaultConfiguration.classes
+      ) {
         classes[classItemKey] = defaultConfiguration.classes[classItemKey];
+      }
+
+      // Get classes from props and merge them with the previous ones
+      if (isObject(props.classes) && classItemKey in props.classes) {
+        if (typeof props.classes[classItemKey] !== 'undefined') {
+          classes[classItemKey] = [classes[classItemKey], props.classes[classItemKey]];
+        } else {
+          classes[classItemKey] = undefined;
+        }
       }
 
       if (variant) {
         if (props.variants !== undefined && props.variants[variant] !== undefined) {
           const propsVariant = props.variants[variant] as WithVariantProps<P>;
 
-          if (propsVariant.classes && hasProperty(propsVariant.classes, classItemKey)) {
+          if (isObject(propsVariant.classes) && classItemKey in propsVariant.classes) {
             classes[classItemKey] = propsVariant.classes[classItemKey];
           }
-        } else if (globalConfiguration !== undefined && globalConfiguration.variants !== undefined && globalConfiguration.variants[variant] !== undefined) {
-          const globalConfigurationVariant = globalConfiguration.variants[variant] as WithVariantProps<P>;
+        } else if (
+          globalConfiguration
+          && isObject(globalConfiguration.variants)
+          && variant in globalConfiguration.variants
+        ) {
+          const globalConfigurationVariant = globalConfiguration.variants[
+            variant
+          ] as WithVariantProps<P>;
 
-          if (globalConfigurationVariant.classes && hasProperty(globalConfigurationVariant.classes, classItemKey)) {
+          if (
+            globalConfigurationVariant.classes
+            && isObject(globalConfigurationVariant.classes)
+            && classItemKey in globalConfigurationVariant.classes
+          ) {
             classes[classItemKey] = globalConfigurationVariant.classes[classItemKey];
           }
-        } else if (defaultConfiguration !== undefined && defaultConfiguration.variants !== undefined && defaultConfiguration.variants[variant] !== undefined) {
-          const defaultConfigurationVariant = defaultConfiguration.variants[variant] as WithVariantProps<P>;
+        } else if (
+          defaultConfiguration !== undefined
+          && defaultConfiguration.variants !== undefined
+          && defaultConfiguration.variants[variant] !== undefined
+        ) {
+          const defaultConfigurationVariant = defaultConfiguration.variants[
+            variant
+          ] as WithVariantProps<P>;
 
-          if (defaultConfigurationVariant.classes && hasProperty(defaultConfigurationVariant.classes, classItemKey)) {
+          if (
+            defaultConfigurationVariant.classes
+            && isObject(defaultConfigurationVariant.classes)
+            && classItemKey in defaultConfigurationVariant.classes
+          ) {
             classes[classItemKey] = defaultConfigurationVariant.classes[classItemKey];
           }
         }
@@ -107,31 +142,68 @@ const parseVariantWithClassesList = <
     });
   } else {
     classesListKeys.forEach((classItemKey) => {
-      if (props.fixedClasses !== undefined && hasProperty(props.fixedClasses, classItemKey)) {
-        fixedClasses[classItemKey] = props.fixedClasses[classItemKey];
-      } else if (globalConfiguration !== undefined && globalConfiguration.fixedClasses !== undefined && hasProperty(globalConfiguration.fixedClasses, classItemKey)) {
+      // Get classes from global configuration or alternatively from library configuration
+      if (
+        globalConfiguration
+        && isObject(globalConfiguration.fixedClasses)
+        && classItemKey in globalConfiguration.fixedClasses
+      ) {
         fixedClasses[classItemKey] = globalConfiguration.fixedClasses[classItemKey];
-      } else if (defaultConfiguration !== undefined && defaultConfiguration.fixedClasses !== undefined && hasProperty(defaultConfiguration.fixedClasses, classItemKey)) {
+      } else if (
+        defaultConfiguration
+        && isObject(defaultConfiguration.fixedClasses)
+        && classItemKey in defaultConfiguration.fixedClasses
+      ) {
         fixedClasses[classItemKey] = defaultConfiguration.fixedClasses[classItemKey];
+      }
+
+      // Get classes from props and merge them with the previous ones
+      if (isObject(props.fixedClasses) && classItemKey in props.fixedClasses) {
+        if (typeof props.fixedClasses[classItemKey] !== 'undefined') {
+          fixedClasses[classItemKey] = [
+            fixedClasses[classItemKey],
+            props.fixedClasses[classItemKey],
+          ];
+        } else {
+          classes[classItemKey] = undefined;
+        }
       }
 
       if (variant) {
         if (props.variants !== undefined && props.variants[variant] !== undefined) {
           const propsVariant = props.variants[variant] as WithVariantProps<P>;
 
-          if (propsVariant.fixedClasses && hasProperty(propsVariant.fixedClasses, classItemKey)) {
+          if (isObject(propsVariant.fixedClasses) && classItemKey in propsVariant.fixedClasses) {
             fixedClasses[classItemKey] = propsVariant.fixedClasses[classItemKey];
           }
-        } else if (globalConfiguration !== undefined && globalConfiguration.variants !== undefined && globalConfiguration.variants[variant] !== undefined) {
-          const globalConfigurationVariant = globalConfiguration.variants[variant] as WithVariantProps<P>;
+        } else if (
+          globalConfiguration !== undefined
+          && globalConfiguration.variants !== undefined
+          && globalConfiguration.variants[variant] !== undefined
+        ) {
+          const globalConfigurationVariant = globalConfiguration.variants[
+            variant
+          ] as WithVariantProps<P>;
 
-          if (globalConfigurationVariant.fixedClasses && hasProperty(globalConfigurationVariant.fixedClasses, classItemKey)) {
+          if (
+            isObject(globalConfigurationVariant.fixedClasses)
+            && classItemKey in globalConfigurationVariant.fixedClasses
+          ) {
             fixedClasses[classItemKey] = globalConfigurationVariant.fixedClasses[classItemKey];
           }
-        } else if (defaultConfiguration !== undefined && defaultConfiguration.variants !== undefined && defaultConfiguration.variants[variant] !== undefined) {
-          const defaultConfigurationVariant = defaultConfiguration.variants[variant] as WithVariantProps<P>;
+        } else if (
+          defaultConfiguration !== undefined
+          && defaultConfiguration.variants !== undefined
+          && defaultConfiguration.variants[variant] !== undefined
+        ) {
+          const defaultConfigurationVariant = defaultConfiguration.variants[
+            variant
+          ] as WithVariantProps<P>;
 
-          if (defaultConfigurationVariant.fixedClasses && hasProperty(defaultConfigurationVariant.fixedClasses, classItemKey)) {
+          if (
+            isObject(defaultConfigurationVariant.fixedClasses)
+            && classItemKey in defaultConfigurationVariant.fixedClasses
+          ) {
             fixedClasses[classItemKey] = defaultConfigurationVariant.fixedClasses[classItemKey];
           }
         }

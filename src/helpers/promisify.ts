@@ -1,4 +1,4 @@
-const promisify = <P>(value: Promise<P> | P) : Promise<P> => {
+const promisify = <P>(value: Promise<P> | P): Promise<P> => {
   if (value instanceof Promise) {
     return value;
   }

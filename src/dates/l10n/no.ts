@@ -4,32 +4,11 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Norwegian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør'],
-    longhand: [
-      'Søndag',
-      'Mandag',
-      'Tirsdag',
-      'Onsdag',
-      'Torsdag',
-      'Fredag',
-      'Lørdag',
-    ],
+    longhand: ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Mai',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Des',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
     longhand: [
       'Januar',
       'Februar',

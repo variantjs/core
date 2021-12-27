@@ -2,7 +2,7 @@
 type DebounceFn = (...args: any[]) => void;
 
 export type DebouncedFn = {
-  cancel: () => void,
+  cancel: () => void
 } & DebounceFn;
 
 const debounce = (func: (...args: any[]) => void, wait = 200): DebouncedFn => {

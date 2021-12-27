@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Bangla: CustomDateLocale = {
   weekdays: {
     shorthand: ['রবি', 'সোম', 'মঙ্গল', 'বুধ', 'বৃহস্পতি', 'শুক্র', 'শনি'],
-    longhand: [
-      'রবিবার',
-      'সোমবার',
-      'মঙ্গলবার',
-      'বুধবার',
-      'বৃহস্পতিবার',
-      'শুক্রবার',
-      'শনিবার',
-    ],
+    longhand: ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'],
   },
 
   months: {

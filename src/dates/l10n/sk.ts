@@ -4,32 +4,11 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Slovak: CustomDateLocale = {
   weekdays: {
     shorthand: ['Ned', 'Pon', 'Ut', 'Str', 'Štv', 'Pia', 'Sob'],
-    longhand: [
-      'Nedeľa',
-      'Pondelok',
-      'Utorok',
-      'Streda',
-      'Štvrtok',
-      'Piatok',
-      'Sobota',
-    ],
+    longhand: ['Nedeľa', 'Pondelok', 'Utorok', 'Streda', 'Štvrtok', 'Piatok', 'Sobota'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Máj',
-      'Jún',
-      'Júl',
-      'Aug',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Máj', 'Jún', 'Júl', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
     longhand: [
       'Január',
       'Február',

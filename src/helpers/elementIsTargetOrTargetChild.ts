@@ -1,4 +1,7 @@
-const elementIsTargetOrTargetChild = (target: EventTarget | null, wrapper: HTMLElement) : boolean => {
+const elementIsTargetOrTargetChild = (
+  target: EventTarget | null,
+  wrapper: HTMLElement,
+): boolean => {
   if (!(target instanceof Element)) {
     return false;
   }

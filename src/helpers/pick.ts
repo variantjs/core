@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const pick = <T, K extends keyof T>(object: T, condition: (value: T[K], key: K) => boolean = (value) => !!value): T => {
+const pick = <T, K extends keyof T>(
+  object: T,
+  condition: (value: T[K], key: K) => boolean = (value) => !!value,
+): T => {
   const newObject = { ...object };
 
   Object.keys(object)

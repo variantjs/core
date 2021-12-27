@@ -4,32 +4,11 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Romanian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Dum', 'Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sâm'],
-    longhand: [
-      'Duminică',
-      'Luni',
-      'Marți',
-      'Miercuri',
-      'Joi',
-      'Vineri',
-      'Sâmbătă',
-    ],
+    longhand: ['Duminică', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', 'Sâmbătă'],
   },
 
   months: {
-    shorthand: [
-      'Ian',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Mai',
-      'Iun',
-      'Iul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Noi',
-      'Dec',
-    ],
+    shorthand: ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Noi', 'Dec'],
     longhand: [
       'Ianuarie',
       'Februarie',

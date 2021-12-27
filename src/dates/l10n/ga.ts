@@ -18,20 +18,7 @@ export const Irish: CustomDateLocale = {
   },
 
   months: {
-    shorthand: [
-      'Ean',
-      'Fea',
-      'Már',
-      'Aib',
-      'Bea',
-      'Mei',
-      'Iúi',
-      'Lún',
-      'MFo',
-      'DFo',
-      'Sam',
-      'Nol',
-    ],
+    shorthand: ['Ean', 'Fea', 'Már', 'Aib', 'Bea', 'Mei', 'Iúi', 'Lún', 'MFo', 'DFo', 'Sam', 'Nol'],
     longhand: [
       'Eanáir',
       'Feabhra',

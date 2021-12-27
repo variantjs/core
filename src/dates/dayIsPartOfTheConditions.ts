@@ -2,7 +2,12 @@ import isSameDay from './isSameDay';
 
 import { DateParser, DateConditions } from '../types/Dates';
 
-const dayIsPartOfTheConditions = (date: Date | null | undefined, condition: DateConditions | undefined, dateParser: DateParser, dateFormat?: string): boolean => {
+const dayIsPartOfTheConditions = (
+  date: Date | null | undefined,
+  condition: DateConditions | undefined,
+  dateParser: DateParser,
+  dateFormat?: string,
+): boolean => {
   if (!date) {
     return false;
   }

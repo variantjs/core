@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const UzbekLatin: CustomDateLocale = {
   weekdays: {
     shorthand: ['Ya', 'Du', 'Se', 'Cho', 'Pa', 'Ju', 'Sha'],
-    longhand: [
-      'Yakshanba',
-      'Dushanba',
-      'Seshanba',
-      'Chorshanba',
-      'Payshanba',
-      'Juma',
-      'Shanba',
-    ],
+    longhand: ['Yakshanba', 'Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma', 'Shanba'],
   },
   months: {
     shorthand: [

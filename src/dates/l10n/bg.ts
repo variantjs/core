@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Bulgarian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-    longhand: [
-      'Неделя',
-      'Понеделник',
-      'Вторник',
-      'Сряда',
-      'Четвъртък',
-      'Петък',
-      'Събота',
-    ],
+    longhand: ['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'],
   },
 
   months: {

@@ -18,7 +18,8 @@ const filterOptions = (options: NormalizedOptions, query: string): NormalizedOpt
       }
 
       return option;
-    }).filter((option: NormalizedOption): boolean => {
+    })
+    .filter((option: NormalizedOption): boolean => {
       const foundText = String(option.text)
         .toUpperCase()
         .trim()

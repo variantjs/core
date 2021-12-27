@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Estonian: CustomDateLocale = {
   weekdays: {
     shorthand: ['P', 'E', 'T', 'K', 'N', 'R', 'L'],
-    longhand: [
-      'Pühapäev',
-      'Esmaspäev',
-      'Teisipäev',
-      'Kolmapäev',
-      'Neljapäev',
-      'Reede',
-      'Laupäev',
-    ],
+    longhand: ['Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev'],
   },
 
   months: {

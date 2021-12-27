@@ -6,15 +6,7 @@ export const Hungarian: CustomDateLocale = {
 
   weekdays: {
     shorthand: ['V', 'H', 'K', 'Sz', 'Cs', 'P', 'Szo'],
-    longhand: [
-      'Vasárnap',
-      'Hétfő',
-      'Kedd',
-      'Szerda',
-      'Csütörtök',
-      'Péntek',
-      'Szombat',
-    ],
+    longhand: ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'],
   },
 
   months: {

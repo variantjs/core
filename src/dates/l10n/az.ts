@@ -16,20 +16,7 @@ export const Azerbaijan: CustomDateLocale = {
   },
 
   months: {
-    shorthand: [
-      'Yan',
-      'Fev',
-      'Mar',
-      'Apr',
-      'May',
-      'İyn',
-      'İyl',
-      'Avq',
-      'Sen',
-      'Okt',
-      'Noy',
-      'Dek',
-    ],
+    shorthand: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'İyn', 'İyl', 'Avq', 'Sen', 'Okt', 'Noy', 'Dek'],
     longhand: [
       'Yanvar',
       'Fevral',

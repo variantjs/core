@@ -1,7 +1,13 @@
 import { DateParser, DateValue } from '../types/Dates';
 import parseDate from './parseDate';
 
-const dateIsPartOfTheRange = (date: Date, min: DateValue | undefined, max: DateValue | undefined, dateParser: DateParser = parseDate, dateFormat = 'Y-m-d H:i:S'): boolean => {
+const dateIsPartOfTheRange = (
+  date: Date,
+  min: DateValue | undefined,
+  max: DateValue | undefined,
+  dateParser: DateParser = parseDate,
+  dateFormat = 'Y-m-d H:i:S',
+): boolean => {
   const minDate = min === undefined ? undefined : dateParser(min, dateFormat);
   const maxDate = max === undefined ? undefined : dateParser(max, dateFormat);
 

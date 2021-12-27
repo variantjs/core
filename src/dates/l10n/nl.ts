@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Dutch: CustomDateLocale = {
   weekdays: {
     shorthand: ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'],
-    longhand: [
-      'zondag',
-      'maandag',
-      'dinsdag',
-      'woensdag',
-      'donderdag',
-      'vrijdag',
-      'zaterdag',
-    ],
+    longhand: ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'],
   },
 
   months: {

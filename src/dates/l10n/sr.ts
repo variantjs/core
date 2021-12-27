@@ -4,32 +4,11 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Serbian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub'],
-    longhand: [
-      'Nedelja',
-      'Ponedeljak',
-      'Utorak',
-      'Sreda',
-      'Četvrtak',
-      'Petak',
-      'Subota',
-    ],
+    longhand: ['Nedelja', 'Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak', 'Subota'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Maj',
-      'Jun',
-      'Jul',
-      'Avg',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'],
     longhand: [
       'Januar',
       'Februar',

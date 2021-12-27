@@ -22,18 +22,28 @@ describe('parseDate', () => {
     });
 
     it('returns today date if passed `today`', () => {
-      const today = new Date(new Date().getFullYear(), (new Date()).getMonth(), (new Date()).getDate(), 0, 0, 0, 0);
+      const today = new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate(),
+        0,
+        0,
+        0,
+        0,
+      );
       expect(parseDate('today')).toEqual(today);
     });
 
     it('parses gmt dates', () => {
-      expect(parseDate('Sat, 23 Oct 2021 20:58:00 GMT'))
-        .toEqual(new Date(Date.UTC(2021, 9, 23, 20, 58, 0, 0)));
+      expect(parseDate('Sat, 23 Oct 2021 20:58:00 GMT')).toEqual(
+        new Date(Date.UTC(2021, 9, 23, 20, 58, 0, 0)),
+      );
     });
 
     it('parses iso dates', () => {
-      expect(parseDate('2021-10-23T20:58:11.733Z'))
-        .toEqual(new Date(Date.UTC(2021, 9, 23, 20, 58, 11, 733)));
+      expect(parseDate('2021-10-23T20:58:11.733Z')).toEqual(
+        new Date(Date.UTC(2021, 9, 23, 20, 58, 11, 733)),
+      );
     });
 
     it('parses a date in the default format', () => {
@@ -41,11 +51,15 @@ describe('parseDate', () => {
     });
 
     it('parses a date ignoring time', () => {
-      expect(parseDate('2020-02-18 12:34:56', defaultFormat, timeless)).toEqual(new Date(2020, 1, 18, 0, 0, 0));
+      expect(parseDate('2020-02-18 12:34:56', defaultFormat, timeless)).toEqual(
+        new Date(2020, 1, 18, 0, 0, 0),
+      );
     });
 
     it('escapes the token', () => {
-      expect(parseDate('2020Y-02-18 12m:34:56', 'Y\\Y-m-d H\\m:i:S')).toEqual(new Date(2020, 1, 18, 12, 34, 56));
+      expect(parseDate('2020Y-02-18 12m:34:56', 'Y\\Y-m-d H\\m:i:S')).toEqual(
+        new Date(2020, 1, 18, 12, 34, 56),
+      );
     });
 
     it('returns undefined if using an invalid format', () => {
@@ -66,9 +80,7 @@ describe('parseDate', () => {
       beforeEach(() => {
         baseDate = new Date('2021-01-01T06:00:00.000Z');
 
-        jest
-          .useFakeTimers()
-          .setSystemTime(baseDate.getTime());
+        jest.useFakeTimers().setSystemTime(baseDate.getTime());
       });
 
       afterEach(() => {
@@ -141,7 +153,9 @@ describe('parseDate', () => {
       });
       // Z / ISO Date format / 2017-03-04T01:23:43.000Z
       it('Z', () => {
-        expect(parseDate('2020-01-01T06:00:00.000', 'Z')).toEqual(new Date('2020-01-01T12:00:00.000Z'));
+        expect(parseDate('2020-01-01T06:00:00.000', 'Z')).toEqual(
+          new Date('2020-01-01T12:00:00.000Z'),
+        );
       });
 
       // H / Hours (24 hours) / 00 to 23

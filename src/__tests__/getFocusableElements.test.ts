@@ -105,14 +105,7 @@ describe('elementIsTargetOrTargetChild', () => {
   it('doesnt return any element that is disabled ', () => {
     const el = document.createElement('div');
 
-    const els = [
-      'a',
-      'button',
-      'input',
-      'textarea',
-      'select',
-      'details',
-    ];
+    const els = ['a', 'button', 'input', 'textarea', 'select', 'details'];
 
     els.forEach((tagName) => {
       const focusable = document.createElement(tagName);

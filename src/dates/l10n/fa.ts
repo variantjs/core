@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Persian: CustomDateLocale = {
   weekdays: {
     shorthand: ['یک', 'دو', 'سه', 'چهار', 'پنج', 'جمعه', 'شنبه'],
-    longhand: [
-      'یک‌شنبه',
-      'دوشنبه',
-      'سه‌شنبه',
-      'چهارشنبه',
-      'پنچ‌شنبه',
-      'جمعه',
-      'شنبه',
-    ],
+    longhand: ['یک‌شنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنچ‌شنبه', 'جمعه', 'شنبه'],
   },
 
   months: {

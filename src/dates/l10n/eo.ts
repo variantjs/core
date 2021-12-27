@@ -9,32 +9,11 @@ export const Esperanto: CustomDateLocale = {
 
   weekdays: {
     shorthand: ['Dim', 'Lun', 'Mar', 'Mer', 'Ĵaŭ', 'Ven', 'Sab'],
-    longhand: [
-      'dimanĉo',
-      'lundo',
-      'mardo',
-      'merkredo',
-      'ĵaŭdo',
-      'vendredo',
-      'sabato',
-    ],
+    longhand: ['dimanĉo', 'lundo', 'mardo', 'merkredo', 'ĵaŭdo', 'vendredo', 'sabato'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Maj',
-      'Jun',
-      'Jul',
-      'Aŭg',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dec',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aŭg', 'Sep', 'Okt', 'Nov', 'Dec'],
     longhand: [
       'januaro',
       'februaro',

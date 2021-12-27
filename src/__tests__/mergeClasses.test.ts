@@ -13,6 +13,26 @@ describe('merge classes function', () => {
     expect(mergeClasses(['hello'], ['world'])).toBe('hello world');
   });
 
+  it('allows functions that can manipulate the classes interactively', () => {
+    expect(
+      mergeClasses(
+        ['hello'],
+        ({ clear, add }) => {
+          clear();
+          add('no');
+        },
+        ['world'],
+        ({ remove }) => {
+          remove('world');
+        },
+      ),
+    ).toBe('no');
+  });
+
+  it('does not allowe duplicates', () => {
+    expect(mergeClasses(['hello'], ['hello'])).toBe('hello');
+  });
+
   it('merges the truthy values from an object format', () => {
     expect(
       mergeClasses(
@@ -23,7 +43,8 @@ describe('merge classes function', () => {
         {
           world: 1,
           universe: null,
-        },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any,
       ),
     ).toBe('hello world');
   });

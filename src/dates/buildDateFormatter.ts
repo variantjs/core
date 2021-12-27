@@ -1,7 +1,7 @@
 import formatDate from './formatDate';
 import { DateLocale, DateFormatter } from '../types/Dates';
 
-const buildDateFormatter = (locale: DateLocale, customDateFormatter?: DateFormatter) : DateFormatter => (date: Date | null | undefined, format = 'Y-m-d H:i:S') => {
+const buildDateFormatter = (locale: DateLocale, customDateFormatter?: DateFormatter): DateFormatter => (date: Date | null | undefined, format = 'Y-m-d H:i:S') => {
   if (customDateFormatter) {
     return customDateFormatter(date, format, locale);
   }

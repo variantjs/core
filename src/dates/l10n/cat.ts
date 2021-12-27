@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Catalan: CustomDateLocale = {
   weekdays: {
     shorthand: ['Dg', 'Dl', 'Dt', 'Dc', 'Dj', 'Dv', 'Ds'],
-    longhand: [
-      'Diumenge',
-      'Dilluns',
-      'Dimarts',
-      'Dimecres',
-      'Dijous',
-      'Divendres',
-      'Dissabte',
-    ],
+    longhand: ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
   },
 
   months: {

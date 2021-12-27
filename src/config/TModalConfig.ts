@@ -13,7 +13,8 @@ export const TModalConfig = {
     // @tw
     wrapper: 'z-50 max-w-lg px-3 py-12',
     // @tw
-    close: 'absolute top-0 right-0 z-10 flex items-center justify-center w-8 h-8 -m-3 text-gray-700 transition ease-in-out bg-gray-100 rounded-full shadow duration-400 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 hover:bg-gray-200',
+    close:
+      'absolute top-0 right-0 z-10 flex items-center justify-center w-8 h-8 -m-3 text-gray-700 transition ease-in-out bg-gray-100 rounded-full shadow duration-400 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 hover:bg-gray-200',
     // @tw
     closeIcon: 'w-4 h-4',
     // @tw

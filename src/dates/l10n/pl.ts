@@ -4,32 +4,11 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Polish: CustomDateLocale = {
   weekdays: {
     shorthand: ['Nd', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'],
-    longhand: [
-      'Niedziela',
-      'Poniedziałek',
-      'Wtorek',
-      'Środa',
-      'Czwartek',
-      'Piątek',
-      'Sobota',
-    ],
+    longhand: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
   },
 
   months: {
-    shorthand: [
-      'Sty',
-      'Lut',
-      'Mar',
-      'Kwi',
-      'Maj',
-      'Cze',
-      'Lip',
-      'Sie',
-      'Wrz',
-      'Paź',
-      'Lis',
-      'Gru',
-    ],
+    shorthand: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'],
     longhand: [
       'Styczeń',
       'Luty',

@@ -1,12 +1,17 @@
 import clone from '../helpers/clone';
 
 import {
-  DateValue, DateLocale, TokenRegex, TokenParsingFunctions, TokenParsingFunction, DateToken,
+  DateValue,
+  DateLocale,
+  TokenRegex,
+  TokenParsingFunctions,
+  TokenParsingFunction,
+  DateToken,
 } from '../types/Dates';
 
 import { English } from './l10n/default';
 
-const boolToInt = (bool: boolean) : 1 | 0 => (bool === true ? 1 : 0);
+const boolToInt = (bool: boolean): 1 | 0 => (bool === true ? 1 : 0);
 
 const doNothing = (): undefined => undefined;
 
@@ -26,8 +31,7 @@ const tokenParsingFunctions: TokenParsingFunctions = {
   },
   K: (dateObj: Date, amPM: string, locale: DateLocale) => {
     dateObj.setHours(
-      (dateObj.getHours() % 12)
-        + 12 * boolToInt(new RegExp(locale.amPM[1], 'i').test(amPM)),
+      (dateObj.getHours() % 12) + 12 * boolToInt(new RegExp(locale.amPM[1], 'i').test(amPM)),
     );
   },
   M(dateObj: Date, shortMonth: string, locale: DateLocale) {
@@ -40,15 +44,7 @@ const tokenParsingFunctions: TokenParsingFunctions = {
 
   W(dateObj: Date, weekNum: string, locale: DateLocale) {
     const weekNumber = parseInt(weekNum, 10);
-    const date = new Date(
-      dateObj.getFullYear(),
-      0,
-      2 + (weekNumber - 1) * 7,
-      0,
-      0,
-      0,
-      0,
-    );
+    const date = new Date(dateObj.getFullYear(), 0, 2 + (weekNumber - 1) * 7, 0, 0, 0, 0);
     date.setDate(date.getDate() - date.getDay() + locale.firstDayOfWeek);
 
     return date;
@@ -127,7 +123,11 @@ const isIsoString = (date: string): boolean => date.toLowerCase().endsWith('z');
 
 const getIsBackSlash = (char: string | undefined): boolean => char === '\\';
 
-const getTokenParsingOperationsFromFormat = (date: string, format: string, locale: DateLocale): { fn: TokenParsingFunction; match: string }[] => {
+const getTokenParsingOperationsFromFormat = (
+  date: string,
+  format: string,
+  locale: DateLocale,
+): { fn: TokenParsingFunction; match: string }[] => {
   // The regex used for the `K` token is different for English and other languages
   const localeTokenRegex = { ...tokenRegex };
   // Generates something like `(AM|PM|am|pm)`
@@ -181,7 +181,12 @@ const getToday = (): Date => {
   return today;
 };
 
-const parseDate = (date: DateValue | undefined | null, fromFormat = 'Y-m-d H:i:S', timeless?: boolean, customLocale?: DateLocale): Date | undefined => {
+const parseDate = (
+  date: DateValue | undefined | null,
+  fromFormat = 'Y-m-d H:i:S',
+  timeless?: boolean,
+  customLocale?: DateLocale,
+): Date | undefined => {
   if (date !== 0 && !date) {
     return undefined;
   }

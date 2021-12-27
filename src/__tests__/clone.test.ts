@@ -30,15 +30,20 @@ describe('clone', () => {
   });
 
   it('makes a deep clone', () => {
-    const obj = [{
-      a: 1,
-      test: 2,
-      something: {
+    const obj = [
+      {
         a: 1,
-        hola: 'Mundo',
-        'an-array': [1, { hello: 'wolrd', test: { foo: '1' } }, ['a', 'b', 'C']],
+        test: 2,
+        something: {
+          a: 1,
+          hola: 'Mundo',
+          'an-array': [1, { hello: 'wolrd', test: { foo: '1' } }, ['a', 'b', 'C']],
+        },
       },
-    }, null, [], { a: 1, b: 2, c: 3 }];
+      null,
+      [],
+      { a: 1, b: 2, c: 3 },
+    ];
 
     expect(clone(obj)).toEqual(obj);
   });

@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Thai: CustomDateLocale = {
   weekdays: {
     shorthand: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'],
-    longhand: [
-      'อาทิตย์',
-      'จันทร์',
-      'อังคาร',
-      'พุธ',
-      'พฤหัสบดี',
-      'ศุกร์',
-      'เสาร์',
-    ],
+    longhand: ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'],
   },
 
   months: {

@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Russian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-    longhand: [
-      'Воскресенье',
-      'Понедельник',
-      'Вторник',
-      'Среда',
-      'Четверг',
-      'Пятница',
-      'Суббота',
-    ],
+    longhand: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
   },
   months: {
     shorthand: [

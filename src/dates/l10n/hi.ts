@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Hindi: CustomDateLocale = {
   weekdays: {
     shorthand: ['रवि', 'सोम', 'मंगल', 'बुध', 'गुरु', 'शुक्र', 'शनि'],
-    longhand: [
-      'रविवार',
-      'सोमवार',
-      'मंगलवार',
-      'बुधवार',
-      'गुरुवार',
-      'शुक्रवार',
-      'शनिवार',
-    ],
+    longhand: ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'],
   },
 
   months: {

@@ -4,15 +4,7 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Burmese: CustomDateLocale = {
   weekdays: {
     shorthand: ['နွေ', 'လာ', 'ဂါ', 'ဟူး', 'ကြာ', 'သော', 'နေ'],
-    longhand: [
-      'တနင်္ဂနွေ',
-      'တနင်္လာ',
-      'အင်္ဂါ',
-      'ဗုဒ္ဓဟူး',
-      'ကြာသပတေး',
-      'သောကြာ',
-      'စနေ',
-    ],
+    longhand: ['တနင်္ဂနွေ', 'တနင်္လာ', 'အင်္ဂါ', 'ဗုဒ္ဓဟူး', 'ကြာသပတေး', 'သောကြာ', 'စနေ'],
   },
 
   months: {

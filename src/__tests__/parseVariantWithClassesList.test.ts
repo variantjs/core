@@ -1,5 +1,5 @@
 import { parseVariantWithClassesList } from '../index';
-import { ObjectWithClassesList, WithVariantPropsAndClassesList } from '../types';
+import { CSSClass, ObjectWithClassesList, WithVariantPropsAndClassesList } from '../types';
 
 describe('parse variants with classes list function', () => {
   it('returns the same object if no variants passed', () => {
@@ -255,11 +255,14 @@ describe('parse variants with classes list function', () => {
     expect(parseVariantWithClassesList(props, [], configuration)).toEqual(props);
   });
 
-  it('uses the props over the configuration for classes list', () => {
-    const props = {
+  it('respects the props for classes list', () => {
+    const props: CSSClass = {
       classes: {
-        wrapper: 'p-3',
-        body: 'text-gray-500',
+        wrapper: 'm-3',
+        body: ({ clear, add }) => {
+          clear();
+          add('text-gray-500');
+        },
       },
     };
 
@@ -271,14 +274,18 @@ describe('parse variants with classes list function', () => {
     };
 
     expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration)).toEqual({
-      classesList: props.classes,
+      classesList: {
+        wrapper: 'p-4 m-3',
+        body: 'text-gray-500',
+      },
     });
   });
 
-  it('overrides only the props defined from the configuration', () => {
+  it('respects only the props defined from the configuration', () => {
     const props = {
       classes: {
-        wrapper: 'p-3',
+        wrapper: 'm-3',
+        inner: 'p-2',
       },
     };
 
@@ -292,7 +299,8 @@ describe('parse variants with classes list function', () => {
     expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration)).toEqual({
       classesList: {
         body: 'text-red-500',
-        wrapper: 'p-3',
+        wrapper: 'p-4 m-3',
+        inner: undefined,
       },
     });
   });
@@ -308,14 +316,14 @@ describe('parse variants with classes list function', () => {
     const configuration = {
       classes: {
         wrapper: 'p-4',
-        body: 'text-red-500',
+        body: 'bg-red-500',
       },
     };
 
     expect(parseVariantWithClassesList(props, ['wrapper', 'body'], {}, configuration)).toEqual({
       classesList: {
         wrapper: undefined,
-        body: 'text-gray-500',
+        body: 'bg-red-500 text-gray-500',
       },
     });
   });
@@ -420,11 +428,11 @@ describe('parse variants with classes list function', () => {
       },
     };
 
-    const defaultConfiguration = {
+    const defaultConfiguration = {};
 
-    };
-
-    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration, defaultConfiguration)).toEqual({
+    expect(
+      parseVariantWithClassesList(props, ['wrapper', 'body'], configuration, defaultConfiguration),
+    ).toEqual({
       classesList: {
         wrapper: 'border p-3',
       },
@@ -436,9 +444,7 @@ describe('parse variants with classes list function', () => {
       variant: 'error',
     };
 
-    const configuration = {
-
-    };
+    const configuration = {};
 
     const defaultConfiguration = {
       variants: {
@@ -453,7 +459,9 @@ describe('parse variants with classes list function', () => {
       },
     };
 
-    expect(parseVariantWithClassesList(props, ['wrapper', 'body'], configuration, defaultConfiguration)).toEqual({
+    expect(
+      parseVariantWithClassesList(props, ['wrapper', 'body'], configuration, defaultConfiguration),
+    ).toEqual({
       classesList: {
         wrapper: 'border p-3',
       },
@@ -721,6 +729,9 @@ describe('parse variants with classes list function', () => {
     const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       classes: {
         input: 'border-1',
+        label: ({ add }) => {
+          add('bg-green-500');
+        },
       },
     };
 
@@ -744,7 +755,7 @@ describe('parse variants with classes list function', () => {
       classesList: {
         wrapper: 'flex items-center space-x-2',
         inputWrapper: 'inline-flex',
-        label: 'uppercase text-gray-500',
+        label: 'uppercase text-gray-500 bg-green-500',
         input: 'border-1',
       },
     });
@@ -755,7 +766,12 @@ describe('parse variants with classes list function', () => {
 
     const props: WithVariantPropsAndClassesList<ObjectWithClassesList, ClassesKeys> = {
       classes: {
-        wrapper: 'flex items-center space-x-2',
+        wrapper: [
+          ({ clear }) => {
+            clear();
+          },
+          'flex items-center space-x-2',
+        ],
       },
     };
 

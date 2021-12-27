@@ -4,32 +4,11 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Italian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
-    longhand: [
-      'Domenica',
-      'Lunedì',
-      'Martedì',
-      'Mercoledì',
-      'Giovedì',
-      'Venerdì',
-      'Sabato',
-    ],
+    longhand: ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
   },
 
   months: {
-    shorthand: [
-      'Gen',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Mag',
-      'Giu',
-      'Lug',
-      'Ago',
-      'Set',
-      'Ott',
-      'Nov',
-      'Dic',
-    ],
+    shorthand: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
     longhand: [
       'Gennaio',
       'Febbraio',

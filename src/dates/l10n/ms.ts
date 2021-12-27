@@ -4,32 +4,11 @@ import { CustomDateLocale } from '../../types/Dates';
 export const Malaysian: CustomDateLocale = {
   weekdays: {
     shorthand: ['Min', 'Isn', 'Sel', 'Rab', 'Kha', 'Jum', 'Sab'],
-    longhand: [
-      'Minggu',
-      'Isnin',
-      'Selasa',
-      'Rabu',
-      'Khamis',
-      'Jumaat',
-      'Sabtu',
-    ],
+    longhand: ['Minggu', 'Isnin', 'Selasa', 'Rabu', 'Khamis', 'Jumaat', 'Sabtu'],
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Feb',
-      'Mac',
-      'Apr',
-      'Mei',
-      'Jun',
-      'Jul',
-      'Ogo',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Dis',
-    ],
+    shorthand: ['Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun', 'Jul', 'Ogo', 'Sep', 'Okt', 'Nov', 'Dis'],
     longhand: [
       'Januari',
       'Februari',

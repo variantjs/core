@@ -14,13 +14,11 @@ describe('substractFromArray', () => {
   });
 
   it('returns an empty array if is not array', () => {
-    expect(substractFromArray(null, 'whatever'))
-      .toEqual([]);
+    expect(substractFromArray(null, 'whatever')).toEqual([]);
   });
 
   it('removes an existing item for objects', () => {
     const arr = [{ a: 1 }, { b: '2' }, { three: '3' }];
-    expect(substractFromArray(arr, { b: '2' }))
-      .toEqual([{ a: 1 }, { three: '3' }]);
+    expect(substractFromArray(arr, { b: '2' })).toEqual([{ a: 1 }, { three: '3' }]);
   });
 });

@@ -2,15 +2,11 @@ import { DateLocale, TokenFormattingFunctions, DateToken } from '../types/Dates'
 
 import { English } from './l10n/default';
 
-const boolToInt = (bool: boolean) : 1 | 0 => (bool === true ? 1 : 0);
+const boolToInt = (bool: boolean): 1 | 0 => (bool === true ? 1 : 0);
 
-const pad = (number: string | number, length = 2) : string => `000${number}`.slice(length * -1);
+const pad = (number: string | number, length = 2): string => `000${number}`.slice(length * -1);
 
-const monthToString = (
-  monthNumber: number,
-  shorthand: boolean,
-  locale: DateLocale,
-): string => locale.months[shorthand ? 'shorthand' : 'longhand'][monthNumber];
+const monthToString = (monthNumber: number, shorthand: boolean, locale: DateLocale): string => locale.months[shorthand ? 'shorthand' : 'longhand'][monthNumber];
 
 export const tokenFormatingFunctions: TokenFormattingFunctions = {
   // get the date in UTC
@@ -18,18 +14,12 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
 
   // weekday name, short, e.g. Thu
   D(date: Date, locale: DateLocale) {
-    return locale.weekdays.shorthand[
-      tokenFormatingFunctions.w(date, locale) as number
-    ];
+    return locale.weekdays.shorthand[tokenFormatingFunctions.w(date, locale) as number];
   },
 
   // full month name e.g. January
   F(date: Date, locale: DateLocale) {
-    return monthToString(
-      (tokenFormatingFunctions.n(date, locale) as number) - 1,
-      false,
-      locale,
-    );
+    return monthToString((tokenFormatingFunctions.n(date, locale) as number) - 1, false, locale);
   },
 
   // padded hour 1-12
@@ -73,12 +63,9 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
     // Adjust to Thursday in week 1 and count number of weeks from date to week1.
     return (
       1
-        + Math.round(
-          ((date.getTime() - week1.getTime()) / 86400000
-            - 3
-            + ((week1.getDay() + 6) % 7))
-            / 7,
-        )
+      + Math.round(
+        ((date.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7,
+      )
     );
   },
 
@@ -118,7 +105,11 @@ export const tokenFormatingFunctions: TokenFormattingFunctions = {
   y: (date: Date) => String(date.getFullYear()).substring(2),
 };
 
-const formatDate = (date: Date | null | undefined, format: string, customLocale?: DateLocale): string => {
+const formatDate = (
+  date: Date | null | undefined,
+  format: string,
+  customLocale?: DateLocale,
+): string => {
   if (!date) {
     return '';
   }
@@ -130,7 +121,8 @@ const formatDate = (date: Date | null | undefined, format: string, customLocale?
     .map((char, i, arr) => {
       if (tokenFormatingFunctions[char as DateToken] && arr[i - 1] !== '\\') {
         return tokenFormatingFunctions[char as DateToken](date, locale);
-      } if (char !== '\\') {
+      }
+      if (char !== '\\') {
         return char;
       }
       return '';

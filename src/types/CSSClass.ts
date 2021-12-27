@@ -1,11 +1,21 @@
 export type CSSClassKeyValuePair = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any
+  [key: string]: CSSClass
 };
 
 export type CSSClasses = CSSClass[];
 
-export type CSSClass = CSSClassKeyValuePair | string | CSSClasses | undefined;
+export type CSSClass =
+  | CSSClassKeyValuePair
+  | string
+  | CSSClasses
+  | undefined
+  | null
+  | boolean
+  | ((modifiers: {
+    clear: () => void
+    add: (...cssClass: string[]) => void
+    remove: (cssClass: string) => void
+  }) => void);
 
 export type CSSRawClassesList<ClassesKeys extends string = string> = {
   [key in ClassesKeys]?: CSSClass

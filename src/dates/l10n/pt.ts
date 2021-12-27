@@ -16,20 +16,7 @@ export const Portuguese: CustomDateLocale = {
   },
 
   months: {
-    shorthand: [
-      'Jan',
-      'Fev',
-      'Mar',
-      'Abr',
-      'Mai',
-      'Jun',
-      'Jul',
-      'Ago',
-      'Set',
-      'Out',
-      'Nov',
-      'Dez',
-    ],
+    shorthand: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
     longhand: [
       'Janeiro',
       'Fevereiro',

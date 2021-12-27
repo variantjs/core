@@ -151,7 +151,28 @@ describe('formatDate', () => {
 
   describe('Custom locale', () => {
     const allTokens = [
-      'D', 'F', 'G', 'H', 'J', 'K', 'M', 'S', 'U', 'W', 'Y', 'Z', 'd', 'h', 'i', 'j', 'l', 'm', 'n', 's', 'w', 'y',
+      'D',
+      'F',
+      'G',
+      'H',
+      'J',
+      'K',
+      'M',
+      'S',
+      'U',
+      'W',
+      'Y',
+      'Z',
+      'd',
+      'h',
+      'i',
+      'j',
+      'l',
+      'm',
+      'n',
+      's',
+      'w',
+      'y',
     ];
 
     it('Spanish', () => {
@@ -160,7 +181,9 @@ describe('formatDate', () => {
         ...defaultLocale,
         ...Spanish,
       };
-      expect(formatDate(date, allTokens.join('-'), customLocale)).toEqual('Vie-Julio-08-08-2º-AM-Jul-08-1625231468-26-2021-2021-07-02T13:11:08.000Z-02-8-11-2-Viernes-07-7-8-5-21');
+      expect(formatDate(date, allTokens.join('-'), customLocale)).toEqual(
+        'Vie-Julio-08-08-2º-AM-Jul-08-1625231468-26-2021-2021-07-02T13:11:08.000Z-02-8-11-2-Viernes-07-7-8-5-21',
+      );
     });
   });
 });

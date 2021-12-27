@@ -40,33 +40,21 @@ describe('dayIsPartOfTheConditions', () => {
 
   it('handles an array of conditions', () => {
     const date = new Date(2019, 0, 1);
-    const conditions = [
-      (d: Date) => d.getFullYear() === 2019,
-      '2019-01-01',
-      new Date(2019, 0, 1),
-    ];
+    const conditions = [(d: Date) => d.getFullYear() === 2019, '2019-01-01', new Date(2019, 0, 1)];
 
     expect(dayIsPartOfTheConditions(date, conditions, dateParser, 'Y-m-d')).toBe(true);
   });
 
   it('handles an array of conditions if one condition is false', () => {
     const date = new Date(2019, 0, 1);
-    const conditions = [
-      (d: Date) => d.getFullYear() !== 2019,
-      '2019-01-01',
-      new Date(2019, 0, 1),
-    ];
+    const conditions = [(d: Date) => d.getFullYear() !== 2019, '2019-01-01', new Date(2019, 0, 1)];
 
     expect(dayIsPartOfTheConditions(date, conditions, dateParser, 'Y-m-d')).toBe(true);
   });
 
   it('handles an array of conditions if all condition are false', () => {
     const date = new Date(2019, 0, 1);
-    const conditions = [
-      (d: Date) => d.getFullYear() !== 2019,
-      '2019-02-01',
-      new Date(2010, 0, 1),
-    ];
+    const conditions = [(d: Date) => d.getFullYear() !== 2019, '2019-02-01', new Date(2010, 0, 1)];
 
     expect(dayIsPartOfTheConditions(date, conditions, dateParser, 'Y-m-d')).toBe(false);
   });

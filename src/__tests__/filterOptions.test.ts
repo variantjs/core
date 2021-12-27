@@ -38,9 +38,7 @@ describe('filterOptions', () => {
           {
             value: 1,
             text: 'Option 1',
-            children: [
-              { value: 'red', text: 'Red' },
-            ],
+            children: [{ value: 'red', text: 'Red' }],
           },
         ],
       },
