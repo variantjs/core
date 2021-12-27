@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
 export const enterAndLeave = {
   // @tw
   enterActiveClass: 'transition-opacity duration-100 ease-out',
