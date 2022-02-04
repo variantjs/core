@@ -24,13 +24,14 @@ it('exports all the helpers', () => {
 });
 
 it('exports all the date-related helpers', () => {
-  expect(Object.keys(dateHelpers).length).toBe(14);
+  expect(Object.keys(dateHelpers).length).toBe(15);
 
   expect(typeof dateHelpers.dateEnglishLocale).toBe('object');
   expect(typeof dateHelpers.visibleDaysInMonthView).toBe('function');
   expect(typeof dateHelpers.isSameDay).toBe('function');
   expect(typeof dateHelpers.isSameMonth).toBe('function');
   expect(typeof dateHelpers.isToday).toBe('function');
+  expect(typeof dateHelpers.diffInDays).toBe('function');
   expect(typeof dateHelpers.addDays).toBe('function');
   expect(typeof dateHelpers.addMonths).toBe('function');
   expect(typeof dateHelpers.addYears).toBe('function');
