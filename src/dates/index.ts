@@ -1,5 +1,6 @@
 export { English as dateEnglishLocale } from './l10n/default';
 export { default as visibleDaysInMonthView } from './visibleDaysInMonthView';
+export { default as isSameYear } from './isSameYear';
 export { default as isSameMonth } from './isSameMonth';
 export { default as isSameDay } from './isSameDay';
 export { default as isToday } from './isToday';

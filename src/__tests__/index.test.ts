@@ -25,7 +25,7 @@ it('exports all the helpers', () => {
 });
 
 it('exports all the date-related helpers', () => {
-  expect(Object.keys(dateHelpers).length).toBe(15);
+  expect(Object.keys(dateHelpers).length).toBe(16);
 
   expect(typeof dateHelpers.addDays).toBe('function');
   expect(typeof dateHelpers.addMonths).toBe('function');
@@ -38,6 +38,7 @@ it('exports all the date-related helpers', () => {
   expect(typeof dateHelpers.formatDate).toBe('function');
   expect(typeof dateHelpers.isSameDay).toBe('function');
   expect(typeof dateHelpers.isSameMonth).toBe('function');
+  expect(typeof dateHelpers.isSameYear).toBe('function');
   expect(typeof dateHelpers.diffInDays).toBe('function');
   expect(typeof dateHelpers.isToday).toBe('function');
   expect(typeof dateHelpers.parseDate).toBe('function');
