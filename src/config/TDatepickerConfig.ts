@@ -3,7 +3,7 @@
 const TDatepickerConfig = {
   classes: {
     // @tw
-    wrapper: 'flex flex-col',
+    // wrapper: 'flex flex-col',
     // @tw
     dropdownWrapper: 'relative z-10',
 
