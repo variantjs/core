@@ -36,4 +36,18 @@ describe('dateIsValid', () => {
 
     expect(dateIsValid(date)).toBe(false);
   });
+
+  it('validates a date that is the last of year 9999 ', () => {
+    const date = new Date('9999-12-31T23:59:59.999Z');
+
+    expect(dateIsValid(date)).toBe(true);
+  });
+  
+  it('a date above year 9999 is not valid', () => {
+    const firstDate = new Date('9999-12-31T23:59:59.999Z');
+
+    const date = new Date(firstDate.getTime() + 1);
+
+    expect(dateIsValid(date)).toBe(false);
+  });
 });
