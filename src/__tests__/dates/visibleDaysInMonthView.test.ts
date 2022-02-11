@@ -79,4 +79,11 @@ describe('visibleDaysInMonthView', () => {
     expect(visibleDaysInMonthView(date, WeekDay.Monday)[0]).toEqual(new Date(2021, 1, 1));
     expect(visibleDaysInMonthView(date, WeekDay.Monday)[27]).toEqual(new Date(2021, 1, 28));
   });
+
+
+  it('works with dates before 1970', () => {
+    const date = new Date('0010-01-01T00:00:00.000Z');
+
+    expect(visibleDaysInMonthView(date, WeekDay.Monday).length).toBe(35);
+  });
 });

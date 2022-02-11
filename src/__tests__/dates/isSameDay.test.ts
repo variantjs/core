@@ -7,6 +7,14 @@ describe('isSameDay', () => {
 
     expect(isSameDay(date1, date2)).toBe(true);
   });
+
+  it('determines that is same day for the same date with dates before 1970', () => {
+    const date1 = new Date('0010-02-18T12:00:00.000Z');
+    const date2 = new Date('0010-02-18T08:12:13.000Z');
+
+    expect(isSameDay(date1, date2)).toBe(true);
+  });
+
   it('determines that is same day if different minute', () => {
     const date1 = new Date(2020, 0, 15, 12);
     const date2 = new Date(2020, 0, 15, 11);

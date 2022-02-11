@@ -8,6 +8,13 @@ describe('addMonths', () => {
     expect(addMonths(date)).toEqual(expected);
   });
 
+  it('adds a month to a date before 1970', () => {
+    const date = new Date('0010-02-18T12:00:00.000Z');
+    const expected = new Date('0010-03-18T12:00:00.000Z');
+    
+    expect(addMonths(date)).toEqual(expected);
+  });
+
   it('changes the year if last month', () => {
     const date = new Date(2021, 11, 15);
     const expected = new Date(2022, 0, 15);

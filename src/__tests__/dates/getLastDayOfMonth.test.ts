@@ -36,6 +36,13 @@ describe('getLastDayOfMonth', () => {
     expect(getLastDayOfMonth(date)).toEqual(new Date(2020, 3, 30));
   });
 
+  it('gets the last day of a month if passes the last day of a month which following month have less days', () => {
+    // 2020-01-31
+    const date = new Date(2020, 0, 31);
+
+    expect(getLastDayOfMonth(date)).toEqual(new Date(2020, 0, 31));
+  });
+
   it('doesnt affects the original date', () => {
     const originalDate = new Date(2020, 0, 15, 10, 11, 12);
     const date = new Date(2020, 0, 15, 10, 11, 12);
@@ -43,5 +50,13 @@ describe('getLastDayOfMonth', () => {
     getLastDayOfMonth(date);
 
     expect(date).toEqual(originalDate);
+  });
+
+
+  it('works with dates before 1970', () => {
+    const date = new Date('0010-02-18T00:00:00.000Z');
+    const expected = new Date('0010-02-28T00:00:00.000Z');
+    
+    expect(getLastDayOfMonth(date)).toEqual(expected);
   });
 });

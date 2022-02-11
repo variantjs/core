@@ -8,6 +8,13 @@ describe('addYears', () => {
     expect(addYears(date)).toEqual(expected);
   });
 
+  it('adds a year to a date before 1970', () => {
+    const date = new Date('0010-02-18T12:00:00.000Z');
+    const expected = new Date('0011-02-18T12:00:00.000Z');
+    
+    expect(addYears(date)).toEqual(expected);
+  });
+
   it('uses the last day of same month if doesnt have an equivalent', () => {
     const date = new Date(2024, 1, 29);
     const expected = new Date(2025, 1, 28);

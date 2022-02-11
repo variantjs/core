@@ -49,4 +49,11 @@ describe('isSameYear', () => {
 
     expect(isSameYear(date1, date2)).toBe(false);
   });
+
+  it('determines that is same year for dates before 1970', () => {
+    const date1 = new Date('0010-02-18T12:00:00.000Z');
+    const date2 = new Date('0010-03-18T08:12:13.000Z');
+
+    expect(isSameYear(date1, date2)).toBe(true);
+  });
 });

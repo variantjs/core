@@ -8,6 +8,14 @@ describe('addDays', () => {
     expect(addDays(date)).toEqual(expected);
   });
 
+  it('adds a day to a date before 1970', () => {
+    const date = new Date('0010-02-18T12:00:00.000Z');
+    const expected = new Date('0010-02-19T12:00:00.000Z');
+    
+    expect(addDays(date)).toEqual(expected);
+  });
+
+
   it('changes the month if last day of month', () => {
     const date = new Date(2021, 9, 31);
     const expected = new Date(2021, 10, 1);

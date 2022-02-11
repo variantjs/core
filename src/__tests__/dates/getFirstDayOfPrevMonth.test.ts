@@ -30,4 +30,11 @@ describe('getFirstDayOfPrevMonth', () => {
 
     expect(date).toEqual(originalDate);
   });
+
+  it('works with dates before 1970', () => {
+    const date = new Date('0010-02-18T00:00:00.000Z');
+    const expected = new Date('0010-01-01T00:00:00.000Z');
+    
+    expect(getFirstDayOfPrevMonth(date)).toEqual(expected);
+  });
 });
