@@ -10,6 +10,7 @@ export { default as addMonths } from './addMonths';
 export { default as addYears } from './addYears';
 export { default as dateIsPartOfTheRange } from './dateIsPartOfTheRange';
 export { default as dayIsPartOfTheConditions } from './dayIsPartOfTheConditions';
+export { default as dateIsValid } from './dateIsValid';
 export { default as parseDate } from './parseDate';
 export { default as formatDate } from './formatDate';
 export { default as buildDateParser } from './buildDateParser';
