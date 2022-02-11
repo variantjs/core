@@ -3,7 +3,9 @@ const dateIsValid = (date?: Date): boolean => {
     return true;
   }
 
-  return date.getTime() === date.getTime() && date.getTime() >= 0;
+  return date instanceof Date 
+    && date.getTime() === date.getTime()
+    && isFinite(date.getTime());
 };
 
 export default dateIsValid;

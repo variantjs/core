@@ -1,5 +1,4 @@
 import dateIsValid from '../../dates/dateIsValid';
-import parseDate from '../../dates/parseDate';
 
 describe('dateIsValid', () => {
   it('a regular date is valid', () => {
@@ -18,15 +17,9 @@ describe('dateIsValid', () => {
     expect(dateIsValid(date)).toBe(false);
   });
 
-  it('marks as invalid a date with a negative timestamp', () => {
+  it('marks as valid a date with a negative timestamp', () => {
     const date = new Date(-1);
 
-    expect(dateIsValid(date)).toBe(false);
-  });
-
-  it('marks as invalid invalid an invalid parsed date', () => {
-    const date = parseDate('0000-00-00 00:00:00', 'Y-m-d H:i:S');
-
-    expect(dateIsValid(date)).toBe(false);
+    expect(dateIsValid(date)).toBe(true);
   });
 });

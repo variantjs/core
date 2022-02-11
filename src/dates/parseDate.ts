@@ -1,3 +1,4 @@
+import dateIsValid from './dateIsValid';
 import clone from '../helpers/clone';
 
 import {
@@ -222,7 +223,7 @@ const parseDate = (date: DateValue | undefined | null, fromFormat = 'Y-m-d H:i:S
   }
 
   // eslint-disable-next-line no-restricted-globals
-  if (!(parsedDate instanceof Date && !isNaN(parsedDate.getTime()))) {
+  if (!dateIsValid(parsedDate) || parsedDate === undefined) {
     throw new Error(`Invalid date provided: ${originalDate}`);
   }
 
