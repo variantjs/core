@@ -22,4 +22,18 @@ describe('dateIsValid', () => {
 
     expect(dateIsValid(date)).toBe(true);
   });
+
+  it('a date in year 0 is valid', () => {
+    const date = new Date('0000-01-01T00:00:00.000Z');
+
+    expect(dateIsValid(date)).toBe(true);
+  });
+
+  it('a date below year 0 is not valid', () => {
+    const firstDate = new Date('0000-01-01T00:00:00.000Z');
+
+    const date = new Date(firstDate.getTime() - 1);
+
+    expect(dateIsValid(date)).toBe(false);
+  });
 });
