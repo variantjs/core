@@ -37,6 +37,13 @@ describe('dayIsPartOfTheConditions', () => {
 
     expect(dayIsPartOfTheConditions(date, conditonDate, dateParser, 'Y-m-d')).toBe(true);
   });
+  
+  it('returns true is date is in the same date as the condition using the date parser with a integer', () => {
+    const date = new Date(2019, 0, 1, 10, 0, 0);
+    const conditonDate: number = +new Date(2019, 0, 1, 10, 0, 0);
+
+    expect(dayIsPartOfTheConditions(date, conditonDate, dateParser, 'Y-m-d')).toBe(true);
+  });
 
   it('handles an array of conditions', () => {
     const date = new Date(2019, 0, 1);

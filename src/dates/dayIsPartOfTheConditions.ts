@@ -11,7 +11,7 @@ const dayIsPartOfTheConditions = (date: Date | null | undefined, condition: Date
     return condition(date);
   }
 
-  if (typeof condition === 'string' || condition instanceof String) {
+  if (['string', 'number'].includes(typeof condition) || condition instanceof String) {
     const disabledDate = dateParser(condition as string, dateFormat);
     return isSameDay(disabledDate, date);
   }
