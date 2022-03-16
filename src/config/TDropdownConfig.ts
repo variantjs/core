@@ -5,7 +5,7 @@ const TDropdownConfig = {
   classes: {
     trigger: TButtonConfig.classes,
     // @tw
-    dropdown: 'w-56 bg-white rounded shadow',
+    dropdown: 'w-56 bg-white rounded shadow z-10',
     ...enterAndLeave,
   },
 };
