@@ -18,6 +18,12 @@ describe('dayIsPartOfTheConditions', () => {
     expect(dayIsPartOfTheConditions(date, condition, dateParser)).toBe(true);
   });
 
+  it('returns false for an undefined condition', () => {
+    const date = new Date(2019, 1, 1);
+    const condition = undefined;
+    expect(dayIsPartOfTheConditions(date, condition, dateParser)).toBe(false);
+  });
+
   it('accept a custom condition to check the date that return false', () => {
     const date = new Date(2019, 1, 1);
     const condition = (d: Date) => d.getFullYear() === 2018;
