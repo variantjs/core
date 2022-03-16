@@ -11,20 +11,16 @@ const dayIsPartOfTheConditions = (date: Date | null | undefined, condition: Date
     return condition(date);
   }
 
-  if (['string', 'number'].includes(typeof condition) || condition instanceof String) {
-    const disabledDate = dateParser(condition as string, dateFormat);
-    return isSameDay(disabledDate, date);
-  }
-
-  if (condition instanceof Date) {
-    return isSameDay(condition, date);
-  }
-
   if (Array.isArray(condition)) {
     return condition.some((c) => dayIsPartOfTheConditions(date, c, dateParser, dateFormat));
   }
 
-  return false;
+  if (typeof condition === 'string' || typeof condition === 'number' || condition instanceof String) {
+    const disabledDate = dateParser(condition as string, dateFormat);
+    return isSameDay(disabledDate, date);
+  }
+
+  return isSameDay(condition, date);
 };
 
 export default dayIsPartOfTheConditions;
